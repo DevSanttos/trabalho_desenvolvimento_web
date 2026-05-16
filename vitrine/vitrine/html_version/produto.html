@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <!-- barra-nav -->
+    <!-- barra de navegação -->
     <nav class="barra-produto">
         <div class="barra-produto__inner">
             <a href="index.html" class="barra-produto__logo">
@@ -27,7 +27,7 @@
     <!-- Conteúdo principal -->
     <main class="produto-pagina">
 
-        <!-- Layout duas colunas: galeria | informações -->
+        <!-- informações -->
         <div class="produto-layout">
 
             <!-- Coluna esquerda: galeria de imagens -->
@@ -107,16 +107,6 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
-
-        document.querySelectorAll('.galeria__miniatura').forEach(miniatura => {
-            miniatura.addEventListener('click', () => {
-                document.querySelectorAll('.galeria__miniatura').forEach(m => {
-                    m.classList.remove('galeria__miniatura--ativa');
-                });
-                miniatura.classList.add('galeria__miniatura--ativa');
-            });
-        });
     </script>
-
 </body>
 </html>
