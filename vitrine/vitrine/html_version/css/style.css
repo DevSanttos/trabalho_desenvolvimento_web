@@ -56,13 +56,16 @@ ul {
    UTILITÁRIOS
    ============================================================ */
 
-.container {
+.barra-nav__conteudo {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.text-terracotta { color: var(--vl-terracotta); }
+.cor-terracotta { color: var(--vl-terracotta); }
 
 /* Tamanhos de ícone (sempre largura + altura juntos) */
 .icone-xs { width: 16px; height: 16px; }
@@ -103,11 +106,6 @@ ul {
   background: var(--vl-surface);
   border-bottom: 1px solid var(--vl-border);
   padding: 16px 0;
-}
-.barra-nav .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 .logo {
   font-size: 24px;
@@ -211,7 +209,7 @@ ul {
   padding: 24px;
   min-height: 100vh;
 }
-.link-lateral {
+.item-lateral {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -220,10 +218,10 @@ ul {
   color: #fff;
   transition: background 0.2s;
 }
-.link-lateral.ativo {
+.item-lateral.ativo {
   background: var(--vl-terracotta);
 }
-.link-lateral:hover:not(.ativo) {
+.item-lateral:hover:not(.ativo) {
   background: rgba(255,255,255,0.1);
 }
 table {
@@ -346,7 +344,7 @@ td {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.nav-lateral {
+.navegacao-lateral {
   display: flex;
   flex-direction: column;
   gap: 8px;

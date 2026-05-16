@@ -109,7 +109,7 @@
    CÉLULA DE PRODUTO NA TABELA
    ---------------------------------------------------------- */
 
-.tabela-produto-cel {
+.tabela-produto-celula {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -156,7 +156,7 @@
 
 .tabela-produtos tr:last-child td { border-bottom: none; }
 
-.tabela-produto-cel span        { color: var(--vl-title); font-weight: 500; }
+.tabela-produto-celula span        { color: var(--vl-title); font-weight: 500; }
 .tabela-produtos td:nth-child(2) { color: var(--vl-secondary); }
 .tabela-produtos td:nth-child(3) { color: var(--vl-terracotta); }
 .tabela-produtos td:last-child   { text-align: right; }

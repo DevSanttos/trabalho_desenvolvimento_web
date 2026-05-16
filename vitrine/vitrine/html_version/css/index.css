@@ -7,19 +7,19 @@
    barra-nav
    ---------------------------------------------------------- */
 
-.links-nav {
+.itens-nav {
     display: flex;
     gap: 24px;
     align-items: center;
 }
 
-.link-menu {
+.item-menu {
     color: var(--vl-body);
     font-weight: 500;
     transition: color 0.2s;
 }
 
-.link-menu:hover {
+.item-menu:hover {
     color: var(--vl-terracotta);
 }
 
@@ -27,7 +27,7 @@
    HERO
    ---------------------------------------------------------- */
 
-.hero {
+.destaque {
     max-width: 1280px;
     margin: 0 auto;
     padding: 80px 24px;
@@ -37,7 +37,7 @@
     align-items: center;
 }
 
-.hero__titulo {
+.destaque__titulo {
     font-size: 60px;
     font-weight: 700;
     color: var(--vl-title);
@@ -45,14 +45,14 @@
     margin-bottom: 24px;
 }
 
-.hero__subtitulo {
+.destaque__subtitulo {
     color: var(--vl-body);
     margin-bottom: 40px;
     font-size: 20px;
     line-height: 1.6;
 }
 
-.hero__busca {
+.destaque__busca {
     display: flex;
     gap: 12px;
     background: #fff;
@@ -62,7 +62,7 @@
     border: 1px solid var(--vl-border);
 }
 
-.hero__busca-campo {
+.destaque__busca-campo {
     flex: 1;
     display: flex;
     align-items: center;
@@ -70,9 +70,9 @@
     gap: 12px;
 }
 
-.hero__busca-campo [data-lucide] { color: var(--vl-secondary); }
+.destaque__busca-campo [data-lucide] { color: var(--vl-secondary); }
 
-.hero__busca-input {
+.destaque__busca-input {
     border: none;
     padding: 12px 0;
     width: 100%;
@@ -84,7 +84,7 @@
 }
 
 /* ----------------------------------------------------------
-   CIDADES RÁPIDAS (coluna direita do hero)
+   CIDADES RÁPIDAS (coluna direita do destaque)
    ---------------------------------------------------------- */
 
 .cidades-rapidas {
@@ -104,10 +104,13 @@
 }
 
 .cartao-cidade-rapida__imagem {
-    background: var(--vl-border);
-    border-radius: 8px;
+    display: block;
+    width: 100%;
     aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
     margin-bottom: 12px;
+    background: var(--vl-border);
 }
 
 /* ----------------------------------------------------------
@@ -119,7 +122,7 @@
     padding: 80px 0;
 }
 
-.como-funciona__inner {
+.como-funciona__conteudo {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 24px;
@@ -133,7 +136,7 @@
     margin-bottom: 56px;
 }
 
-.como-funciona__steps {
+.como-funciona__passos {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
@@ -177,7 +180,7 @@
     padding: 80px 0;
 }
 
-.cidades-cadastradas__inner {
+.cidades-cadastradas__conteudo {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 24px;
@@ -209,8 +212,11 @@
 }
 
 .cidade-cartao__imagem {
-    background: var(--vl-border);
+    display: block;
+    width: 100%;
     aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--vl-border);
 }
 
 .cidade-cartao__corpo {
@@ -260,7 +266,7 @@
     padding: 48px 0 0;
 }
 
-.rodape__inner {
+.rodape__conteudo {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 24px 40px;
@@ -287,13 +293,13 @@
     margin-bottom: 16px;
 }
 
-.rodape__links-lista {
+.rodape__lista-itens {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.rodape__link {
+.rodape__item {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
@@ -321,10 +327,10 @@
    BOTÕES DA barra-nav
    ---------------------------------------------------------- */
 
-.links-nav .botao { padding: 10px 24px; }
+.itens-nav .botao { padding: 10px 24px; }
 
 /* ----------------------------------------------------------
-   BOTÃO EXPLORAR (hero)
+   BOTÃO EXPLORAR (destaque)
    ---------------------------------------------------------- */
 
 .botao-explorar {
