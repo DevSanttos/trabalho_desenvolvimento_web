@@ -107,15 +107,6 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
-
-        document.querySelectorAll('.galeria__miniatura').forEach(miniatura => {
-            miniatura.addEventListener('click', () => {
-                document.querySelectorAll('.galeria__miniatura').forEach(m => {
-                    m.classList.remove('galeria__miniatura--ativa');
-                });
-                miniatura.classList.add('galeria__miniatura--ativa');
-            });
-        });
     </script>
 
 </body>
