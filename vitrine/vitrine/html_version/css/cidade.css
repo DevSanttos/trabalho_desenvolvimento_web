@@ -233,10 +233,9 @@ Componentes exclusivos da página de listagem de cidadef
     border-color: var(--vl-terracotta);
 }
 
-.cartao-loja__logo {
+.cartao-loja__logo img {
     width: 52px;
     height: 52px;
-    background: var(--vl-border);
     border-radius: 8px;
     margin-bottom: 14px;
 }

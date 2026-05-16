@@ -81,7 +81,7 @@ input:checked + .interruptor-controle:before { transform: translateX(20px); }
    ÁREA DE UPLOAD DE IMAGEM
    ---------------------------------------------------------- */
 
-.area-upload {
+.area-envio {
     text-align: center;
     cursor: pointer;
     border: 2px dashed var(--vl-border);
@@ -90,28 +90,6 @@ input:checked + .interruptor-controle:before { transform: translateX(20px); }
     transition: border-color 0.2s, background 0.2s;
 }
 
-.area-upload:hover {
+.area-envio:hover {
     border-color: var(--vl-secondary);
-}
-
-/* ----------------------------------------------------------
-   CONTEÚDO INTERNO DA ÁREA DE UPLOAD
-   ---------------------------------------------------------- */
-
-.area-upload [data-lucide] {
-    width: 40px;
-    height: 40px;
-    color: var(--vl-secondary);
-    margin-bottom: 12px;
-}
-
-.area-upload p:first-of-type {
-    color: var(--vl-body);
-    font-weight: 500;
-    margin-bottom: 4px;
-}
-
-.area-upload p:last-of-type {
-    color: var(--vl-secondary);
-    font-size: 14px;
 }
