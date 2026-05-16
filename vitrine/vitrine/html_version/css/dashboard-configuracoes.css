@@ -3,9 +3,6 @@
    Componentes exclusivos da tela de configurações
    ============================================================ */
 
-/* ----------------------------------------------------------
-   CAIXA DE INFORMAÇÃO DO PLANO
-   ---------------------------------------------------------- */
 
 /* ----------------------------------------------------------
    LARGURA DO CONTEÚDO INTERNO
@@ -45,10 +42,6 @@
 /* ----------------------------------------------------------
    ZONA DE PERIGO
    ---------------------------------------------------------- */
-
-.zona-perigo-cartao {
-    border-color: var(--vl-closed) !important;
-}
 
 .zona-perigo__titulo {
     color: var(--vl-closed);
@@ -99,4 +92,12 @@
 .info-pagamento p:last-child {
     color: var(--vl-title);
     font-weight: 500;
+}
+
+.dashboard-conteudo h3 {
+    color: var(--vl-body);
+}
+
+.cabecalho-pagina h2{
+    color: var(--vl-title);
 }

@@ -1,7 +1,9 @@
-﻿/* ============================================================
-   cidade.css
-   Componentes exclusivos da página de listagem de cidade
-   ============================================================ */
+﻿/* 
+============================================================
+cidade.css
+Componentes exclusivos da página de listagem de cidadef
+============================================================ 
+*/
 
 /* ----------------------------------------------------------
    barra-nav
@@ -92,12 +94,12 @@
 .cidade-hero__subtitulo {
     color: rgba(255, 255, 255, 0.75);
     font-size: 15px;
-    margin-bottom: 32px;
+    margin-bottom: 8px;
 }
 
-.cidade-hero__stats {
+.cidade-hero__status {
     display: flex;
-    gap: 48px;
+    gap: 40px;
 }
 
 .cidade-hero__stat-valor {

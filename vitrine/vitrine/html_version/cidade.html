@@ -35,7 +35,7 @@
             <h1 class="cidade-hero__titulo">Ibirama</h1>
             <p class="cidade-hero__subtitulo">Santa Catarina · Explore as lojas locais</p>
 
-            <div class="cidade-hero__stats">
+            <div class="cidade-hero__status">
                 <div>
                     <div class="cidade-hero__stat-valor">6</div>
                     <div class="cidade-hero__stat-label">Lojas ativas</div>
@@ -155,13 +155,6 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
-
-        document.querySelectorAll('.categoria-lista__item').forEach(botao => {
-            botao.addEventListener('click', () => {
-                document.querySelectorAll('.categoria-lista__item').forEach(b => b.classList.remove('categoria-lista__item--ativo'));
-                botao.classList.add('categoria-lista__item--ativo');
-            });
-        });
     </script>
 </body>
 </html>
