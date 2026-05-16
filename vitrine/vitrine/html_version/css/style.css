@@ -95,11 +95,13 @@ ul {
 }
 
 .miniatura-produto {
+  display: block;
   width: 48px;
   height: 48px;
-  background: var(--vl-border);
+  object-fit: contain;
   border-radius: 4px;
   flex-shrink: 0;
+  background: var(--vl-border);
 }
 
 .barra-nav {

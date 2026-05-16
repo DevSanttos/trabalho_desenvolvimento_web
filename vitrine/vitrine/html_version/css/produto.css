@@ -119,10 +119,12 @@
 }
 
 .galeria__imagem-principal {
+    display: block;
     width: 100%;
     aspect-ratio: 1 / 1;
-    background: #DDE1E9;
+    object-fit: contain;
     border-radius: 10px;
+    background: #f5f6f8;
 }
 
 .galeria__seta {
@@ -158,13 +160,15 @@
 }
 
 .galeria__miniatura {
+    display: block;
     width: 72px;
     height: 72px;
-    background: #DDE1E9;
+    object-fit: contain;
     border-radius: 8px;
     border: 2px solid var(--vl-border);
     cursor: pointer;
     transition: border-color 0.2s;
+    background: #f5f6f8;
 }
 
 .galeria__miniatura:hover:not(.galeria__miniatura--ativa) {
