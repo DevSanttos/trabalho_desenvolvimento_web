@@ -56,13 +56,16 @@ ul {
    UTILITÁRIOS
    ============================================================ */
 
-.container {
+.barra-nav__conteudo {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.text-terracotta { color: var(--vl-terracotta); }
+.cor-terracotta { color: var(--vl-terracotta); }
 
 /* Tamanhos de ícone (sempre largura + altura juntos) */
 .icone-xs { width: 16px; height: 16px; }
@@ -104,17 +107,12 @@ ul {
   border-bottom: 1px solid var(--vl-border);
   padding: 16px 0;
 }
-.barra-nav .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo {
+.marca {
   font-size: 24px;
   font-weight: 700;
   color: var(--vl-title);
 }
-.logo span,
+.marca span,
 .logo-lateral h1 span {
   color: var(--vl-terracotta);
 }
