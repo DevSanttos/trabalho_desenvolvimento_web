@@ -1,0 +1,315 @@
+﻿/* ============================================================
+   produto.css
+   Componentes exclusivos da página de detalhe de produto
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   barra-nav
+   ---------------------------------------------------------- */
+
+.barra-produto {
+    background: #fff;
+    border-bottom: 1px solid var(--vl-border);
+}
+
+.barra-produto__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.barra-produto__logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--vl-title);
+    text-decoration: none;
+}
+
+.barra-produto__logo span {
+    color: var(--vl-terracotta);
+}
+
+.barra-produto__cidade {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid var(--vl-border);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--vl-title);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.barra-produto__cidade:hover {
+    border-color: var(--vl-terracotta);
+}
+
+.barra-produto__cidade [data-lucide] {
+    color: var(--vl-secondary);
+}
+
+/* ----------------------------------------------------------
+   PÁGINA — CONTAINER E LAYOUT GERAL
+   ---------------------------------------------------------- */
+
+.produto-pagina {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+.produto-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+/* ----------------------------------------------------------
+   CABEÇALHO DO PAINEL DE INFO (voltar + fechar)
+   ---------------------------------------------------------- */
+
+.produto-info__cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.botao-fechar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--vl-border);
+    background: transparent;
+    color: var(--vl-secondary);
+    cursor: pointer;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: background 0.2s, color 0.2s;
+}
+
+.botao-fechar:hover {
+    background: var(--vl-border);
+    color: var(--vl-title);
+}
+
+/* ----------------------------------------------------------
+   GALERIA DE IMAGENS (coluna esquerda)
+   ---------------------------------------------------------- */
+
+.galeria {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.galeria__imagem-wrapper {
+    position: relative;
+}
+
+.galeria__imagem-principal {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #DDE1E9;
+    border-radius: 10px;
+}
+
+.galeria__seta {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border: 1px solid var(--vl-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--vl-title);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+    transition: box-shadow 0.2s;
+}
+
+.galeria__seta:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+}
+
+.galeria__seta--anterior { left: -18px; }
+.galeria__seta--proxima  { right: -18px; }
+
+.galeria__miniaturas {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.galeria__miniatura {
+    width: 72px;
+    height: 72px;
+    background: #DDE1E9;
+    border-radius: 8px;
+    border: 2px solid var(--vl-border);
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.galeria__miniatura:hover:not(.galeria__miniatura--ativa) {
+    border-color: var(--vl-secondary);
+}
+
+.galeria__miniatura--ativa {
+    border-color: var(--vl-terracotta);
+}
+
+/* ----------------------------------------------------------
+   INFORMAÇÕES DO PRODUTO (coluna direita)
+   ---------------------------------------------------------- */
+
+.produto-info__voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--vl-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 6px;
+    transition: color 0.2s;
+}
+
+.produto-info__voltar:hover {
+    color: var(--vl-terracotta);
+}
+
+.produto-info__breadcrumb {
+    font-size: 13px;
+    color: var(--vl-secondary);
+    margin-bottom: 20px;
+}
+
+.produto-info__categoria {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 14px;
+    background: var(--vl-terracotta);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 9999px;
+    margin-bottom: 16px;
+}
+
+.produto-info__titulo {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--vl-title);
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.produto-info__preco {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--vl-terracotta);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.produto-info__descricao {
+    font-size: 14px;
+    color: var(--vl-body);
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+/* ----------------------------------------------------------
+   ESPECIFICAÇÕES TÉCNICAS
+   ---------------------------------------------------------- */
+
+.especificacoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 32px;
+    margin-bottom: 24px;
+}
+
+.especificacao__label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--vl-secondary);
+    margin-bottom: 4px;
+}
+
+.especificacao__valor {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--vl-title);
+}
+
+/* ----------------------------------------------------------
+   BOTÕES DE AÇÃO
+   ---------------------------------------------------------- */
+
+.produto-acoes {
+    display: flex;
+    gap: 12px;
+}
+
+.botao-contato-whatsapp {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--vl-terracotta);
+    color: #fff;
+    border: none;
+    padding: 16px 24px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.botao-contato-whatsapp:hover {
+    background: var(--vl-terracotta-hover);
+}
+
+.botao-favoritar {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1.5px solid var(--vl-border);
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--vl-secondary);
+    flex-shrink: 0;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.botao-favoritar:hover {
+    border-color: var(--vl-terracotta);
+    color: var(--vl-terracotta);
+}

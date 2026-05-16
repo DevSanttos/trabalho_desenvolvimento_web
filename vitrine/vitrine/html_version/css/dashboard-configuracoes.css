@@ -1,0 +1,102 @@
+﻿/* ============================================================
+   dashboard-configuracoes.css
+   Componentes exclusivos da tela de configurações
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   CAIXA DE INFORMAÇÃO DO PLANO
+   ---------------------------------------------------------- */
+
+/* ----------------------------------------------------------
+   LARGURA DO CONTEÚDO INTERNO
+   ---------------------------------------------------------- */
+
+.dashboard-interno { max-width: 896px; }
+
+/* ----------------------------------------------------------
+   RODAPÉ DE SEÇÃO DO FORMULÁRIO (botão de salvar)
+   ---------------------------------------------------------- */
+
+.rodape-campos { padding-top: 16px; }
+
+/* ----------------------------------------------------------
+   ITEM DE NOTIFICAÇÃO / VISIBILIDADE
+   ---------------------------------------------------------- */
+
+.item-configuracao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+}
+
+/* ----------------------------------------------------------
+   CAIXA DE INFORMAÇÃO DO PLANO
+   ---------------------------------------------------------- */
+
+.plano-info-caixa {
+    background: var(--vl-terracotta-soft);
+    border: 1px solid var(--vl-terracotta);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+/* ----------------------------------------------------------
+   ZONA DE PERIGO
+   ---------------------------------------------------------- */
+
+.zona-perigo-cartao {
+    border-color: var(--vl-closed) !important;
+}
+
+.zona-perigo__titulo {
+    color: var(--vl-closed);
+    font-weight: 500;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.botao-perigo {
+    color: var(--vl-closed);
+    border-color: var(--vl-closed);
+}
+
+/* ----------------------------------------------------------
+   BOTÃO SAIR
+   ---------------------------------------------------------- */
+
+.botao-sair {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--vl-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.botao-sair:hover {
+    color: var(--vl-terracotta);
+}
+
+/* ----------------------------------------------------------
+   BLOCO DE INFO DE PAGAMENTO
+   ---------------------------------------------------------- */
+
+.info-pagamento { margin-bottom: 16px; }
+
+.info-pagamento p:first-child {
+    color: var(--vl-secondary);
+    margin-bottom: 4px;
+}
+
+.info-pagamento p:last-child {
+    color: var(--vl-title);
+    font-weight: 500;
+}

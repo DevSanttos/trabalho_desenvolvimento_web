@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produto - Dashboard - VitrineLocal</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard-produtos-novo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+
+        <!-- Sidebar -->
+        <aside class="painel-lateral">
+            <div class="logo-lateral">
+                <h1>
+                    <span>Vitrine</span>Local
+                </h1>
+                <p>Painel do lojista</p>
+            </div>
+
+            <nav class="nav-lateral">
+                <a href="index.html" class="link-lateral">
+                    <i data-lucide="layout-dashboard" class="icone-sm"></i> Dashboard
+                </a>
+                <a href="loja.html" class="link-lateral">
+                    <i data-lucide="store" class="icone-sm"></i> Minha loja
+                </a>
+                <a href="produtos.html" class="link-lateral ativo">
+                    <i data-lucide="package" class="icone-sm"></i> Produtos
+                </a>
+                <a href="configuracoes.html" class="link-lateral">
+                    <i data-lucide="settings" class="icone-sm"></i> Configurações
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="dashboard-conteudo">
+            <div class="dashboard-interno">
+
+                <div class="cabecalho-pagina">
+                    <h2>Adicionar produto</h2>
+                    <p>Preencha as informações do novo produto</p>
+                </div>
+
+                <div class="cartao">
+                    <form class="campos-formulario">
+
+                        <!-- Imagem do produto -->
+                        <div>
+                            <label>Imagem do produto</label>
+                            <div class="area-upload">
+                                <i data-lucide="upload"></i>
+                                <p>Clique para fazer upload</p>
+                                <p>PNG, JPG até 5MB</p>
+                            </div>
+                        </div>
+
+                        <!-- Nome do produto -->
+                        <div>
+                            <label>Nome do produto *</label>
+                            <input type="text" class="input" placeholder="Ex: Sofá Retrátil" required>
+                        </div>
+
+                        <!-- Preço -->
+                        <div>
+                            <label>Preço *</label>
+                            <input type="text" class="input" placeholder="0,00" required>
+                        </div>
+
+                        <!-- Descrição curta -->
+                        <div>
+                            <label>Descrição curta *</label>
+                            <input type="text" class="input" placeholder="Ex: 3 lugares, tecido" required>
+                        </div>
+
+                        <!-- Descrição completa -->
+                        <div>
+                            <label>Descrição completa</label>
+                            <textarea class="textarea" rows="4" placeholder="Descreva detalhadamente o produto, incluindo materiais, dimensões, características especiais, etc."></textarea>
+                        </div>
+
+                        <!-- Marca -->
+                        <div>
+                            <label>Marca</label>
+                            <input type="text" class="input" placeholder="Ex: Sofás Brasil">
+                        </div>
+
+                        <!-- Categoria -->
+                        <div>
+                            <label>Categoria *</label>
+                            <select class="select" required>
+                                <option value=""></option>
+                                <option value="sofas">Sofás</option>
+                                <option value="mesas">Mesas</option>
+                                <option value="cadeiras">Cadeiras</option>
+                                <option value="decoracao">Decoração</option>
+                            </select>
+                        </div>
+
+                        <!-- Status -->
+                        <div class="campo-status">
+                            <div>
+                                <label>Status</label>
+                                <p>Produto visível na vitrine</p>
+                            </div>
+                            <label class="interruptor">
+                                <input type="checkbox" checked>
+                                <span class="interruptor-controle"></span>
+                            </label>
+                        </div>
+
+                        <!-- Botões de ação -->
+                        <div class="acoes-formulario">
+                            <button type="button" class="botao botao-contorno" onclick="window.location.href='produtos.html'">Cancelar</button>
+                            <button type="submit" class="botao">Salvar produto</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
+

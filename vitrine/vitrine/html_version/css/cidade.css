@@ -1,0 +1,292 @@
+﻿/* ============================================================
+   cidade.css
+   Componentes exclusivos da página de listagem de cidade
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   barra-nav
+   ---------------------------------------------------------- */
+
+.barra-cidade {
+    background: #fff;
+    border-bottom: 1px solid var(--vl-border);
+}
+
+.barra-cidade__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.barra-cidade__logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--vl-title);
+    text-decoration: none;
+}
+
+.barra-cidade__logo span {
+    color: var(--vl-terracotta);
+}
+
+.barra-cidade__cidade {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 1px solid var(--vl-border);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--vl-title);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.barra-cidade__cidade:hover {
+    border-color: var(--vl-terracotta);
+}
+
+.barra-cidade__cidade [data-lucide] {
+    color: var(--vl-secondary);
+}
+
+/* ----------------------------------------------------------
+   HERO DA CIDADE
+   ---------------------------------------------------------- */
+
+.cidade-hero {
+    background: var(--vl-slate-blue);
+    color: #fff;
+    padding: 40px 0 48px;
+}
+
+.cidade-hero__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.cidade-hero__voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.cidade-hero__titulo {
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.1;
+}
+
+.cidade-hero__subtitulo {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    margin-bottom: 32px;
+}
+
+.cidade-hero__stats {
+    display: flex;
+    gap: 48px;
+}
+
+.cidade-hero__stat-valor {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.cidade-hero__stat-label {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* ----------------------------------------------------------
+   CONTEÚDO PRINCIPAL (sidebar + grade)
+   ---------------------------------------------------------- */
+
+.cidade-conteudo {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* ----------------------------------------------------------
+   SIDEBAR DE FILTROS
+   ---------------------------------------------------------- */
+
+.cidade-sidebar {
+    background: #fff;
+    border: 1px solid var(--vl-border);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.cidade-sidebar__busca {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.cidade-sidebar__busca [data-lucide] {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--vl-secondary);
+}
+
+.cidade-sidebar__input {
+    width: 100%;
+    padding: 9px 12px 9px 36px;
+    border: 1px solid var(--vl-border);
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: var(--vl-body);
+    box-sizing: border-box;
+    outline: none;
+}
+
+.cidade-sidebar__titulo {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--vl-title);
+    margin-bottom: 10px;
+}
+
+/* ----------------------------------------------------------
+   LISTA DE CATEGORIAS
+   ---------------------------------------------------------- */
+
+.categoria-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.categoria-lista__item {
+    width: 100%;
+    text-align: left;
+    padding: 9px 12px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--vl-body);
+    transition: background 0.15s, color 0.15s;
+}
+
+.categoria-lista__item:hover:not(.categoria-lista__item--ativo) {
+    background: var(--vl-bg-base);
+}
+
+.categoria-lista__item--ativo {
+    background: var(--vl-terracotta-soft);
+    color: var(--vl-terracotta);
+    font-weight: 600;
+}
+
+/* ----------------------------------------------------------
+   GRADE DE LOJAS
+   ---------------------------------------------------------- */
+
+.lojas-grade {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* ----------------------------------------------------------
+   cartao DE LOJA
+   ---------------------------------------------------------- */
+
+.cartao-loja {
+    background: #fff;
+    border: 1px solid var(--vl-border);
+    border-radius: 12px;
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.cartao-loja:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-color: var(--vl-terracotta);
+}
+
+.cartao-loja__logo {
+    width: 52px;
+    height: 52px;
+    background: var(--vl-border);
+    border-radius: 8px;
+    margin-bottom: 14px;
+}
+
+.cartao-loja__nome {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--vl-title);
+    margin-bottom: 4px;
+}
+
+.cartao-loja__categoria {
+    font-size: 13px;
+    color: var(--vl-secondary);
+    margin-bottom: 4px;
+}
+
+.cartao-loja__endereco {
+    font-size: 13px;
+    color: var(--vl-secondary);
+    margin-bottom: 14px;
+}
+
+.cartao-loja__rodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.cartao-loja__produtos {
+    font-size: 13px;
+    color: var(--vl-body);
+}
+
+.botao-ver-loja {
+    display: block;
+    width: 100%;
+    padding: 9px;
+    text-align: center;
+    border: 1.5px solid var(--vl-terracotta);
+    border-radius: 8px;
+    color: var(--vl-terracotta);
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.botao-ver-loja:hover {
+    background: var(--vl-terracotta-soft);
+}

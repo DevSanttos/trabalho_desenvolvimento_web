@@ -1,0 +1,214 @@
+﻿/* ============================================================
+   login.css
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   LAYOUT GERAL
+   ---------------------------------------------------------- */
+
+.pagina-login {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+}
+
+/* ----------------------------------------------------------
+   PAINEL ESQUERDO (MARCA)
+   ---------------------------------------------------------- */
+
+.login-painel-marca {
+    background: var(--vl-title);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+}
+
+.login-marca-conteudo {
+    max-width: 360px;
+}
+
+.login-marca-logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.login-marca-logo span { color: var(--vl-terracotta); }
+
+.login-marca-frase {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.lista-beneficios {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.beneficio-item {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px 24px;
+}
+
+.beneficio-numero {
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.beneficio-descricao {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ----------------------------------------------------------
+   PAINEL DIREITO (FORMULÁRIO)
+   ---------------------------------------------------------- */
+
+.login-painel-form {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+}
+
+.login-form-caixa {
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form-titulo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--vl-title);
+    margin-bottom: 6px;
+}
+
+.login-form-subtitulo {
+    font-size: 14px;
+    color: var(--vl-secondary);
+    margin-bottom: 32px;
+}
+
+/* ----------------------------------------------------------
+   CAMPOS DO FORMULÁRIO
+   ---------------------------------------------------------- */
+
+.login-campos {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.login-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.login-linha-opcoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
+.login-lembrar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--vl-body);
+    cursor: pointer;
+}
+
+.login-esqueceu {
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    color: var(--vl-terracotta);
+}
+
+.login-esqueceu:hover {
+    text-decoration: underline;
+}
+
+.login-botao-entrar {
+    margin-top: 8px;
+    padding: 14px;
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+}
+
+/* ----------------------------------------------------------
+   SEPARADOR "OU"
+   ---------------------------------------------------------- */
+
+.login-separador {
+    position: relative;
+    text-align: center;
+    margin: 4px 0;
+}
+
+.login-separador::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--vl-border);
+}
+
+.login-separador-texto {
+    position: relative;
+    background: #fff;
+    padding: 0 14px;
+    font-size: 13px;
+    color: var(--vl-secondary);
+}
+
+/* ----------------------------------------------------------
+   BOTÃO GOOGLE
+   ---------------------------------------------------------- */
+
+.login-botao-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px;
+    font-size: 15px;
+    width: 100%;
+}
+
+/* ----------------------------------------------------------
+   RODAPÉ
+   ---------------------------------------------------------- */
+
+.login-rodape {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: var(--vl-secondary);
+}
+
+.login-rodape a {
+    color: var(--vl-terracotta);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-rodape a:hover {
+    text-decoration: underline;
+}

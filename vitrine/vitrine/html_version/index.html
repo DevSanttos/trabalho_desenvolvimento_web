@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitrineLocal - Produtos na sua cidade</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- barra-nav -->
+    <nav class="barra-nav">
+        <div class="container">
+            <a href="index.html" class="logo"><span>Vitrine</span>Local</a>
+            <div class="links-nav">
+                <a href="#" class="link-menu">Como funciona</a>
+                <a href="#" class="link-menu">Para lojistas</a>
+                <a href="login.html" class="botao botao-contorno">Entrar</a>
+                <a href="cadastro.html" class="botao">Cadastrar loja</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section>
+        <div class="hero">
+            <div>
+                <h1 class="hero__titulo">
+                    Descubra <span class="text-terracotta">produtos locais</span> na sua cidade
+                </h1>
+                <p class="hero__subtitulo">
+                    Conectamos você com o comércio local. Explore lojas, produtos e entre em contato diretamente com lojistas da sua região.
+                </p>
+
+                <div class="hero__busca">
+                    <div class="hero__busca-campo">
+                        <i data-lucide="map-pin" class="icone-sm"></i>
+                        <input type="text" class="hero__busca-input" placeholder="Digite sua cidade...">
+                    </div>
+                    <button class="botao botao-explorar">Explorar</button>
+                </div>
+            </div>
+
+            <!-- Cidades rápidas -->
+            <div class="cidades-rapidas">
+                <a href="cidade.html" class="cartao-cidade-rapida">
+                    <div class="cartao-cidade-rapida__imagem"></div>
+                    <h3>Ibirama</h3>
+                    <p>127 lojas</p>
+                </a>
+                <a href="cidade.html" class="cartao-cidade-rapida">
+                    <div class="cartao-cidade-rapida__imagem"></div>
+                    <h3>Rio do Sul</h3>
+                    <p>89 lojas</p>
+                </a>
+                <a href="cidade.html" class="cartao-cidade-rapida">
+                    <div class="cartao-cidade-rapida__imagem"></div>
+                    <h3>São Paulo</h3>
+                    <p>56 lojas</p>
+                </a>
+                <a href="cidade.html" class="cartao-cidade-rapida">
+                    <div class="cartao-cidade-rapida__imagem"></div>
+                    <h3>Oliveira</h3>
+                    <p>43 lojas</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="como-funciona">
+        <div class="como-funciona__inner">
+            <h2 class="como-funciona__titulo">Como funciona</h2>
+
+            <div class="como-funciona__steps">
+                <div class="como-funciona__passo">
+                    <div class="como-funciona__icone">
+                        <i data-lucide="search" class="icone-md"></i>
+                    </div>
+                    <h3 class="como-funciona__passo-titulo">Escolha sua cidade</h3>
+                    <p class="como-funciona__passo-descricao">Selecione a cidade onde você quer explorar lojas locais</p>
+                </div>
+                <div class="como-funciona__passo">
+                    <div class="como-funciona__icone">
+                        <i data-lucide="store" class="icone-md"></i>
+                    </div>
+                    <h3 class="como-funciona__passo-titulo">Explore lojas</h3>
+                    <p class="como-funciona__passo-descricao">Navegue por diversas lojas e categorias da sua região</p>
+                </div>
+                <div class="como-funciona__passo">
+                    <div class="como-funciona__icone">
+                        <i data-lucide="eye" class="icone-md"></i>
+                    </div>
+                    <h3 class="como-funciona__passo-titulo">Navegue produtos</h3>
+                    <p class="como-funciona__passo-descricao">Veja produtos, preços e informações detalhadas</p>
+                </div>
+                <div class="como-funciona__passo">
+                    <div class="como-funciona__icone">
+                        <i data-lucide="message-circle" class="icone-md"></i>
+                    </div>
+                    <h3 class="como-funciona__passo-titulo">Entre em contato</h3>
+                    <p class="como-funciona__passo-descricao">Fale diretamente com a loja via WhatsApp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cidades com lojas cadastradas -->
+    <section class="cidades-cadastradas">
+        <div class="cidades-cadastradas__inner">
+            <h2 class="cidades-cadastradas__titulo">Cidades com lojas cadastradas</h2>
+
+            <div class="cidades-cadastradas__grade">
+
+                <div class="cidade-cartao">
+                    <div class="cidade-cartao__imagem"></div>
+                    <div class="cidade-cartao__corpo">
+                        <h3 class="cidade-cartao__nome">Ibirama</h3>
+                        <p class="cidade-cartao__total">127 lojas cadastradas</p>
+                        <a href="cidade.html" class="botao-ver-cidade">Ver lojas</a>
+                    </div>
+                </div>
+
+                <div class="cidade-cartao">
+                    <div class="cidade-cartao__imagem"></div>
+                    <div class="cidade-cartao__corpo">
+                        <h3 class="cidade-cartao__nome">Rio do Sul</h3>
+                        <p class="cidade-cartao__total">89 lojas cadastradas</p>
+                        <a href="cidade.html" class="botao-ver-cidade">Ver lojas</a>
+                    </div>
+                </div>
+
+                <div class="cidade-cartao">
+                    <div class="cidade-cartao__imagem"></div>
+                    <div class="cidade-cartao__corpo">
+                        <h3 class="cidade-cartao__nome">São Paulo</h3>
+                        <p class="cidade-cartao__total">56 lojas cadastradas</p>
+                        <a href="cidade.html" class="botao-ver-cidade">Ver lojas</a>
+                    </div>
+                </div>
+
+                <div class="cidade-cartao">
+                    <div class="cidade-cartao__imagem"></div>
+                    <div class="cidade-cartao__corpo">
+                        <h3 class="cidade-cartao__nome">Oliveira</h3>
+                        <p class="cidade-cartao__total">43 lojas cadastradas</p>
+                        <a href="cidade.html" class="botao-ver-cidade">Ver lojas</a>
+                    </div>
+                </div>
+
+                <div class="cidade-cartao">
+                    <div class="cidade-cartao__imagem"></div>
+                    <div class="cidade-cartao__corpo">
+                        <h3 class="cidade-cartao__nome">Lages</h3>
+                        <p class="cidade-cartao__total">38 lojas cadastradas</p>
+                        <a href="cidade.html" class="botao-ver-cidade">Ver lojas</a>
+                    </div>
+                </div>
+
+                <div class="cidade-cartao">
+                    <div class="cidade-cartao__imagem"></div>
+                    <div class="cidade-cartao__corpo">
+                        <h3 class="cidade-cartao__nome">Presidente Getúlio</h3>
+                        <p class="cidade-cartao__total">29 lojas cadastradas</p>
+                        <a href="cidade.html" class="botao-ver-cidade">Ver lojas</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <div class="rodape__inner">
+
+            <div>
+                <h3 class="rodape__marca-titulo">
+                    <span class="text-terracotta">Vitrine</span>Local
+                </h3>
+                <p class="rodape__marca-descricao">Conectando você com o comércio local da sua cidade.</p>
+            </div>
+
+            <div>
+                <h4 class="rodape__secao-titulo">Links</h4>
+                <ul class="rodape__links-lista">
+                    <li><a href="#" class="rodape__link">Como funciona</a></li>
+                    <li><a href="#" class="rodape__link">Para lojistas</a></li>
+                    <li><a href="login.html" class="rodape__link">Login</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="rodape__secao-titulo">Contato</h4>
+                <p class="rodape__contato-email">contato@vitrinelocal.com.br</p>
+            </div>
+
+        </div>
+
+        <div class="rodape__base">
+            <p class="rodape__copyright">&copy; 2024 VitrineLocal. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

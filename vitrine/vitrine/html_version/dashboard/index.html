@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - VitrineLocal</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard-index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-layout">
+
+        <!-- Sidebar -->
+        <aside class="painel-lateral">
+            <div class="logo-lateral">
+                <h1>
+                    <span>Vitrine</span>Local
+                </h1>
+                <p>Painel do lojista</p>
+            </div>
+
+            <nav class="nav-lateral">
+                <a href="index.html" class="link-lateral ativo">
+                    <i data-lucide="layout-dashboard" class="icone-sm"></i> Dashboard
+                </a>
+                <a href="loja.html" class="link-lateral">
+                    <i data-lucide="store" class="icone-sm"></i> Minha loja
+                </a>
+                <a href="produtos.html" class="link-lateral">
+                    <i data-lucide="package" class="icone-sm"></i> Produtos
+                </a>
+                <a href="configuracoes.html" class="link-lateral">
+                    <i data-lucide="settings" class="icone-sm"></i> Configurações
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="dashboard-conteudo">
+            <div class="dashboard-interno">
+
+                <div class="cabecalho-secao">
+                    <div>
+                        <h2>Dashboard</h2>
+                        <p>Bem-vindo de volta, Casa &amp; Design!</p>
+                    </div>
+                    <a href="produtos-novo.html" class="botao">
+                        <i data-lucide="plus" class="icone-xs"></i> Adicionar produto
+                    </a>
+                </div>
+
+                <!-- cartaos de estatísticas -->
+                <div class="grade-estatisticas">
+                    <div class="cartao cartao-estatistica">
+                        <div class="dado-estatistica">
+                            <p>Total de produtos</p>
+                            <p>48</p>
+                        </div>
+                        <div class="icone-estatistica icone-estatistica--laranja">
+                            <i data-lucide="package" class="icone-md"></i>
+                        </div>
+                    </div>
+                    <div class="cartao cartao-estatistica">
+                        <div class="dado-estatistica">
+                            <p>Visualizações da loja</p>
+                            <p>1.234</p>
+                        </div>
+                        <div class="icone-estatistica icone-estatistica--verde">
+                            <i data-lucide="eye" class="icone-md"></i>
+                        </div>
+                    </div>
+                    <div class="cartao cartao-estatistica">
+                        <div class="dado-estatistica">
+                            <p>Categorias ativas</p>
+                            <p>8</p>
+                        </div>
+                        <div class="icone-estatistica icone-estatistica--laranja">
+                            <i data-lucide="tag" class="icone-md"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ações rápidas + Produtos mais vistos -->
+                <div class="grade-dois-paineis">
+                    <div class="cartao">
+                        <h3>Ações rápidas</h3>
+                        <div class="acoes-lista">
+                            <a href="produtos-novo.html" class="botao botao-contorno">
+                                <i data-lucide="plus" class="icone-xs"></i> Adicionar novo produto
+                            </a>
+                            <a href="loja.html" class="botao botao-contorno">
+                                <i data-lucide="store" class="icone-xs"></i> Editar informações da loja
+                            </a>
+                            <a href="../loja.html" class="botao botao-contorno">
+                                <i data-lucide="eye" class="icone-xs"></i> Visualizar loja pública
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="cartao">
+                        <h3>Produtos mais visualizados</h3>
+                        <div class="produtos-populares-lista">
+                            <div class="produto-popular-linha">
+                                <div class="produto-popular-info">
+                                    <div class="miniatura-produto"></div>
+                                    <div>
+                                        <p class="produto-popular-nome">Sofá Retrátil</p>
+                                        <p class="produto-popular-views">234 visualizações</p>
+                                    </div>
+                                </div>
+                                <span class="produto-popular-preco">R$ 2.499,90</span>
+                            </div>
+                            <div class="produto-popular-linha">
+                                <div class="produto-popular-info">
+                                    <div class="miniatura-produto"></div>
+                                    <div>
+                                        <p class="produto-popular-nome">Sofá Retrátil</p>
+                                        <p class="produto-popular-views">234 visualizações</p>
+                                    </div>
+                                </div>
+                                <span class="produto-popular-preco">R$ 1.899,90</span>
+                            </div>
+                            <div class="produto-popular-linha">
+                                <div class="produto-popular-info">
+                                    <div class="miniatura-produto"></div>
+                                    <div>
+                                        <p class="produto-popular-nome">Sofá Retrátil</p>
+                                        <p class="produto-popular-views">234 visualizações</p>
+                                    </div>
+                                </div>
+                                <span class="produto-popular-preco">R$ 1.499,90</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabela de produtos recentes -->
+                <div class="cartao">
+                    <div class="cartao-cabecalho">
+                        <h3>Produtos recentes</h3>
+                        <a href="produtos.html" >Ver todos</a>
+                    </div>
+
+                    <div class="rolagem-x">
+                        <table class="tabela-resumo">
+                            <thead>
+                                <tr>
+                                    <th>Produto</th>
+                                    <th>Categoria</th>
+                                    <th>Preço</th>
+                                    <th>Status</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sofá Retrátil</td>
+                                    <td>Sofás</td>
+                                    <td>R$ 2499,90</td>
+                                    <td><span class="etiqueta etiqueta-aberto">Ativo</span></td>
+                                    <td><button class="botao-fantasma">Editar</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Sofá Retrátil</td>
+                                    <td>Sofás</td>
+                                    <td>R$ 2499,90</td>
+                                    <td><span class="etiqueta etiqueta-aberto">Ativo</span></td>
+                                    <td><button class="botao-fantasma">Editar</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Sofá Retrátil</td>
+                                    <td>Sofás</td>
+                                    <td>R$ 2499,90</td>
+                                    <td><span class="etiqueta etiqueta-aberto">Ativo</span></td>
+                                    <td><button class="botao-fantasma">Editar</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Sofá Retrátil</td>
+                                    <td>Sofás</td>
+                                    <td>R$ 2499,90</td>
+                                    <td><span class="etiqueta etiqueta-padrao">Inativo</span></td>
+                                    <td><button class="botao-fantasma">Editar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,166 @@
+﻿/* ============================================================
+   dashboard-index.css
+   Componentes exclusivos do dashboard principal
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   ÍCONES DOS cartaoS DE ESTATÍSTICA
+   ---------------------------------------------------------- */
+
+/* ----------------------------------------------------------
+   LARGURA DO CONTEÚDO INTERNO
+   ---------------------------------------------------------- */
+
+.dashboard-interno { max-width: 1280px; }
+
+/* ----------------------------------------------------------
+   GRADE DE ESTATÍSTICAS
+   ---------------------------------------------------------- */
+
+.grade-estatisticas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+/* ----------------------------------------------------------
+   GRADE DE DOIS PAINÉIS (ações + mais vistos)
+   ---------------------------------------------------------- */
+
+.grade-dois-paineis {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+/* ----------------------------------------------------------
+   ÍCONES DOS cartaoS DE ESTATÍSTICA
+   ---------------------------------------------------------- */
+
+.icone-estatistica {
+    padding: 12px;
+    background: var(--vl-border);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icone-estatistica--azul   { color: #2563eb; }
+.icone-estatistica--verde  { color: #16a34a; }
+.icone-estatistica--roxo   { color: #9333ea; }
+.icone-estatistica--laranja { color: #ea580c; }
+
+/* ----------------------------------------------------------
+   CABEÇALHO DE CARTÃO (título + link "ver todos")
+   ---------------------------------------------------------- */
+
+.cartao-cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.cartao-cabecalho h3 { color: var(--vl-title); font-weight: 600; }
+.cartao-cabecalho a  { color: var(--vl-terracotta); font-size: 14px; }
+.cartao-cabecalho a:hover { text-decoration: underline; }
+
+/* ----------------------------------------------------------
+   LISTA DE AÇÕES RÁPIDAS
+   ---------------------------------------------------------- */
+
+.acoes-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.acoes-lista .botao { width: 100%; text-align: center; }
+
+/* ----------------------------------------------------------
+   LISTA DE PRODUTOS POPULARES
+   ---------------------------------------------------------- */
+
+.produtos-populares-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.produto-popular-linha {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.produto-popular-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.produto-popular-nome {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--vl-title);
+    margin-bottom: 2px;
+}
+
+.produto-popular-views {
+    font-size: 13px;
+    color: var(--vl-secondary);
+}
+
+.produto-popular-preco {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--vl-terracotta);
+}
+
+/* ----------------------------------------------------------
+   DADO ESTATÍSTICO (rótulo + valor)
+   ---------------------------------------------------------- */
+
+.dado-estatistica p:first-child {
+    font-size: 14px;
+    color: var(--vl-secondary);
+    margin-bottom: 4px;
+}
+
+.dado-estatistica p:last-child {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--vl-title);
+}
+
+/* ----------------------------------------------------------
+   TÍTULOS DOS cartaoS DE PAINÉIS
+   ---------------------------------------------------------- */
+
+.grade-dois-paineis .cartao h3 {
+    color: var(--vl-title);
+    margin-bottom: 16px;
+}
+
+/* ----------------------------------------------------------
+   TABELA RESUMO (produtos recentes no dashboard)
+   ---------------------------------------------------------- */
+
+.tabela-resumo th {
+    text-align: left;
+    padding: 16px 0;
+    color: var(--vl-body);
+    font-size: 14px;
+}
+
+.tabela-resumo th:last-child {
+    text-align: right;
+}
+
+.tabela-resumo td:first-child { color: var(--vl-title); font-weight: 500; }
+.tabela-resumo td:nth-child(2) { color: var(--vl-secondary); }
+.tabela-resumo td:nth-child(3) { color: var(--vl-terracotta); }
+.tabela-resumo td:last-child   { text-align: right; }

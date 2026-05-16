@@ -1,0 +1,76 @@
+﻿/* ============================================================
+   dashboard-loja.css
+   Componentes exclusivos da tela de edição da loja
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   PLACEHOLDER DO LOGO DA LOJA
+   ---------------------------------------------------------- */
+
+/* ----------------------------------------------------------
+   LARGURA DO CONTEÚDO INTERNO
+   ---------------------------------------------------------- */
+
+.dashboard-interno { max-width: 896px; }
+
+/* ----------------------------------------------------------
+   LINHA DE AÇÕES DO FORMULÁRIO
+   ---------------------------------------------------------- */
+
+.acoes-formulario {
+    display: flex;
+    gap: 12px;
+}
+
+/* ----------------------------------------------------------
+   LINHA DE HORÁRIO DE FUNCIONAMENTO
+   ---------------------------------------------------------- */
+
+.horario-linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 16px;
+}
+
+.horario-linha .label {
+    margin-bottom: 0;
+}
+
+/* ----------------------------------------------------------
+   PLACEHOLDER DO LOGO DA LOJA
+   ---------------------------------------------------------- */
+
+.loja-logo-placeholder {
+    width: 56px;
+    height: 56px;
+    background: var(--vl-terracotta-soft);
+    color: var(--vl-terracotta);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* ----------------------------------------------------------
+   LINHA DE UPLOAD DO LOGO
+   ---------------------------------------------------------- */
+
+.logo-upload-linha {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* ----------------------------------------------------------
+   TÍTULOS DE SEÇÃO NOS cartaoS
+   ---------------------------------------------------------- */
+
+.cartao-estatistica h3 { color: var(--vl-title); margin-bottom: 4px; }
+.cartao-estatistica p  { color: var(--vl-secondary); }
+
+.cartao > h3 {
+    color: var(--vl-title);
+    margin-bottom: 24px;
+}

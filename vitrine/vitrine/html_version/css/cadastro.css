@@ -1,0 +1,193 @@
+/* ============================================================
+   cadastro.css
+   Componentes exclusivos da página de cadastro
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   LAYOUT DE DOIS PAINÉIS
+   ---------------------------------------------------------- */
+
+.pagina-auth {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.painel-esquerdo {
+    background: var(--vl-title);
+    color: #fff;
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.painel-direito {
+    background: var(--vl-surface);
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.painel-conteudo {
+    max-width: 448px;
+    width: 100%;
+}
+
+/* ----------------------------------------------------------
+   SEPARADOR "OU"
+   ---------------------------------------------------------- */
+
+.separador-ou {
+    position: relative;
+    margin: 24px 0;
+}
+
+.separador-ou__linha {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    display: flex;
+    align-items: center;
+}
+
+.separador-ou__texto {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.separador-ou__etiqueta {
+    padding: 0 16px;
+    background: var(--vl-surface);
+    color: var(--vl-secondary);
+}
+
+/* ----------------------------------------------------------
+   RODAPÉ DO FORMULÁRIO
+   ---------------------------------------------------------- */
+
+.rodape-formulario {
+    text-align: center;
+    color: var(--vl-secondary);
+    margin-top: 24px;
+    font-size: 14px;
+}
+
+/* ----------------------------------------------------------
+   TEXTO DOS TERMOS
+   ---------------------------------------------------------- */
+
+.termos-linha a { color: var(--vl-terracotta); }
+.termos-linha a:hover { text-decoration: underline; }
+
+.cadastro__termos-texto {
+    color: var(--vl-body);
+}
+
+/* ----------------------------------------------------------
+   LISTA DE VANTAGENS (painel esquerdo)
+   ---------------------------------------------------------- */
+
+.lista-vantagens {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.vantagem-item {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.vantagem-icone {
+    margin-bottom: 8px;
+    color: var(--vl-terracotta);
+}
+
+.vantagem-titulo {
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.vantagem-descricao {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ----------------------------------------------------------
+   LINHA DOS TERMOS
+   ---------------------------------------------------------- */
+
+.termos-linha {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding-top: 8px;
+}
+
+/* ----------------------------------------------------------
+   TIPOGRAFIA DO PAINEL ESQUERDO
+   ---------------------------------------------------------- */
+
+.painel-esquerdo h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.painel-esquerdo h1 span { color: var(--vl-terracotta); }
+
+.painel-esquerdo .painel-conteudo > p {
+    font-size: 20px;
+    margin-bottom: 32px;
+}
+
+/* ----------------------------------------------------------
+   TIPOGRAFIA DO PAINEL DIREITO
+   ---------------------------------------------------------- */
+
+.painel-direito h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--vl-title);
+    margin-bottom: 8px;
+}
+
+.subtitulo-form {
+    color: var(--vl-secondary);
+    margin-bottom: 32px;
+}
+
+/* ----------------------------------------------------------
+   CHECKBOX NA LINHA DE TERMOS
+   ---------------------------------------------------------- */
+
+.termos-linha input[type="checkbox"] {
+    margin-top: 4px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+/* ----------------------------------------------------------
+   ESPAÇAMENTO DO BLOCO DE ENVIO
+   ---------------------------------------------------------- */
+
+.bloco-submit { margin-top: 24px; }
+
+.bloco-submit .botao {
+    width: 100%;
+    text-align: center;
+}
+
+.botao-google { width: 100%; }
+
+/* ----------------------------------------------------------
+   FIO DO SEPARADOR OU
+   ---------------------------------------------------------- */
+
+.separador-ou__linha div {
+    width: 100%;
+    border-top: 1px solid var(--vl-border);
+}

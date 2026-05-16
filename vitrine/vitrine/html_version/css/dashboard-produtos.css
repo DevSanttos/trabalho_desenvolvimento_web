@@ -1,0 +1,173 @@
+﻿/* ============================================================
+   dashboard-produtos.css
+   Componentes exclusivos da listagem de produtos do dashboard
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   BOTÃO SÓ COM ÍCONE
+   ---------------------------------------------------------- */
+
+.botao-icone {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--vl-secondary);
+    padding: 6px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s, background 0.15s;
+}
+
+.botao-icone:hover {
+    background: var(--vl-border);
+    color: var(--vl-title);
+}
+
+/* ----------------------------------------------------------
+   BOTÕES DE FILTRO
+   ---------------------------------------------------------- */
+
+/* ----------------------------------------------------------
+   LARGURA DO CONTEÚDO INTERNO
+   ---------------------------------------------------------- */
+
+.dashboard-interno { max-width: 1280px; }
+
+/* ----------------------------------------------------------
+   BARRA DE FILTROS
+   ---------------------------------------------------------- */
+
+.barra-filtros {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    background: var(--vl-surface);
+    border: 1px solid var(--vl-border);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.campo-busca {
+    flex: 1;
+    position: relative;
+}
+
+.campo-busca .icone-busca {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--vl-secondary);
+}
+
+.campo-busca .input {
+    padding-left: 40px;
+    background: #fff;
+}
+
+.grupo-filtros {
+    display: flex;
+    align-items: center;
+    background: var(--vl-bg-base);
+    border: 1px solid var(--vl-border);
+    border-radius: 10px;
+    padding: 4px;
+    gap: 2px;
+}
+
+/* ----------------------------------------------------------
+   BOTÕES DE FILTRO
+   ---------------------------------------------------------- */
+
+.filtro-botao {
+    padding: 7px 16px;
+    border: none;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--vl-body);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s, color 0.15s;
+}
+
+.filtro-botao:hover:not(.filtro-botao--ativo) {
+    background: var(--vl-bg-base);
+}
+
+.filtro-botao--ativo {
+    background: var(--vl-terracotta);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* ----------------------------------------------------------
+   CÉLULA DE PRODUTO NA TABELA
+   ---------------------------------------------------------- */
+
+.tabela-produto-cel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ----------------------------------------------------------
+   GRADE DE ESTATÍSTICAS (4 colunas)
+   ---------------------------------------------------------- */
+
+.grade-estatisticas-produtos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.grade-estatisticas-produtos .cartao p:first-child {
+    font-size: 14px;
+    color: var(--vl-secondary);
+    margin-bottom: 4px;
+}
+
+.grade-estatisticas-produtos .cartao p:last-child {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--vl-title);
+}
+
+/* ----------------------------------------------------------
+   TABELA DE PRODUTOS
+   ---------------------------------------------------------- */
+
+.tabela-produtos th {
+    text-align: left;
+    padding: 16px 0;
+    font-size: 14px;
+    color: var(--vl-body);
+}
+
+.tabela-produtos th:last-child {
+    text-align: right;
+    width: 100px;
+}
+
+.tabela-produtos tr:last-child td { border-bottom: none; }
+
+.tabela-produto-cel span        { color: var(--vl-title); font-weight: 500; }
+.tabela-produtos td:nth-child(2) { color: var(--vl-secondary); }
+.tabela-produtos td:nth-child(3) { color: var(--vl-terracotta); }
+.tabela-produtos td:last-child   { text-align: right; }
+
+/* ----------------------------------------------------------
+   AÇÕES DA TABELA (botões de ícone alinhados à direita)
+   ---------------------------------------------------------- */
+
+.tabela-acoes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}

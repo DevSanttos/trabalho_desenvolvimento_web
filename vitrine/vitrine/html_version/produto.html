@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofá Retrátil - VitrineLocal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/produto.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- barra-nav -->
+    <nav class="barra-produto">
+        <div class="barra-produto__inner">
+            <a href="index.html" class="barra-produto__logo">
+                <span>Vitrine</span>Local
+            </a>
+            <button class="barra-produto__cidade">
+                <i data-lucide="map-pin" class="icone-xs"></i>
+                Ibirama, SC
+                <i data-lucide="chevron-down" class="icone-xs"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main class="produto-pagina">
+
+        <!-- Layout duas colunas: galeria | informações -->
+        <div class="produto-layout">
+
+            <!-- Coluna esquerda: galeria de imagens -->
+            <section class="galeria" aria-label="Galeria de imagens do produto">
+                <div class="galeria__imagem-wrapper">
+                    <div class="galeria__imagem-principal"></div>
+                    <button class="galeria__seta galeria__seta--anterior" aria-label="Imagem anterior">
+                        <i data-lucide="chevron-left" class="icone-sm"></i>
+                    </button>
+                    <button class="galeria__seta galeria__seta--proxima" aria-label="Próxima imagem">
+                        <i data-lucide="chevron-right" class="icone-sm"></i>
+                    </button>
+                </div>
+
+                <div class="galeria__miniaturas">
+                    <div class="galeria__miniatura galeria__miniatura--ativa"></div>
+                    <div class="galeria__miniatura"></div>
+                    <div class="galeria__miniatura"></div>
+                </div>
+            </section>
+
+            <!-- Coluna direita: informações do produto -->
+            <div class="produto-info">
+
+                <!-- Cabeçalho: voltar + fechar -->
+                <div class="produto-info__cabecalho">
+                    <a href="loja.html" class="produto-info__voltar">
+                        <i data-lucide="arrow-left" class="icone-xs"></i>
+                        Voltar para Casa &amp; Design
+                    </a>
+                    <a href="loja.html" class="botao-fechar" aria-label="Fechar">
+                        <i data-lucide="x" class="icone-xs"></i>
+                    </a>
+                </div>
+
+                <p class="produto-info__breadcrumb">Ibirama / Casa &amp; Design / Sofá Retrátil</p>
+
+                <!-- Categoria, título e preço -->
+                <span class="produto-info__categoria">Sofás</span>
+                <h1 class="produto-info__titulo">Sofá Retrátil</h1>
+                <p class="produto-info__preco">R$ 2499,90</p>
+
+                <!-- Descrição -->
+                <p class="produto-info__descricao">
+                    Sofá retrátil de 3 lugares com tecido suede de alta qualidade. Design moderno e
+                    confortável, perfeito para sua sala de estar. Inclui almofadas decorativas e
+                    mecanismo de retração suave.
+                </p>
+
+                <!-- Especificações -->
+                <dl class="especificacoes">
+                    <div>
+                        <dt class="especificacao__label">Marca</dt>
+                        <dd class="especificacao__valor">Sofás Brasil</dd>
+                    </div>
+                    <div>
+                        <dt class="especificacao__label">Categoria</dt>
+                        <dd class="especificacao__valor">Clássico / Retrô</dd>
+                    </div>
+                </dl>
+
+                <!-- Ações principais -->
+                <div class="produto-acoes">
+                    <button class="botao-contato-whatsapp">
+                        <i data-lucide="message-circle" class="icone-sm"></i>
+                        Falar com a loja no WhatsApp
+                    </button>
+                    <button class="botao-favoritar" aria-label="Favoritar produto">
+                        <i data-lucide="heart" class="icone-sm"></i>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+
+        document.querySelectorAll('.galeria__miniatura').forEach(miniatura => {
+            miniatura.addEventListener('click', () => {
+                document.querySelectorAll('.galeria__miniatura').forEach(m => {
+                    m.classList.remove('galeria__miniatura--ativa');
+                });
+                miniatura.classList.add('galeria__miniatura--ativa');
+            });
+        });
+    </script>
+
+</body>
+</html>

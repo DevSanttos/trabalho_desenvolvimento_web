@@ -1,0 +1,354 @@
+﻿/* CSS Base - VitrineLocal */
+
+:root {
+  /* Colors */
+  --vl-bg-base: #F5F6F8;
+  --vl-surface: #FFFFFF;
+  --vl-border: #E2E5EA;
+  --vl-terracotta: #D45E2E;
+  --vl-terracotta-hover: #B84E22;
+  --vl-terracotta-soft: #FDF0ED;
+  --vl-title: #1A2233;
+  --vl-body: #3D4F66;
+  --vl-secondary: #8B95A4;
+  --vl-slate-blue: #6B8DAE;
+  --vl-open: #276945;
+  --vl-closed: #C0392B;
+  
+  --font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--vl-bg-base);
+  color: var(--vl-body);
+  line-height: 1.5;
+}
+
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+
+/* ============================================================
+   UTILITÁRIOS
+   ============================================================ */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.text-terracotta { color: var(--vl-terracotta); }
+
+/* Tamanhos de ícone (sempre largura + altura juntos) */
+.icone-xs { width: 16px; height: 16px; }
+.icone-sm { width: 20px; height: 20px; }
+.icone-md { width: 24px; height: 24px; }
+.icone-lg { width: 32px; height: 32px; }
+
+/* Scroll horizontal (tabelas responsivas) */
+.rolagem-x { overflow-x: auto; }
+
+
+/* Espaçamento inferior entre cartaos de seção */
+.cartao-secao { margin-bottom: 24px; }
+
+[data-lucide] {
+  display: inline-block;
+  vertical-align: middle;
+  stroke-width: 2px;
+}
+
+/* Components */
+
+.icone-google {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.miniatura-produto {
+  width: 48px;
+  height: 48px;
+  background: var(--vl-border);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.barra-nav {
+  background: var(--vl-surface);
+  border-bottom: 1px solid var(--vl-border);
+  padding: 16px 0;
+}
+.barra-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--vl-title);
+}
+.logo span,
+.logo-lateral h1 span {
+  color: var(--vl-terracotta);
+}
+
+.botao {
+  background: var(--vl-terracotta);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.botao:hover {
+  background: var(--vl-terracotta-hover);
+}
+.botao:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.botao-contorno {
+  background: transparent;
+  color: var(--vl-terracotta);
+  border: 1px solid var(--vl-terracotta);
+}
+.botao-contorno:hover {
+  background: var(--vl-terracotta-soft);
+}
+.botao-fantasma {
+  background: transparent;
+  color: var(--vl-terracotta);
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+.botao-fantasma:hover {
+  background: var(--vl-terracotta-soft);
+}
+
+.input, .select, .textarea {
+  padding: 12px 16px;
+  border: 1px solid var(--vl-border);
+  border-radius: 8px;
+  width: 100%;
+  background: var(--vl-surface);
+  color: var(--vl-body);
+  font-family: var(--font-family);
+  font-size: 16px;
+}
+.input:disabled { background: var(--vl-bg-base); color: var(--vl-secondary); cursor: not-allowed; }
+
+.campos-formulario label {
+  display: block;
+  color: var(--vl-body);
+  margin-bottom: 8px;
+}
+
+
+.etiqueta {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.etiqueta-aberto {
+  background: var(--vl-open);
+  color: #fff;
+}
+.etiqueta-fechado {
+  background: var(--vl-closed);
+  color: #fff;
+}
+.etiqueta-padrao {
+  background: var(--vl-border);
+  color: var(--vl-body);
+}
+
+/* Dashboard Specific */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+.painel-lateral {
+  width: 256px;
+  background: var(--vl-title);
+  color: #fff;
+  padding: 24px;
+  min-height: 100vh;
+}
+.link-lateral {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #fff;
+  transition: background 0.2s;
+}
+.link-lateral.ativo {
+  background: var(--vl-terracotta);
+}
+.link-lateral:hover:not(.ativo) {
+  background: rgba(255,255,255,0.1);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th {
+  font-weight: 500;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--vl-border);
+}
+td {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--vl-border);
+}
+
+
+/* cartaos */
+.cartao {
+  background: var(--vl-surface);
+  border: 1px solid var(--vl-border);
+  border-radius: 8px;
+  padding: 16px;
+}
+.cartao-estatistica {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.secao-titulo-icone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--vl-title);
+  margin-bottom: 24px;
+}
+
+.campos-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.acoes-formulario {
+  display: flex;
+  gap: 16px;
+  padding-top: 8px;
+}
+.acoes-formulario .botao {
+  flex: 1;
+}
+
+/* ============================================================
+   CABEÇALHO DE PÁGINA (h2 + subtítulo)
+   ============================================================ */
+
+.cabecalho-pagina { margin-bottom: 32px; }
+
+.cabecalho-pagina h2,
+.cabecalho-secao h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--vl-title);
+  margin-bottom: 8px;
+}
+
+.cabecalho-pagina p,
+.cabecalho-secao p {
+  color: var(--vl-secondary);
+}
+
+/* ============================================================
+   DICA DE CAMPO (texto auxiliar abaixo de inputs)
+   ============================================================ */
+
+.campo-dica {
+  color: var(--vl-secondary);
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+
+/* ============================================================
+   DASHBOARD - estrutura de conteúdo
+   ============================================================ */
+
+.dashboard-conteudo {
+  flex: 1;
+  padding: 32px;
+}
+
+.dashboard-interno {
+  margin: 0 auto;
+}
+
+.cabecalho-secao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.logo-lateral {
+  margin-bottom: 32px;
+}
+
+.logo-lateral h1 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.logo-lateral p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.nav-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+

@@ -1,0 +1,303 @@
+﻿/* ============================================================
+   loja.css
+   Componentes exclusivos da página de loja
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   barra-nav
+   ---------------------------------------------------------- */
+
+.barra-loja {
+    background: #fff;
+    border-bottom: 1px solid var(--vl-border);
+}
+
+.barra-loja__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.barra-loja__logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--vl-title);
+    text-decoration: none;
+}
+
+.barra-loja__logo span {
+    color: var(--vl-terracotta);
+}
+
+.barra-loja__cidade {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 1px solid var(--vl-border);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--vl-title);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.barra-loja__cidade:hover {
+    border-color: var(--vl-terracotta);
+}
+
+.barra-loja__cidade [data-lucide] {
+    color: var(--vl-secondary);
+}
+
+/* ----------------------------------------------------------
+   CABEÇALHO DA LOJA
+   ---------------------------------------------------------- */
+
+.loja-cabecalho {
+    background: var(--vl-slate-blue);
+    color: #fff;
+}
+
+.loja-cabecalho__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 32px 24px;
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.loja-cabecalho__logo {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.loja-cabecalho__corpo {
+    flex: 1;
+}
+
+.loja-cabecalho__titulo-linha {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.loja-cabecalho__titulo {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.loja-cabecalho__categoria {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 16px;
+    font-size: 15px;
+}
+
+.loja-cabecalho__infos {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.loja-cabecalho__info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+}
+
+.loja-cabecalho__acoes {
+    display: flex;
+    gap: 12px;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+/* ----------------------------------------------------------
+   BOTÕES DE AÇÃO DO CABEÇALHO
+   ---------------------------------------------------------- */
+
+.botao-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--vl-terracotta);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.botao-whatsapp:hover {
+    background: var(--vl-terracotta-hover);
+}
+
+.botao-compartilhar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.botao-compartilhar:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ----------------------------------------------------------
+   ABAS DE CATEGORIAS
+   ---------------------------------------------------------- */
+
+.loja-abas {
+    background: #fff;
+    border-bottom: 1px solid var(--vl-border);
+}
+
+.loja-abas__lista {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.loja-abas__item {
+    padding: 16px 20px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--vl-title);
+    border-bottom: 2px solid transparent;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+}
+
+.loja-abas__item:first-child {
+    padding-left: 0;
+}
+
+.loja-abas__item.ativo {
+    color: var(--vl-terracotta);
+    border-bottom-color: var(--vl-terracotta);
+}
+
+.loja-abas__item:hover:not(.ativo) {
+    color: var(--vl-terracotta);
+}
+
+/* ----------------------------------------------------------
+   GRADE DE PRODUTOS
+   ---------------------------------------------------------- */
+
+.produtos-grade {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* ----------------------------------------------------------
+   cartao DE PRODUTO
+   ---------------------------------------------------------- */
+
+.cartao-produto {
+    background: #fff;
+    border: 1px solid var(--vl-border);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.2s, border-color 0.2s;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.cartao-produto:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    border-color: var(--vl-terracotta);
+}
+
+.cartao-produto__imagem-wrapper {
+    padding: 12px 12px 0;
+}
+
+.cartao-produto__imagem {
+    background: #DDE1E9;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.cartao-produto__corpo {
+    padding: 14px 16px 16px;
+}
+
+.cartao-produto__titulo {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--vl-title);
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.cartao-produto__descricao {
+    font-size: 13px;
+    color: var(--vl-secondary);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.cartao-produto__preco {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--vl-terracotta);
+    margin-bottom: 14px;
+}
+
+.cartao-produto__rodape {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 12px;
+    border-top: 1px solid var(--vl-border);
+}
+
+.cartao-produto__tag {
+    background: var(--vl-border);
+    color: var(--vl-body);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 12px;
+    border-radius: 9999px;
+}

@@ -1,0 +1,353 @@
+﻿/* ============================================================
+   index.css
+   Componentes exclusivos da página inicial
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   barra-nav
+   ---------------------------------------------------------- */
+
+.links-nav {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.link-menu {
+    color: var(--vl-body);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.link-menu:hover {
+    color: var(--vl-terracotta);
+}
+
+/* ----------------------------------------------------------
+   HERO
+   ---------------------------------------------------------- */
+
+.hero {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.hero__titulo {
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--vl-title);
+    line-height: 1.1;
+    margin-bottom: 24px;
+}
+
+.hero__subtitulo {
+    color: var(--vl-body);
+    margin-bottom: 40px;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.hero__busca {
+    display: flex;
+    gap: 12px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--vl-border);
+}
+
+.hero__busca-campo {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 12px;
+}
+
+.hero__busca-campo [data-lucide] { color: var(--vl-secondary); }
+
+.hero__busca-input {
+    border: none;
+    padding: 12px 0;
+    width: 100%;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--vl-body);
+    outline: none;
+    background: transparent;
+}
+
+/* ----------------------------------------------------------
+   CIDADES RÁPIDAS (coluna direita do hero)
+   ---------------------------------------------------------- */
+
+.cidades-rapidas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.cartao-cidade-rapida {
+    display: block;
+    background: var(--vl-surface);
+    border: 1px solid var(--vl-border);
+    border-radius: 8px;
+    padding: 16px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.cartao-cidade-rapida__imagem {
+    background: var(--vl-border);
+    border-radius: 8px;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 12px;
+}
+
+/* ----------------------------------------------------------
+   SEÇÃO COMO FUNCIONA
+   ---------------------------------------------------------- */
+
+.como-funciona {
+    background: #fff;
+    padding: 80px 0;
+}
+
+.como-funciona__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.como-funciona__titulo {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--vl-title);
+    margin-bottom: 56px;
+}
+
+.como-funciona__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.como-funciona__passo {
+    text-align: center;
+}
+
+.como-funciona__icone {
+    width: 64px;
+    height: 64px;
+    background: var(--vl-terracotta-soft);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: var(--vl-terracotta);
+}
+
+.como-funciona__passo-titulo {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--vl-title);
+    margin-bottom: 10px;
+}
+
+.como-funciona__passo-descricao {
+    font-size: 14px;
+    color: var(--vl-secondary);
+    line-height: 1.6;
+}
+
+/* ----------------------------------------------------------
+   SEÇÃO CIDADES CADASTRADAS
+   ---------------------------------------------------------- */
+
+.cidades-cadastradas {
+    background: var(--vl-bg-base);
+    padding: 80px 0;
+}
+
+.cidades-cadastradas__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.cidades-cadastradas__titulo {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--vl-title);
+    margin-bottom: 48px;
+}
+
+.cidades-cadastradas__grade {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* ----------------------------------------------------------
+   cartao DE CIDADE
+   ---------------------------------------------------------- */
+
+.cidade-cartao {
+    background: #fff;
+    border: 1px solid var(--vl-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.cidade-cartao__imagem {
+    background: var(--vl-border);
+    aspect-ratio: 16 / 9;
+}
+
+.cidade-cartao__corpo {
+    padding: 16px;
+}
+
+.cidade-cartao__nome {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--vl-title);
+    margin-bottom: 4px;
+}
+
+.cidade-cartao__total {
+    font-size: 13px;
+    color: var(--vl-secondary);
+    margin-bottom: 14px;
+}
+
+.botao-ver-cidade {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border: 1.5px solid var(--vl-terracotta);
+    border-radius: 8px;
+    color: var(--vl-terracotta);
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s;
+    box-sizing: border-box;
+}
+
+.botao-ver-cidade:hover {
+    background: var(--vl-terracotta-soft);
+}
+
+/* ----------------------------------------------------------
+   RODAPÉ
+   ---------------------------------------------------------- */
+
+.rodape {
+    background: var(--vl-title);
+    color: #fff;
+    padding: 48px 0 0;
+}
+
+.rodape__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 48px;
+}
+
+.rodape__marca-titulo {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.rodape__marca-descricao {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+}
+
+.rodape__secao-titulo {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.rodape__links-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.rodape__link {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+}
+
+.rodape__contato-email {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.rodape__base {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+.rodape__copyright {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ----------------------------------------------------------
+   BOTÕES DA barra-nav
+   ---------------------------------------------------------- */
+
+.links-nav .botao { padding: 10px 24px; }
+
+/* ----------------------------------------------------------
+   BOTÃO EXPLORAR (hero)
+   ---------------------------------------------------------- */
+
+.botao-explorar {
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+/* ----------------------------------------------------------
+   TIPOGRAFIA DOS cartaoS DE CIDADE RÁPIDA
+   ---------------------------------------------------------- */
+
+.cartao-cidade-rapida h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--vl-title);
+    margin-bottom: 4px;
+}
+
+.cartao-cidade-rapida p {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--vl-secondary);
+}
