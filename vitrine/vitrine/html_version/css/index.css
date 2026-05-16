@@ -104,10 +104,13 @@
 }
 
 .cartao-cidade-rapida__imagem {
-    background: var(--vl-border);
-    border-radius: 8px;
+    display: block;
+    width: 100%;
     aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
     margin-bottom: 12px;
+    background: var(--vl-border);
 }
 
 /* ----------------------------------------------------------
@@ -209,8 +212,11 @@
 }
 
 .cidade-cartao__imagem {
-    background: var(--vl-border);
+    display: block;
+    width: 100%;
     aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--vl-border);
 }
 
 .cidade-cartao__corpo {
