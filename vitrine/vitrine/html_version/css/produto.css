@@ -9,7 +9,7 @@
 
 .barra-produto {
     background: #fff;
-    border-bottom: 1px solid var(--vl-border);
+    border-bottom: 1px solid var(--vl-borda);
 }
 
 .barra-produto__conteudo {
@@ -24,12 +24,12 @@
 .barra-produto__logo {
     font-size: 22px;
     font-weight: 700;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     text-decoration: none;
 }
 
 .barra-produto__logo span {
-    color: var(--vl-terracotta);
+    color: var(--vl-terracota);
 }
 
 .barra-produto__cidade {
@@ -37,10 +37,10 @@
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    border: 1px solid var(--vl-border);
+    border: 1px solid var(--vl-borda);
     border-radius: 8px;
     background: #fff;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -48,11 +48,11 @@
 }
 
 .barra-produto__cidade:hover {
-    border-color: var(--vl-terracotta);
+    border-color: var(--vl-terracota);
 }
 
 .barra-produto__cidade [data-lucide] {
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
 }
 
 /* ----------------------------------------------------------
@@ -90,9 +90,9 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    border: 1px solid var(--vl-border);
+    border: 1px solid var(--vl-borda);
     background: transparent;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     cursor: pointer;
     text-decoration: none;
     flex-shrink: 0;
@@ -100,8 +100,8 @@
 }
 
 .botao-fechar:hover {
-    background: var(--vl-border);
-    color: var(--vl-title);
+    background: var(--vl-borda);
+    color: var(--vl-titulo);
 }
 
 /* ----------------------------------------------------------
@@ -134,13 +134,13 @@
     width: 36px;
     height: 36px;
     background: #fff;
-    border: 1px solid var(--vl-border);
+    border: 1px solid var(--vl-borda);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
     transition: box-shadow 0.2s;
 }
@@ -165,18 +165,18 @@
     height: 72px;
     object-fit: contain;
     border-radius: 8px;
-    border: 2px solid var(--vl-border);
+    border: 2px solid var(--vl-borda);
     cursor: pointer;
     transition: border-color 0.2s;
     background: #f5f6f8;
 }
 
 .galeria__miniatura:hover:not(.galeria__miniatura--ativa) {
-    border-color: var(--vl-secondary);
+    border-color: var(--vl-secundario);
 }
 
 .galeria__miniatura--ativa {
-    border-color: var(--vl-terracotta);
+    border-color: var(--vl-terracota);
 }
 
 /* ----------------------------------------------------------
@@ -187,7 +187,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     font-size: 14px;
     font-weight: 500;
     text-decoration: none;
@@ -196,12 +196,12 @@
 }
 
 .produto-info__voltar:hover {
-    color: var(--vl-terracotta);
+    color: var(--vl-terracota);
 }
 
 .produto-info__caminho {
     font-size: 13px;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     margin-bottom: 20px;
 }
 
@@ -209,7 +209,7 @@
     display: inline-flex;
     align-items: center;
     padding: 4px 14px;
-    background: var(--vl-terracotta);
+    background: var(--vl-terracota);
     color: #fff;
     font-size: 12px;
     font-weight: 700;
@@ -222,7 +222,7 @@
 .produto-info__titulo {
     font-size: 32px;
     font-weight: 700;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     line-height: 1.2;
     margin-bottom: 8px;
 }
@@ -230,14 +230,14 @@
 .produto-info__preco {
     font-size: 40px;
     font-weight: 700;
-    color: var(--vl-terracotta);
+    color: var(--vl-terracota);
     line-height: 1;
     margin-bottom: 20px;
 }
 
 .produto-info__descricao {
     font-size: 14px;
-    color: var(--vl-body);
+    color: var(--vl-corpo);
     line-height: 1.7;
     margin-bottom: 24px;
 }
@@ -258,14 +258,14 @@
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     margin-bottom: 4px;
 }
 
 .especificacao__valor {
     font-size: 15px;
     font-weight: 500;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
 }
 
 /* ----------------------------------------------------------
@@ -283,7 +283,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: var(--vl-terracotta);
+    background: var(--vl-terracota);
     color: #fff;
     border: none;
     padding: 16px 24px;
@@ -295,7 +295,7 @@
 }
 
 .botao-contato-whatsapp:hover {
-    background: var(--vl-terracotta-hover);
+    background: var(--vl-terracota-hover);
 }
 
 .botao-favoritar {
@@ -305,15 +305,15 @@
     align-items: center;
     justify-content: center;
     background: #fff;
-    border: 1.5px solid var(--vl-border);
+    border: 1.5px solid var(--vl-borda);
     border-radius: 10px;
     cursor: pointer;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     flex-shrink: 0;
     transition: border-color 0.2s, color 0.2s;
 }
 
 .botao-favoritar:hover {
-    border-color: var(--vl-terracotta);
-    color: var(--vl-terracotta);
+    border-color: var(--vl-terracota);
+    color: var(--vl-terracota);
 }

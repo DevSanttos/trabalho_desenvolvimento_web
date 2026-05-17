@@ -17,7 +17,7 @@
    ---------------------------------------------------------- */
 
 .login-painel-marca {
-    background: var(--vl-title);
+    background: var(--vl-titulo);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,13 +44,13 @@
 .login-form-titulo {
     font-size: 28px;
     font-weight: 700;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     margin-bottom: 6px;
 }
 
 .login-form-subtitulo {
     font-size: 14px;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     margin-bottom: 32px;
 }
 
@@ -82,7 +82,7 @@
     align-items: center;
     gap: 8px;
     font-size: 14px;
-    color: var(--vl-body);
+    color: var(--vl-corpo);
     cursor: pointer;
 }
 
@@ -90,7 +90,7 @@
     font-size: 14px;
     text-decoration: none;
     font-weight: 500;
-    color: var(--vl-terracotta);
+    color: var(--vl-terracota);
 }
 
 .login-esqueceu:hover {
@@ -113,11 +113,11 @@
     text-align: center;
     margin-top: 24px;
     font-size: 14px;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
 }
 
 .login-rodape a {
-    color: var(--vl-terracotta);
+    color: var(--vl-terracota);
     text-decoration: none;
     font-weight: 500;
 }

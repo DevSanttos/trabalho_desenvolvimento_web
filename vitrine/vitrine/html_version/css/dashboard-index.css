@@ -41,7 +41,7 @@
 
 .icone-estatistica {
     padding: 12px;
-    background: var(--vl-border);
+    background: var(--vl-borda);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -64,8 +64,8 @@
     margin-bottom: 16px;
 }
 
-.cartao-cabecalho h3 { color: var(--vl-title); font-weight: 600; }
-.cartao-cabecalho a  { color: var(--vl-terracotta); font-size: 14px; }
+.cartao-cabecalho h3 { color: var(--vl-titulo); font-weight: 600; }
+.cartao-cabecalho a  { color: var(--vl-terracota); font-size: 14px; }
 .cartao-cabecalho a:hover { text-decoration: underline; }
 
 /* ----------------------------------------------------------
@@ -105,19 +105,19 @@
 .produto-popular-nome {
     font-size: 14px;
     font-weight: 500;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     margin-bottom: 2px;
 }
 
 .produto-popular-visualizacoes {
     font-size: 13px;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
 }
 
 .produto-popular-preco {
     font-size: 14px;
     font-weight: 500;
-    color: var(--vl-terracotta);
+    color: var(--vl-terracota);
 }
 
 /* ----------------------------------------------------------
@@ -126,14 +126,14 @@
 
 .dado-estatistica p:first-child {
     font-size: 14px;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     margin-bottom: 4px;
 }
 
 .dado-estatistica p:last-child {
     font-size: 32px;
     font-weight: 700;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
 }
 
 /* ----------------------------------------------------------
@@ -141,7 +141,7 @@
    ---------------------------------------------------------- */
 
 .grade-dois-paineis .cartao h3 {
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     margin-bottom: 16px;
 }
 
@@ -152,7 +152,7 @@
 .tabela-resumo th {
     text-align: left;
     padding: 16px 0;
-    color: var(--vl-body);
+    color: var(--vl-corpo);
     font-size: 14px;
 }
 
@@ -160,7 +160,7 @@
     text-align: right;
 }
 
-.tabela-resumo td:first-child { color: var(--vl-title); font-weight: 500; }
-.tabela-resumo td:nth-child(2) { color: var(--vl-secondary); }
-.tabela-resumo td:nth-child(3) { color: var(--vl-terracotta); }
+.tabela-resumo td:first-child { color: var(--vl-titulo); font-weight: 500; }
+.tabela-resumo td:nth-child(2) { color: var(--vl-secundario); }
+.tabela-resumo td:nth-child(3) { color: var(--vl-terracota); }
 .tabela-resumo td:last-child   { text-align: right; }

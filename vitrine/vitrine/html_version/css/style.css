@@ -2,18 +2,18 @@
 
 :root {
   /* Colors */
-  --vl-bg-base: #F5F6F8;
-  --vl-surface: #FFFFFF;
-  --vl-border: #E2E5EA;
-  --vl-terracotta: #D45E2E;
-  --vl-terracotta-hover: #B84E22;
-  --vl-terracotta-soft: #FDF0ED;
-  --vl-title: #1A2233;
-  --vl-body: #3D4F66;
-  --vl-secondary: #8B95A4;
-  --vl-slate-blue: #6B8DAE;
-  --vl-open: #276945;
-  --vl-closed: #C0392B;
+  --vl-fundo-base: #F5F6F8;
+  --vl-superficie: #FFFFFF;
+  --vl-borda: #E2E5EA;
+  --vl-terracota: #D45E2E;
+  --vl-terracota-hover: #B84E22;
+  --vl-terracota-suave: #FDF0ED;
+  --vl-titulo: #1A2233;
+  --vl-corpo: #3D4F66;
+  --vl-secundario: #8B95A4;
+  --vl-azul-ardosia: #6B8DAE;
+  --vl-aberto: #276945;
+  --vl-fechado: #C0392B;
   
   --font-family: 'Inter', system-ui, sans-serif;
 }
@@ -27,8 +27,8 @@
 
 body {
   font-family: var(--font-family);
-  background-color: var(--vl-bg-base);
-  color: var(--vl-body);
+  background-color: var(--vl-fundo-base);
+  color: var(--vl-corpo);
   line-height: 1.5;
 }
 
@@ -52,9 +52,7 @@ ul {
   list-style: none;
 }
 
-/* ============================================================
-   UTILITÁRIOS
-   ============================================================ */
+/* UTILITÁRIOS */
 
 .barra-nav__conteudo {
   max-width: 1200px;
@@ -65,7 +63,7 @@ ul {
   align-items: center;
 }
 
-.cor-terracotta { color: var(--vl-terracotta); }
+.cor-terracotta { color: var(--vl-terracota); }
 
 /* Tamanhos de ícone (sempre largura + altura juntos) */
 .icone-xs { width: 16px; height: 16px; }
@@ -101,26 +99,26 @@ ul {
   object-fit: contain;
   border-radius: 4px;
   flex-shrink: 0;
-  background: var(--vl-border);
+  background: var(--vl-borda);
 }
 
 .barra-nav {
-  background: var(--vl-surface);
-  border-bottom: 1px solid var(--vl-border);
+  background: var(--vl-superficie);
+  border-bottom: 1px solid var(--vl-borda);
   padding: 16px 0;
 }
 .logo {
   font-size: 24px;
   font-weight: 700;
-  color: var(--vl-title);
+  color: var(--vl-titulo);
 }
 .logo span,
 .logo-lateral h1 span {
-  color: var(--vl-terracotta);
+  color: var(--vl-terracota);
 }
 
 .botao {
-  background: var(--vl-terracotta);
+  background: var(--vl-terracota);
   color: #fff;
   border: none;
   padding: 12px 24px;
@@ -134,7 +132,7 @@ ul {
   gap: 8px;
 }
 .botao:hover {
-  background: var(--vl-terracotta-hover);
+  background: var(--vl-terracota-hover);
 }
 .botao:disabled {
   opacity: 0.5;
@@ -142,38 +140,38 @@ ul {
 }
 .botao-contorno {
   background: transparent;
-  color: var(--vl-terracotta);
-  border: 1px solid var(--vl-terracotta);
+  color: var(--vl-terracota);
+  border: 1px solid var(--vl-terracota);
 }
 .botao-contorno:hover {
-  background: var(--vl-terracotta-soft);
+  background: var(--vl-terracota-suave);
 }
 .botao-fantasma {
   background: transparent;
-  color: var(--vl-terracotta);
+  color: var(--vl-terracota);
   border: none;
   padding: 8px 16px;
   cursor: pointer;
 }
 .botao-fantasma:hover {
-  background: var(--vl-terracotta-soft);
+  background: var(--vl-terracota-suave);
 }
 
 .input, .select, .textarea {
   padding: 12px 16px;
-  border: 1px solid var(--vl-border);
+  border: 1px solid var(--vl-borda);
   border-radius: 8px;
   width: 100%;
-  background: var(--vl-surface);
-  color: var(--vl-body);
+  background: var(--vl-superficie);
+  color: var(--vl-corpo);
   font-family: var(--font-family);
   font-size: 16px;
 }
-.input:disabled { background: var(--vl-bg-base); color: var(--vl-secondary); cursor: not-allowed; }
+.input:disabled { background: var(--vl-fundo-base); color: var(--vl-secundario); cursor: not-allowed; }
 
 .campos-formulario label {
   display: block;
-  color: var(--vl-body);
+  color: var(--vl-corpo);
   margin-bottom: 8px;
 }
 
@@ -186,16 +184,16 @@ ul {
   font-weight: 500;
 }
 .etiqueta-aberto {
-  background: var(--vl-open);
+  background: var(--vl-aberto);
   color: #fff;
 }
 .etiqueta-fechado {
-  background: var(--vl-closed);
+  background: var(--vl-fechado);
   color: #fff;
 }
 .etiqueta-padrao {
-  background: var(--vl-border);
-  color: var(--vl-body);
+  background: var(--vl-borda);
+  color: var(--vl-corpo);
 }
 
 /* Dashboard Specific */
@@ -205,7 +203,7 @@ ul {
 }
 .painel-lateral {
   width: 256px;
-  background: var(--vl-title);
+  background: var(--vl-titulo);
   color: #fff;
   padding: 24px;
   min-height: 100vh;
@@ -220,7 +218,7 @@ ul {
   transition: background 0.2s;
 }
 .item-lateral.ativo {
-  background: var(--vl-terracotta);
+  background: var(--vl-terracota);
 }
 .item-lateral:hover:not(.ativo) {
   background: rgba(255,255,255,0.1);
@@ -232,18 +230,18 @@ table {
 th {
   font-weight: 500;
   padding: 12px 0;
-  border-bottom: 1px solid var(--vl-border);
+  border-bottom: 1px solid var(--vl-borda);
 }
 td {
   padding: 16px 0;
-  border-bottom: 1px solid var(--vl-border);
+  border-bottom: 1px solid var(--vl-borda);
 }
 
 
 /* cartaos */
 .cartao {
-  background: var(--vl-surface);
-  border: 1px solid var(--vl-border);
+  background: var(--vl-superficie);
+  border: 1px solid var(--vl-borda);
   border-radius: 8px;
   padding: 16px;
 }
@@ -260,7 +258,7 @@ td {
   gap: 8px;
   font-size: 16px;
   font-weight: 700;
-  color: var(--vl-title);
+  color: var(--vl-titulo);
   margin-bottom: 24px;
 }
 
@@ -279,9 +277,7 @@ td {
   flex: 1;
 }
 
-/* ============================================================
-   CABEÇALHO DE PÁGINA (h2 + subtítulo)
-   ============================================================ */
+/*  CABEÇALHO DE PÁGINA (h2 + subtítulo) */
 
 .cabecalho-pagina { margin-bottom: 32px; }
 
@@ -289,29 +285,25 @@ td {
 .cabecalho-secao h2 {
   font-size: 32px;
   font-weight: 700;
-  color: var(--vl-title);
+  color: var(--vl-titulo);
   margin-bottom: 8px;
 }
 
 .cabecalho-pagina p,
 .cabecalho-secao p {
-  color: var(--vl-secondary);
+  color: var(--vl-secundario);
 }
 
-/* ============================================================
-   DICA DE CAMPO (texto auxiliar abaixo de inputs)
-   ============================================================ */
+/*  DICA DE CAMPO (texto auxiliar abaixo de inputs) */
 
 .campo-dica {
-  color: var(--vl-secondary);
+  color: var(--vl-secundario);
   margin-top: 4px;
   font-size: 13px;
 }
 
 
-/* ============================================================
-   DASHBOARD - estrutura de conteúdo
-   ============================================================ */
+/* DASHBOARD - estrutura de conteúdo */
 
 .dashboard-conteudo {
   flex: 1;

@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    cadastro.css
    Componentes exclusivos da página de cadastro
    ============================================================ */
@@ -14,7 +14,7 @@
 }
 
 .painel-esquerdo {
-    background: var(--vl-title);
+    background: var(--vl-titulo);
     color: #fff;
     padding: 48px;
     display: flex;
@@ -23,7 +23,7 @@
 }
 
 .painel-direito {
-    background: var(--vl-surface);
+    background: var(--vl-superficie);
     padding: 48px;
     display: flex;
     flex-direction: column;
@@ -42,7 +42,7 @@
 
 .rodape-formulario {
     text-align: center;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     margin-top: 24px;
     font-size: 14px;
 }
@@ -51,11 +51,11 @@
    TEXTO DOS TERMOS
    ---------------------------------------------------------- */
 
-.termos-linha a { color: var(--vl-terracotta); }
+.termos-linha a { color: var(--vl-terracota); }
 .termos-linha a:hover { text-decoration: underline; }
 
 .cadastro__termos-texto {
-    color: var(--vl-body);
+    color: var(--vl-corpo);
 }
 
 /* ----------------------------------------------------------
@@ -76,12 +76,12 @@
 .painel-direito h2 {
     font-size: 32px;
     font-weight: 700;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     margin-bottom: 8px;
 }
 
 .subtitulo-formulario {
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     margin-bottom: 32px;
 }
 

@@ -44,8 +44,8 @@
 .loja-logo-placeholder {
     width: 56px;
     height: 56px;
-    background: var(--vl-terracotta-soft);
-    color: var(--vl-terracotta);
+    background: var(--vl-terracota-suave);
+    color: var(--vl-terracota);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -67,10 +67,10 @@
    TÍTULOS DE SEÇÃO NOS cartaoS
    ---------------------------------------------------------- */
 
-.cartao-estatistica h3 { color: var(--vl-title); margin-bottom: 4px; }
-.cartao-estatistica p  { color: var(--vl-secondary); }
+.cartao-estatistica h3 { color: var(--vl-titulo); margin-bottom: 4px; }
+.cartao-estatistica p  { color: var(--vl-secundario); }
 
 .cartao > h3 {
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     margin-bottom: 24px;
 }

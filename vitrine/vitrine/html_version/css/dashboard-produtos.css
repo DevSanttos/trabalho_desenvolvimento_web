@@ -11,7 +11,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     padding: 6px;
     border-radius: 6px;
     display: inline-flex;
@@ -21,8 +21,8 @@
 }
 
 .botao-icone:hover {
-    background: var(--vl-border);
-    color: var(--vl-title);
+    background: var(--vl-borda);
+    color: var(--vl-titulo);
 }
 
 /* ----------------------------------------------------------
@@ -43,8 +43,8 @@
     display: flex;
     gap: 16px;
     align-items: center;
-    background: var(--vl-surface);
-    border: 1px solid var(--vl-border);
+    background: var(--vl-superficie);
+    border: 1px solid var(--vl-borda);
     border-radius: 8px;
     padding: 16px;
     margin-bottom: 16px;
@@ -60,7 +60,7 @@
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
 }
 
 .campo-busca .input {
@@ -71,8 +71,8 @@
 .grupo-filtros {
     display: flex;
     align-items: center;
-    background: var(--vl-bg-base);
-    border: 1px solid var(--vl-border);
+    background: var(--vl-fundo-base);
+    border: 1px solid var(--vl-borda);
     border-radius: 10px;
     padding: 4px;
     gap: 2px;
@@ -87,7 +87,7 @@
     border: none;
     border-radius: 7px;
     background: transparent;
-    color: var(--vl-body);
+    color: var(--vl-corpo);
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -96,11 +96,11 @@
 }
 
 .filtro-botao:hover:not(.filtro-botao--ativo) {
-    background: var(--vl-bg-base);
+    background: var(--vl-fundo-base);
 }
 
 .filtro-botao--ativo {
-    background: var(--vl-terracotta);
+    background: var(--vl-terracota);
     color: #fff;
     font-weight: 600;
 }
@@ -128,14 +128,14 @@
 
 .grade-estatisticas-produtos .cartao p:first-child {
     font-size: 14px;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     margin-bottom: 4px;
 }
 
 .grade-estatisticas-produtos .cartao p:last-child {
     font-size: 32px;
     font-weight: 700;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
 }
 
 /* ----------------------------------------------------------
@@ -146,7 +146,7 @@
     text-align: left;
     padding: 16px 0;
     font-size: 14px;
-    color: var(--vl-body);
+    color: var(--vl-corpo);
 }
 
 .tabela-produtos th:last-child {
@@ -156,9 +156,9 @@
 
 .tabela-produtos tr:last-child td { border-bottom: none; }
 
-.tabela-produto-celula span        { color: var(--vl-title); font-weight: 500; }
-.tabela-produtos td:nth-child(2) { color: var(--vl-secondary); }
-.tabela-produtos td:nth-child(3) { color: var(--vl-terracotta); }
+.tabela-produto-celula span        { color: var(--vl-titulo); font-weight: 500; }
+.tabela-produtos td:nth-child(2) { color: var(--vl-secundario); }
+.tabela-produtos td:nth-child(3) { color: var(--vl-terracota); }
 .tabela-produtos td:last-child   { text-align: right; }
 
 /* ----------------------------------------------------------

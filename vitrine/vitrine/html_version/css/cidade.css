@@ -11,7 +11,7 @@ Componentes exclusivos da página de listagem de cidadef
 
 .barra-cidade {
     background: #fff;
-    border-bottom: 1px solid var(--vl-border);
+    border-bottom: 1px solid var(--vl-borda);
 }
 
 .barra-cidade__inner {
@@ -26,12 +26,12 @@ Componentes exclusivos da página de listagem de cidadef
 .barra-cidade__logo {
     font-size: 20px;
     font-weight: 700;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     text-decoration: none;
 }
 
 .barra-cidade__logo span {
-    color: var(--vl-terracotta);
+    color: var(--vl-terracota);
 }
 
 .barra-cidade__cidade {
@@ -39,10 +39,10 @@ Componentes exclusivos da página de listagem de cidadef
     align-items: center;
     gap: 6px;
     padding: 8px 14px;
-    border: 1px solid var(--vl-border);
+    border: 1px solid var(--vl-borda);
     border-radius: 8px;
     background: #fff;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
@@ -50,11 +50,11 @@ Componentes exclusivos da página de listagem de cidadef
 }
 
 .barra-cidade__cidade:hover {
-    border-color: var(--vl-terracotta);
+    border-color: var(--vl-terracota);
 }
 
 .barra-cidade__cidade [data-lucide] {
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
 }
 
 /* ----------------------------------------------------------
@@ -62,7 +62,7 @@ Componentes exclusivos da página de listagem de cidadef
    ---------------------------------------------------------- */
 
 .cidade-hero {
-    background: var(--vl-slate-blue);
+    background: var(--vl-azul-ardosia);
     color: #fff;
     padding: 40px 0 48px;
 }
@@ -133,7 +133,7 @@ Componentes exclusivos da página de listagem de cidadef
 
 .cidade-sidebar {
     background: #fff;
-    border: 1px solid var(--vl-border);
+    border: 1px solid var(--vl-borda);
     border-radius: 12px;
     padding: 16px;
 }
@@ -148,17 +148,17 @@ Componentes exclusivos da página de listagem de cidadef
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
 }
 
 .cidade-sidebar__input {
     width: 100%;
     padding: 9px 12px 9px 36px;
-    border: 1px solid var(--vl-border);
+    border: 1px solid var(--vl-borda);
     border-radius: 8px;
     font-size: 14px;
     font-family: inherit;
-    color: var(--vl-body);
+    color: var(--vl-corpo);
     box-sizing: border-box;
     outline: none;
 }
@@ -166,7 +166,7 @@ Componentes exclusivos da página de listagem de cidadef
 .cidade-sidebar__titulo {
     font-size: 14px;
     font-weight: 700;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     margin-bottom: 10px;
 }
 
@@ -189,17 +189,17 @@ Componentes exclusivos da página de listagem de cidadef
     background: transparent;
     cursor: pointer;
     font-size: 14px;
-    color: var(--vl-body);
+    color: var(--vl-corpo);
     transition: background 0.15s, color 0.15s;
 }
 
 .categoria-lista__item:hover:not(.categoria-lista__item--ativo) {
-    background: var(--vl-bg-base);
+    background: var(--vl-fundo-base);
 }
 
 .categoria-lista__item--ativo {
-    background: var(--vl-terracotta-soft);
-    color: var(--vl-terracotta);
+    background: var(--vl-terracota-suave);
+    color: var(--vl-terracota);
     font-weight: 600;
 }
 
@@ -219,7 +219,7 @@ Componentes exclusivos da página de listagem de cidadef
 
 .cartao-loja {
     background: #fff;
-    border: 1px solid var(--vl-border);
+    border: 1px solid var(--vl-borda);
     border-radius: 12px;
     padding: 20px;
     text-decoration: none;
@@ -230,7 +230,7 @@ Componentes exclusivos da página de listagem de cidadef
 
 .cartao-loja:hover {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-    border-color: var(--vl-terracotta);
+    border-color: var(--vl-terracota);
 }
 
 .cartao-loja__logo img {
@@ -244,19 +244,19 @@ Componentes exclusivos da página de listagem de cidadef
 .cartao-loja__nome {
     font-size: 16px;
     font-weight: 700;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     margin-bottom: 4px;
 }
 
 .cartao-loja__categoria {
     font-size: 13px;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     margin-bottom: 4px;
 }
 
 .cartao-loja__endereco {
     font-size: 13px;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     margin-bottom: 14px;
 }
 
@@ -269,7 +269,7 @@ Componentes exclusivos da página de listagem de cidadef
 
 .cartao-loja__produtos {
     font-size: 13px;
-    color: var(--vl-body);
+    color: var(--vl-corpo);
 }
 
 .botao-ver-loja {
@@ -277,9 +277,9 @@ Componentes exclusivos da página de listagem de cidadef
     width: 100%;
     padding: 9px;
     text-align: center;
-    border: 1.5px solid var(--vl-terracotta);
+    border: 1.5px solid var(--vl-terracota);
     border-radius: 8px;
-    color: var(--vl-terracotta);
+    color: var(--vl-terracota);
     background: transparent;
     font-size: 14px;
     font-weight: 600;
@@ -290,5 +290,5 @@ Componentes exclusivos da página de listagem de cidadef
 }
 
 .botao-ver-loja:hover {
-    background: var(--vl-terracotta-soft);
+    background: var(--vl-terracota-suave);
 }

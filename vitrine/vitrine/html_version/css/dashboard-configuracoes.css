@@ -32,8 +32,8 @@
    ---------------------------------------------------------- */
 
 .plano-info-caixa {
-    background: var(--vl-terracotta-soft);
-    border: 1px solid var(--vl-terracotta);
+    background: var(--vl-terracota-suave);
+    border: 1px solid var(--vl-terracota);
     border-radius: 8px;
     padding: 16px;
     margin-bottom: 16px;
@@ -44,7 +44,7 @@
    ---------------------------------------------------------- */
 
 .zona-perigo__titulo {
-    color: var(--vl-closed);
+    color: var(--vl-fechado);
     font-weight: 500;
     margin-bottom: 24px;
     display: flex;
@@ -53,8 +53,8 @@
 }
 
 .botao-perigo {
-    color: var(--vl-closed);
-    border-color: var(--vl-closed);
+    color: var(--vl-fechado);
+    border-color: var(--vl-fechado);
 }
 
 /* ----------------------------------------------------------
@@ -65,7 +65,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     text-decoration: none;
     font-size: 14px;
     background: none;
@@ -75,7 +75,7 @@
 }
 
 .botao-sair:hover {
-    color: var(--vl-terracotta);
+    color: var(--vl-terracota);
 }
 
 /* ----------------------------------------------------------
@@ -85,19 +85,19 @@
 .info-pagamento { margin-bottom: 16px; }
 
 .info-pagamento p:first-child {
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     margin-bottom: 4px;
 }
 
 .info-pagamento p:last-child {
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     font-weight: 500;
 }
 
 .dashboard-conteudo h3 {
-    color: var(--vl-body);
+    color: var(--vl-corpo);
 }
 
 .cabecalho-pagina h2{
-    color: var(--vl-title);
+    color: var(--vl-titulo);
 }

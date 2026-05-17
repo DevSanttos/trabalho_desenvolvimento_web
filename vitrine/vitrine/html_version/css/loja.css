@@ -9,7 +9,7 @@
 
 .barra-loja {
     background: #fff;
-    border-bottom: 1px solid var(--vl-border);
+    border-bottom: 1px solid var(--vl-borda);
 }
 
 .barra-loja__inner {
@@ -24,12 +24,12 @@
 .barra-loja__logo {
     font-size: 22px;
     font-weight: 700;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     text-decoration: none;
 }
 
 .barra-loja__logo span {
-    color: var(--vl-terracotta);
+    color: var(--vl-terracota);
 }
 
 .barra-loja__cidade {
@@ -37,10 +37,10 @@
     align-items: center;
     gap: 6px;
     padding: 8px 14px;
-    border: 1px solid var(--vl-border);
+    border: 1px solid var(--vl-borda);
     border-radius: 8px;
     background: #fff;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     font-size: 13px;
     font-weight: 600;
     cursor: pointer;
@@ -48,11 +48,11 @@
 }
 
 .barra-loja__cidade:hover {
-    border-color: var(--vl-terracotta);
+    border-color: var(--vl-terracota);
 }
 
 .barra-loja__cidade [data-lucide] {
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
 }
 
 /* ----------------------------------------------------------
@@ -60,7 +60,7 @@
    ---------------------------------------------------------- */
 
 .loja-cabecalho {
-    background: var(--vl-slate-blue);
+    background: var(--vl-azul-ardosia);
     color: #fff;
 }
 
@@ -134,7 +134,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--vl-terracotta);
+    background: var(--vl-terracota);
     color: #fff;
     border: none;
     padding: 12px 24px;
@@ -146,7 +146,7 @@
 }
 
 .botao-whatsapp:hover {
-    background: var(--vl-terracotta-hover);
+    background: var(--vl-terracota-hover);
 }
 
 .botao-compartilhar {
@@ -175,7 +175,7 @@
 
 .loja-abas {
     background: #fff;
-    border-bottom: 1px solid var(--vl-border);
+    border-bottom: 1px solid var(--vl-borda);
 }
 
 .loja-abas__lista {
@@ -189,7 +189,7 @@
     padding: 16px 20px;
     font-size: 15px;
     font-weight: 500;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     border-bottom: 2px solid transparent;
     background: none;
     border-top: none;
@@ -205,12 +205,12 @@
 }
 
 .loja-abas__item.ativo {
-    color: var(--vl-terracotta);
-    border-bottom-color: var(--vl-terracotta);
+    color: var(--vl-terracota);
+    border-bottom-color: var(--vl-terracota);
 }
 
 .loja-abas__item:hover:not(.ativo) {
-    color: var(--vl-terracotta);
+    color: var(--vl-terracota);
 }
 
 /* ----------------------------------------------------------
@@ -232,7 +232,7 @@
 
 .cartao-produto {
     background: #fff;
-    border: 1px solid var(--vl-border);
+    border: 1px solid var(--vl-borda);
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
@@ -245,7 +245,7 @@
 
 .cartao-produto:hover {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-    border-color: var(--vl-terracotta);
+    border-color: var(--vl-terracota);
 }
 
 .cartao-produto__imagem-wrapper {
@@ -265,14 +265,14 @@
 .cartao-produto__titulo {
     font-size: 15px;
     font-weight: 700;
-    color: var(--vl-title);
+    color: var(--vl-titulo);
     margin-bottom: 4px;
     line-height: 1.4;
 }
 
 .cartao-produto__descricao {
     font-size: 13px;
-    color: var(--vl-secondary);
+    color: var(--vl-secundario);
     margin-bottom: 10px;
     line-height: 1.4;
 }
@@ -280,7 +280,7 @@
 .cartao-produto__preco {
     font-size: 18px;
     font-weight: 700;
-    color: var(--vl-terracotta);
+    color: var(--vl-terracota);
     margin-bottom: 14px;
 }
 
@@ -289,12 +289,12 @@
     align-items: center;
     justify-content: flex-end;
     padding-top: 12px;
-    border-top: 1px solid var(--vl-border);
+    border-top: 1px solid var(--vl-borda);
 }
 
 .cartao-produto__tag {
-    background: var(--vl-border);
-    color: var(--vl-body);
+    background: var(--vl-borda);
+    color: var(--vl-corpo);
     font-size: 12px;
     font-weight: 500;
     padding: 3px 12px;
