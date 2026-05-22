@@ -1,11 +1,4 @@
-﻿/* ============================================================
-   cadastro.css
-   Componentes exclusivos da página de cadastro
-   ============================================================ */
-
-/* ----------------------------------------------------------
-   LAYOUT DE DOIS PAINÉIS
-   ---------------------------------------------------------- */
+﻿/*  LAYOUT DE DOIS PAINÉIS  */
 
 .pagina-autenticacao {
     min-height: 100vh;
@@ -36,9 +29,7 @@
     width: 100%;
 }
 
-/* ----------------------------------------------------------
-   RODAPÉ DO FORMULÁRIO
-   ---------------------------------------------------------- */
+/* RODAPÉ DO FORMULÁRIO */
 
 .rodape-formulario {
     text-align: center;
@@ -47,9 +38,7 @@
     font-size: 14px;
 }
 
-/* ----------------------------------------------------------
-   TEXTO DOS TERMOS
-   ---------------------------------------------------------- */
+/* TEXTO DOS TERMOS */
 
 .termos-linha a { color: var(--vl-terracota); }
 .termos-linha a:hover { text-decoration: underline; }
@@ -58,20 +47,12 @@
     color: var(--vl-corpo);
 }
 
-/* ----------------------------------------------------------
-   LINHA DOS TERMOS
-   ---------------------------------------------------------- */
-
 .termos-linha {
     display: flex;
     align-items: flex-start;
     gap: 8px;
     padding-top: 8px;
 }
-
-/* ----------------------------------------------------------
-   TIPOGRAFIA DO PAINEL DIREITO
-   ---------------------------------------------------------- */
 
 .painel-direito h2 {
     font-size: 32px;
@@ -85,19 +66,11 @@
     margin-bottom: 32px;
 }
 
-/* ----------------------------------------------------------
-   CHECKBOX NA LINHA DE TERMOS
-   ---------------------------------------------------------- */
-
 .termos-linha input[type="checkbox"] {
     margin-top: 4px;
     border-radius: 4px;
     flex-shrink: 0;
 }
-
-/* ----------------------------------------------------------
-   ESPAÇAMENTO DO BLOCO DE ENVIO
-   ---------------------------------------------------------- */
 
 .bloco-envio { margin-top: 24px; }
 

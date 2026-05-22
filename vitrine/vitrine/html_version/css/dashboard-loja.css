@@ -1,30 +1,12 @@
-﻿/* ============================================================
-   dashboard-loja.css
-   Componentes exclusivos da tela de edição da loja
-   ============================================================ */
-
-/* ----------------------------------------------------------
-   PLACEHOLDER DO LOGO DA LOJA
-   ---------------------------------------------------------- */
-
-/* ----------------------------------------------------------
-   LARGURA DO CONTEÚDO INTERNO
-   ---------------------------------------------------------- */
-
+﻿
 .dashboard-interno { max-width: 896px; }
-
-/* ----------------------------------------------------------
-   LINHA DE AÇÕES DO FORMULÁRIO
-   ---------------------------------------------------------- */
 
 .acoes-formulario {
     display: flex;
     gap: 12px;
 }
 
-/* ----------------------------------------------------------
-   LINHA DE HORÁRIO DE FUNCIONAMENTO
-   ---------------------------------------------------------- */
+/* LINHA DE HORÁRIO DE FUNCIONAMENTO */
 
 .horario-linha {
     display: grid;
@@ -36,10 +18,6 @@
 .horario-linha .label {
     margin-bottom: 0;
 }
-
-/* ----------------------------------------------------------
-   PLACEHOLDER DO LOGO DA LOJA
-   ---------------------------------------------------------- */
 
 .loja-logo-placeholder {
     width: 56px;
@@ -53,19 +31,13 @@
     flex-shrink: 0;
 }
 
-/* ----------------------------------------------------------
-   LINHA DE UPLOAD DO LOGO
-   ---------------------------------------------------------- */
-
 .logo-envio-linha {
     display: flex;
     align-items: center;
     gap: 16px;
 }
 
-/* ----------------------------------------------------------
-   TÍTULOS DE SEÇÃO NOS cartaoS
-   ---------------------------------------------------------- */
+/* TÍTULOS DE SEÇÃO NOS cartaoS */
 
 .cartao-estatistica h3 { color: var(--vl-titulo); margin-bottom: 4px; }
 .cartao-estatistica p  { color: var(--vl-secundario); }

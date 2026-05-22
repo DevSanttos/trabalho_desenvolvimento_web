@@ -1,21 +1,4 @@
-﻿/* ============================================================
-   dashboard-index.css
-   Componentes exclusivos do dashboard principal
-   ============================================================ */
-
-/* ----------------------------------------------------------
-   ÍCONES DOS cartaoS DE ESTATÍSTICA
-   ---------------------------------------------------------- */
-
-/* ----------------------------------------------------------
-   LARGURA DO CONTEÚDO INTERNO
-   ---------------------------------------------------------- */
-
-.dashboard-interno { max-width: 1280px; }
-
-/* ----------------------------------------------------------
-   GRADE DE ESTATÍSTICAS
-   ---------------------------------------------------------- */
+﻿.dashboard-interno { max-width: 1280px; }
 
 .grade-estatisticas {
     display: grid;
@@ -24,10 +7,6 @@
     margin-bottom: 32px;
 }
 
-/* ----------------------------------------------------------
-   GRADE DE DOIS PAINÉIS (ações + mais vistos)
-   ---------------------------------------------------------- */
-
 .grade-dois-paineis {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -35,9 +14,7 @@
     margin-bottom: 32px;
 }
 
-/* ----------------------------------------------------------
-   ÍCONES DOS cartaoS DE ESTATÍSTICA
-   ---------------------------------------------------------- */
+/* ÍCONES DOS cartaoS DE ESTATÍSTICA */
 
 .icone-estatistica {
     padding: 12px;
@@ -53,10 +30,6 @@
 .icone-estatistica--roxo   { color: #9333ea; }
 .icone-estatistica--laranja { color: #ea580c; }
 
-/* ----------------------------------------------------------
-   CABEÇALHO DE CARTÃO (título + link "ver todos")
-   ---------------------------------------------------------- */
-
 .cartao-cabecalho {
     display: flex;
     align-items: center;
@@ -68,9 +41,7 @@
 .cartao-cabecalho a  { color: var(--vl-terracota); font-size: 14px; }
 .cartao-cabecalho a:hover { text-decoration: underline; }
 
-/* ----------------------------------------------------------
-   LISTA DE AÇÕES RÁPIDAS
-   ---------------------------------------------------------- */
+/* LISTA DE AÇÕES RÁPIDAS */
 
 .acoes-lista {
     display: flex;
@@ -80,9 +51,7 @@
 
 .acoes-lista .botao { width: 100%; text-align: center; }
 
-/* ----------------------------------------------------------
-   LISTA DE PRODUTOS POPULARES
-   ---------------------------------------------------------- */
+/* LISTA DE PRODUTOS POPULARES */
 
 .produtos-populares-lista {
     display: flex;
@@ -120,10 +89,6 @@
     color: var(--vl-terracota);
 }
 
-/* ----------------------------------------------------------
-   DADO ESTATÍSTICO (rótulo + valor)
-   ---------------------------------------------------------- */
-
 .dado-estatistica p:first-child {
     font-size: 14px;
     color: var(--vl-secundario);
@@ -136,18 +101,12 @@
     color: var(--vl-titulo);
 }
 
-/* ----------------------------------------------------------
-   TÍTULOS DOS cartaoS DE PAINÉIS
-   ---------------------------------------------------------- */
+/* TÍTULOS DOS cartaoS DE PAINÉIS */
 
 .grade-dois-paineis .cartao h3 {
     color: var(--vl-titulo);
     margin-bottom: 16px;
 }
-
-/* ----------------------------------------------------------
-   TABELA RESUMO (produtos recentes no dashboard)
-   ---------------------------------------------------------- */
 
 .tabela-resumo th {
     text-align: left;

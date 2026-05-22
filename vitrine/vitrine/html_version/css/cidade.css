@@ -1,13 +1,5 @@
-﻿/* 
-============================================================
-cidade.css
-Componentes exclusivos da página de listagem de cidadef
-============================================================ 
-*/
-
-/* ----------------------------------------------------------
-   barra-nav
-   ---------------------------------------------------------- */
+﻿
+/* barra-nav */
 
 .barra-cidade {
     background: #fff;
@@ -57,9 +49,7 @@ Componentes exclusivos da página de listagem de cidadef
     color: var(--vl-secundario);
 }
 
-/* ----------------------------------------------------------
-   HERO DA CIDADE
-   ---------------------------------------------------------- */
+/* HERO DA CIDADE */
 
 .cidade-hero {
     background: var(--vl-azul-ardosia);
@@ -113,9 +103,7 @@ Componentes exclusivos da página de listagem de cidadef
     color: rgba(255, 255, 255, 0.75);
 }
 
-/* ----------------------------------------------------------
-   CONTEÚDO PRINCIPAL (sidebar + grade)
-   ---------------------------------------------------------- */
+/* CONTEÚDO PRINCIPAL (sidebar + grade) */
 
 .cidade-conteudo {
     max-width: 1280px;
@@ -127,9 +115,7 @@ Componentes exclusivos da página de listagem de cidadef
     align-items: start;
 }
 
-/* ----------------------------------------------------------
-   SIDEBAR DE FILTROS
-   ---------------------------------------------------------- */
+/* SIDEBAR DE FILTROS */
 
 .cidade-sidebar {
     background: #fff;
@@ -170,9 +156,7 @@ Componentes exclusivos da página de listagem de cidadef
     margin-bottom: 10px;
 }
 
-/* ----------------------------------------------------------
-   LISTA DE CATEGORIAS
-   ---------------------------------------------------------- */
+/* LISTA DE CATEGORIAS */
 
 .categoria-lista {
     display: flex;
@@ -203,9 +187,7 @@ Componentes exclusivos da página de listagem de cidadef
     font-weight: 600;
 }
 
-/* ----------------------------------------------------------
-   GRADE DE LOJAS
-   ---------------------------------------------------------- */
+/* GRADE DE LOJAS */
 
 .lojas-grade {
     display: grid;
@@ -213,9 +195,7 @@ Componentes exclusivos da página de listagem de cidadef
     gap: 20px;
 }
 
-/* ----------------------------------------------------------
-   cartao DE LOJA
-   ---------------------------------------------------------- */
+/* cartao DE LOJA */
 
 .cartao-loja {
     background: #fff;

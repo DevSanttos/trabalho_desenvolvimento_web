@@ -1,11 +1,5 @@
-﻿/* ============================================================
-   produto.css
-   Componentes exclusivos da página de detalhe de produto
-   ============================================================ */
-
-/* ----------------------------------------------------------
-   barra-nav
-   ---------------------------------------------------------- */
+﻿
+/* barra-nav */
 
 .barra-produto {
     background: #fff;
@@ -55,9 +49,7 @@
     color: var(--vl-secundario);
 }
 
-/* ----------------------------------------------------------
-   PÁGINA — CONTAINER E LAYOUT GERAL
-   ---------------------------------------------------------- */
+/* PÁGINA — CONTAINER E LAYOUT GERAL */
 
 .produto-pagina {
     max-width: 1280px;
@@ -72,9 +64,7 @@
     align-items: start;
 }
 
-/* ----------------------------------------------------------
-   CABEÇALHO DO PAINEL DE INFO (voltar + fechar)
-   ---------------------------------------------------------- */
+/* CABEÇALHO DO PAINEL DE INFO (voltar + fechar) */
 
 .produto-info__cabecalho {
     display: flex;
@@ -104,9 +94,7 @@
     color: var(--vl-titulo);
 }
 
-/* ----------------------------------------------------------
-   GALERIA DE IMAGENS (coluna esquerda)
-   ---------------------------------------------------------- */
+/* GALERIA DE IMAGENS (coluna esquerda) */
 
 .galeria {
     background: #fff;
@@ -179,9 +167,7 @@
     border-color: var(--vl-terracota);
 }
 
-/* ----------------------------------------------------------
-   INFORMAÇÕES DO PRODUTO (coluna direita)
-   ---------------------------------------------------------- */
+/* INFORMAÇÕES DO PRODUTO (coluna direita) */
 
 .produto-info__voltar {
     display: inline-flex;
@@ -242,10 +228,6 @@
     margin-bottom: 24px;
 }
 
-/* ----------------------------------------------------------
-   ESPECIFICAÇÕES TÉCNICAS
-   ---------------------------------------------------------- */
-
 .especificacoes {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -268,9 +250,7 @@
     color: var(--vl-titulo);
 }
 
-/* ----------------------------------------------------------
-   BOTÕES DE AÇÃO
-   ---------------------------------------------------------- */
+/* BOTÕES DE AÇÃO */
 
 .produto-acoes {
     display: flex;

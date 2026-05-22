@@ -1,5 +1,4 @@
-﻿/* CSS Base - VitrineLocal */
-
+﻿
 :root {
   /* Colors */
   --vl-fundo-base: #F5F6F8;
@@ -18,7 +17,6 @@
   --font-family: 'Inter', system-ui, sans-serif;
 }
 
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -65,17 +63,14 @@ ul {
 
 .cor-terracotta { color: var(--vl-terracota); }
 
-/* Tamanhos de ícone (sempre largura + altura juntos) */
+/* Tamanhos de ícone */
 .icone-xs { width: 16px; height: 16px; }
 .icone-sm { width: 20px; height: 20px; }
 .icone-md { width: 24px; height: 24px; }
 .icone-lg { width: 32px; height: 32px; }
 
-/* Scroll horizontal (tabelas responsivas) */
 .rolagem-x { overflow-x: auto; }
 
-
-/* Espaçamento inferior entre cartaos de seção */
 .cartao-secao { margin-bottom: 24px; }
 
 [data-lucide] {
@@ -277,7 +272,7 @@ td {
   flex: 1;
 }
 
-/*  CABEÇALHO DE PÁGINA (h2 + subtítulo) */
+/*  CABEÇALHO DE PÁGINA */
 
 .cabecalho-pagina { margin-bottom: 32px; }
 
@@ -294,16 +289,13 @@ td {
   color: var(--vl-secundario);
 }
 
-/*  DICA DE CAMPO (texto auxiliar abaixo de inputs) */
-
 .campo-dica {
   color: var(--vl-secundario);
   margin-top: 4px;
   font-size: 13px;
 }
 
-
-/* DASHBOARD - estrutura de conteúdo */
+/* DASHBOARD */
 
 .dashboard-conteudo {
   flex: 1;

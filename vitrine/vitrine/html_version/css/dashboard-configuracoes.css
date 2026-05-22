@@ -1,24 +1,7 @@
-﻿/* ============================================================
-   dashboard-configuracoes.css
-   Componentes exclusivos da tela de configurações
-   ============================================================ */
-
-
-/* ----------------------------------------------------------
-   LARGURA DO CONTEÚDO INTERNO
-   ---------------------------------------------------------- */
-
+﻿
 .dashboard-interno { max-width: 896px; }
 
-/* ----------------------------------------------------------
-   RODAPÉ DE SEÇÃO DO FORMULÁRIO (botão de salvar)
-   ---------------------------------------------------------- */
-
 .rodape-campos { padding-top: 16px; }
-
-/* ----------------------------------------------------------
-   ITEM DE NOTIFICAÇÃO / VISIBILIDADE
-   ---------------------------------------------------------- */
 
 .item-configuracao {
     display: flex;
@@ -27,10 +10,6 @@
     padding: 12px 0;
 }
 
-/* ----------------------------------------------------------
-   CAIXA DE INFORMAÇÃO DO PLANO
-   ---------------------------------------------------------- */
-
 .plano-info-caixa {
     background: var(--vl-terracota-suave);
     border: 1px solid var(--vl-terracota);
@@ -38,10 +17,6 @@
     padding: 16px;
     margin-bottom: 16px;
 }
-
-/* ----------------------------------------------------------
-   ZONA DE PERIGO
-   ---------------------------------------------------------- */
 
 .zona-perigo__titulo {
     color: var(--vl-fechado);
@@ -56,10 +31,6 @@
     color: var(--vl-fechado);
     border-color: var(--vl-fechado);
 }
-
-/* ----------------------------------------------------------
-   BOTÃO SAIR
-   ---------------------------------------------------------- */
 
 .botao-sair {
     display: inline-flex;
@@ -77,10 +48,6 @@
 .botao-sair:hover {
     color: var(--vl-terracota);
 }
-
-/* ----------------------------------------------------------
-   BLOCO DE INFO DE PAGAMENTO
-   ---------------------------------------------------------- */
 
 .info-pagamento { margin-bottom: 16px; }
 
