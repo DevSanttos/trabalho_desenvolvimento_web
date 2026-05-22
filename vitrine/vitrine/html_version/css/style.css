@@ -191,7 +191,7 @@ ul {
   color: var(--vl-corpo);
 }
 
-/* Dashboard Specific */
+/* Dashboard */
 .dashboard-layout {
   display: flex;
   min-height: 100vh;
@@ -232,7 +232,6 @@ td {
   border-bottom: 1px solid var(--vl-borda);
 }
 
-
 /* cartaos */
 .cartao {
   background: var(--vl-superficie);
@@ -245,7 +244,6 @@ td {
   align-items: center;
   justify-content: space-between;
 }
-
 
 .secao-titulo-icone {
   display: flex;
