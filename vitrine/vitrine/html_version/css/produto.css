@@ -137,8 +137,13 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
 }
 
-.galeria__seta--anterior { left: -18px; }
-.galeria__seta--proxima  { right: -18px; }
+.galeria__seta--anterior { 
+    left: -18px; 
+}
+
+.galeria__seta--proxima { 
+    right: -18px; 
+}
 
 .galeria__miniaturas {
     display: flex;

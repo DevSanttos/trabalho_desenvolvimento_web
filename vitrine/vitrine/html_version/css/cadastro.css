@@ -40,8 +40,9 @@
 
 /* TEXTO DOS TERMOS */
 
-.termos-linha a { color: var(--vl-terracota); }
-.termos-linha a:hover { text-decoration: underline; }
+.termos-linha a { 
+    color: var(--vl-terracota); 
+}
 
 .cadastro__termos-texto {
     color: var(--vl-corpo);
@@ -69,10 +70,11 @@
 .termos-linha input[type="checkbox"] {
     margin-top: 4px;
     border-radius: 4px;
-    flex-shrink: 0;
 }
 
-.bloco-envio { margin-top: 24px; }
+.bloco-envio { 
+    margin-top: 24px; 
+}
 
 .bloco-envio .botao {
     width: 100%;

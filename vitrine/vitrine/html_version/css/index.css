@@ -95,7 +95,6 @@
 .cartao-cidade-rapida__imagem {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 8px;
     margin-bottom: 12px;
@@ -191,13 +190,11 @@
     background: #fff;
     border: 1px solid var(--vl-borda);
     border-radius: 12px;
-    overflow: hidden;
 }
 
 .cidade-cartao__imagem {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
     object-fit: cover;
     background: var(--vl-borda);
 }
@@ -304,7 +301,9 @@
     color: rgba(255, 255, 255, 0.4);
 }
 
-.itens-nav .botao { padding: 10px 24px; }
+.itens-nav .botao { 
+    padding: 10px 24px; 
+}
 
 .botao-explorar {
     padding: 16px 32px;

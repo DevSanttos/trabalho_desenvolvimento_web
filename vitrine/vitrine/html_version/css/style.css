@@ -61,17 +61,34 @@ ul {
   align-items: center;
 }
 
-.cor-terracotta { color: var(--vl-terracota); }
+.cor-terracotta { 
+  color: var(--vl-terracota); 
+}
 
 /* Tamanhos de ícone */
-.icone-xs { width: 16px; height: 16px; }
-.icone-sm { width: 20px; height: 20px; }
-.icone-md { width: 24px; height: 24px; }
-.icone-lg { width: 32px; height: 32px; }
+.icone-xs { 
+  width: 16px; height: 16px; 
+}
 
-.rolagem-x { overflow-x: auto; }
+.icone-sm { 
+  width: 20px; height: 20px; 
+}
 
-.cartao-secao { margin-bottom: 24px; }
+.icone-md { 
+  width: 24px; height: 24px; 
+}
+
+.icone-lg { 
+  width: 32px; height: 32px; 
+}
+
+.rolagem-x { 
+  overflow-x: auto; 
+}
+
+.cartao-secao { 
+  margin-bottom: 24px; 
+}
 
 [data-lucide] {
   display: inline-block;
@@ -107,8 +124,7 @@ ul {
   font-weight: 700;
   color: var(--vl-titulo);
 }
-.logo span,
-.logo-lateral h1 span {
+.logo span, .logo-lateral h1 span {
   color: var(--vl-terracota);
 }
 
@@ -162,7 +178,11 @@ ul {
   font-family: var(--font-family);
   font-size: 16px;
 }
-.input:disabled { background: var(--vl-fundo-base); color: var(--vl-secundario); cursor: not-allowed; }
+.input:disabled { 
+  background: var(--vl-fundo-base); 
+  color: var(--vl-secundario); 
+  cursor: not-allowed; 
+}
 
 .campos-formulario label {
   display: block;
@@ -178,14 +198,17 @@ ul {
   font-size: 14px;
   font-weight: 500;
 }
+
 .etiqueta-aberto {
   background: var(--vl-aberto);
   color: #fff;
 }
+
 .etiqueta-fechado {
   background: var(--vl-fechado);
   color: #fff;
 }
+
 .etiqueta-padrao {
   background: var(--vl-borda);
   color: var(--vl-corpo);
@@ -196,6 +219,7 @@ ul {
   display: flex;
   min-height: 100vh;
 }
+
 .painel-lateral {
   width: 256px;
   background: var(--vl-titulo);
@@ -203,6 +227,7 @@ ul {
   padding: 24px;
   min-height: 100vh;
 }
+
 .item-lateral {
   display: flex;
   align-items: center;
@@ -212,21 +237,26 @@ ul {
   color: #fff;
   transition: background 0.2s;
 }
+
 .item-lateral.ativo {
   background: var(--vl-terracota);
 }
+
 .item-lateral:hover:not(.ativo) {
   background: rgba(255,255,255,0.1);
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
 }
+
 th {
   font-weight: 500;
   padding: 12px 0;
   border-bottom: 1px solid var(--vl-borda);
 }
+
 td {
   padding: 16px 0;
   border-bottom: 1px solid var(--vl-borda);
@@ -239,6 +269,7 @@ td {
   border-radius: 8px;
   padding: 16px;
 }
+
 .cartao-estatistica {
   display: flex;
   align-items: center;
@@ -272,18 +303,18 @@ td {
 
 /*  CABEÇALHO DE PÁGINA */
 
-.cabecalho-pagina { margin-bottom: 32px; }
+.cabecalho-pagina { 
+  margin-bottom: 32px; 
+}
 
-.cabecalho-pagina h2,
-.cabecalho-secao h2 {
+.cabecalho-pagina h2, .cabecalho-secao h2 {
   font-size: 32px;
   font-weight: 700;
   color: var(--vl-titulo);
   margin-bottom: 8px;
 }
 
-.cabecalho-pagina p,
-.cabecalho-secao p {
+.cabecalho-pagina p, .cabecalho-secao p {
   color: var(--vl-secundario);
 }
 

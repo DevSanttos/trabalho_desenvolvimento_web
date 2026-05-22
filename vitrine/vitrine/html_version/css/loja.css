@@ -184,7 +184,6 @@
     border-right: none;
     cursor: pointer;
     transition: color 0.15s, border-color 0.15s;
-    white-space: nowrap;
 }
 
 .loja-abas__item:first-child {

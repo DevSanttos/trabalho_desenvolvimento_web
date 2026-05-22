@@ -19,7 +19,6 @@
     font-size: 20px;
     font-weight: 700;
     color: var(--vl-titulo);
-    text-decoration: none;
 }
 
 .barra-cidade__logo span {
@@ -70,7 +69,6 @@
     color: rgba(255, 255, 255, 0.85);
     font-size: 14px;
     font-weight: 500;
-    text-decoration: none;
     margin-bottom: 20px;
 }
 
@@ -146,7 +144,6 @@
     font-family: inherit;
     color: var(--vl-corpo);
     box-sizing: border-box;
-    outline: none;
 }
 
 .cidade-sidebar__titulo {

@@ -49,7 +49,9 @@
     color: var(--vl-terracota);
 }
 
-.info-pagamento { margin-bottom: 16px; }
+.info-pagamento { 
+    margin-bottom: 16px; 
+}
 
 .info-pagamento p:first-child {
     color: var(--vl-secundario);

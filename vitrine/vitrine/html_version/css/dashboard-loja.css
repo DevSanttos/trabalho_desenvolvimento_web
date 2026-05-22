@@ -39,8 +39,13 @@
 
 /* TÍTULOS DE SEÇÃO NOS cartaoS */
 
-.cartao-estatistica h3 { color: var(--vl-titulo); margin-bottom: 4px; }
-.cartao-estatistica p  { color: var(--vl-secundario); }
+.cartao-estatistica h3 { 
+    color: var(--vl-titulo); margin-bottom: 4px; 
+}
+
+.cartao-estatistica p { 
+    color: var(--vl-secundario); 
+}
 
 .cartao > h3 {
     color: var(--vl-titulo);

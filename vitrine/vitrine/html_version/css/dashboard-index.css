@@ -49,7 +49,9 @@
     gap: 12px;
 }
 
-.acoes-lista .botao { width: 100%; text-align: center; }
+.acoes-lista .botao { 
+    width: 100%; text-align: center; 
+}
 
 /* LISTA DE PRODUTOS POPULARES */
 
@@ -119,7 +121,17 @@
     text-align: right;
 }
 
-.tabela-resumo td:first-child { color: var(--vl-titulo); font-weight: 500; }
-.tabela-resumo td:nth-child(2) { color: var(--vl-secundario); }
-.tabela-resumo td:nth-child(3) { color: var(--vl-terracota); }
-.tabela-resumo td:last-child   { text-align: right; }
+.tabela-resumo td:first-child { 
+    color: var(--vl-titulo); font-weight: 500; 
+}
+
+.tabela-resumo td:nth-child(2) { 
+    color: var(--vl-secundario); 
+}
+
+.tabela-resumo td:nth-child(3) { 
+    color: var(--vl-terracota); 
+}
+
+.tabela-resumo td:last-child { 
+    text-align: right; }

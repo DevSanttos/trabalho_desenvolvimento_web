@@ -35,9 +35,17 @@
     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-input:checked + .interruptor-controle { background-color: var(--vl-terracota); }
-input:focus  + .interruptor-controle  { box-shadow: 0 0 1px var(--vl-terracota); }
-input:checked + .interruptor-controle:before { transform: translateX(20px); }
+input:checked + .interruptor-controle { 
+    background-color: var(--vl-terracota); 
+}
+
+input:focus  + .interruptor-controle  { 
+    box-shadow: 0 0 1px var(--vl-terracota); 
+}
+
+input:checked + .interruptor-controle:before { 
+    transform: translateX(20px); 
+}
 
 .dashboard-interno { max-width: 768px; }
 
