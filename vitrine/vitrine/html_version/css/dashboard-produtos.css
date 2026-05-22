@@ -1,11 +1,4 @@
-﻿/* ============================================================
-   dashboard-produtos.css
-   Componentes exclusivos da listagem de produtos do dashboard
-   ============================================================ */
-
-/* ----------------------------------------------------------
-   BOTÃO SÓ COM ÍCONE
-   ---------------------------------------------------------- */
+﻿/* Botão só com ícone */
 
 .botao-icone {
     background: transparent;
@@ -25,19 +18,7 @@
     color: var(--vl-titulo);
 }
 
-/* ----------------------------------------------------------
-   BOTÕES DE FILTRO
-   ---------------------------------------------------------- */
-
-/* ----------------------------------------------------------
-   LARGURA DO CONTEÚDO INTERNO
-   ---------------------------------------------------------- */
-
-.dashboard-interno { max-width: 1280px; }
-
-/* ----------------------------------------------------------
-   BARRA DE FILTROS
-   ---------------------------------------------------------- */
+/* Barra de filtros */
 
 .barra-filtros {
     display: flex;
@@ -78,9 +59,7 @@
     gap: 2px;
 }
 
-/* ----------------------------------------------------------
-   BOTÕES DE FILTRO
-   ---------------------------------------------------------- */
+/* Botões de filtro */
 
 .filtro-botao {
     padding: 7px 16px;
@@ -105,9 +84,7 @@
     font-weight: 600;
 }
 
-/* ----------------------------------------------------------
-   CÉLULA DE PRODUTO NA TABELA
-   ---------------------------------------------------------- */
+/* Célula de produto na tabela */
 
 .tabela-produto-celula {
     display: flex;
@@ -115,9 +92,7 @@
     gap: 12px;
 }
 
-/* ----------------------------------------------------------
-   GRADE DE ESTATÍSTICAS (4 colunas)
-   ---------------------------------------------------------- */
+/* estatísticas (4 colunas) */
 
 .grade-estatisticas-produtos {
     display: grid;
@@ -138,9 +113,7 @@
     color: var(--vl-titulo);
 }
 
-/* ----------------------------------------------------------
-   TABELA DE PRODUTOS
-   ---------------------------------------------------------- */
+/* Tabela de Produtos*/
 
 .tabela-produtos th {
     text-align: left;
@@ -161,9 +134,7 @@
 .tabela-produtos td:nth-child(3) { color: var(--vl-terracota); }
 .tabela-produtos td:last-child   { text-align: right; }
 
-/* ----------------------------------------------------------
-   AÇÕES DA TABELA (botões de ícone alinhados à direita)
-   ---------------------------------------------------------- */
+/* AÇÕES DA TABELA (botões de ícone alinhados à direita)*/
 
 .tabela-acoes {
     display: flex;

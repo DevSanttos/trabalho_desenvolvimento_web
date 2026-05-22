@@ -18,7 +18,6 @@
     cursor: pointer;
     top: 0; left: 0; right: 0; bottom: 0;
     background-color: var(--vl-borda);
-    transition: .4s;
     border-radius: 34px;
 }
 
@@ -30,7 +29,6 @@
     left: 2px;
     bottom: 2px;
     background-color: white;
-    transition: .4s;
     border-radius: 50%;
     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
@@ -47,7 +45,9 @@ input:checked + .interruptor-controle:before {
     transform: translateX(20px); 
 }
 
-.dashboard-interno { max-width: 768px; }
+input:checked + .interruptor-controle { 
+    background-color: var(--vl-terracota); }
+input:checked + .interruptor-controle:before { transform: translateX(20px); }
 
 .dashboard-interno .cartao {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
@@ -76,7 +76,6 @@ input:checked + .interruptor-controle:before {
     border: 2px dashed var(--vl-borda);
     border-radius: 12px;
     padding: 48px;
-    transition: border-color 0.2s, background 0.2s;
 }
 
 .area-envio:hover {
