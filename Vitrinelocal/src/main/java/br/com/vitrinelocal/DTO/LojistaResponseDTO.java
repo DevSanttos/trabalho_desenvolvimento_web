@@ -2,9 +2,11 @@ package br.com.vitrinelocal.DTO;
 
 import br.com.vitrinelocal.model.Lojista;
 
+import java.util.UUID;
+
 // Resposta sem o campo senha — nunca devolve o hash ao cliente.
 public record LojistaResponseDTO(
-        Long id,
+        UUID id,
         String nomeLoja,
         String email
 ) {

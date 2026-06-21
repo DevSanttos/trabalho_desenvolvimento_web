@@ -34,4 +34,7 @@ public class LojistaController {
         LojistaResponseDTO response = lojistaService.login(dto);
         return ResponseEntity.ok(response);
     }
+
+
+
 }
