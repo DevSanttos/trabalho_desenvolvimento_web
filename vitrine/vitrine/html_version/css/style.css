@@ -292,6 +292,23 @@ td {
   gap: 16px;
 }
 
+/* Mensagens de feedback dos formulários (login/cadastro) */
+.mensagem-erro,
+.mensagem-sucesso {
+  font-size: 14px;
+  margin: 0;
+}
+.mensagem-erro:empty,
+.mensagem-sucesso:empty {
+  display: none;
+}
+.mensagem-erro {
+  color: var(--vl-fechado);
+}
+.mensagem-sucesso {
+  color: var(--vl-aberto);
+}
+
 .acoes-formulario {
   display: flex;
   gap: 16px;
