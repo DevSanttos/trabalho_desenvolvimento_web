@@ -22,6 +22,12 @@
         nomeLojaEl.textContent = lojista.loja.nome;
     }
 
+    // Link "Visualizar loja pública" aponta para a vitrine da loja (por slug).
+    const linkLojaPublica = document.getElementById("linkLojaPublica");
+    if (linkLojaPublica && lojista.loja.slug) {
+        linkLojaPublica.href = `../loja.html?loja=${lojista.loja.slug}`;
+    }
+
     // Botão "Sair" (se existir): limpa a sessão e volta ao login.
     const sairEl = document.getElementById("btnSair");
     if (sairEl) {

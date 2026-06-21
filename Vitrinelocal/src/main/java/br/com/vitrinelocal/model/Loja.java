@@ -26,6 +26,10 @@ public class Loja {
     @Column(nullable = false)
     private String nome;
 
+    // Versão do nome amigável para URL (ex: "casa-design"). Usado na vitrine pública.
+    @Column(nullable = false, unique = true)
+    private String slug;
+
     // Campos preenchidos depois (página "Minha loja"). Nullable por enquanto.
     private String descricao;
     private String categoria;

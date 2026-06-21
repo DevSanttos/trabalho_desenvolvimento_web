@@ -1,0 +1,90 @@
+package br.com.vitrinelocal.service;
+
+import java.util.List;
+import java.util.UUID;
+
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import br.com.vitrinelocal.DTO.ProdutoRequestDTO;
+import br.com.vitrinelocal.DTO.ProdutoResponseDTO;
+import br.com.vitrinelocal.exception.RecursoNaoEncontradoException;
+import br.com.vitrinelocal.model.Loja;
+import br.com.vitrinelocal.model.Produto;
+import br.com.vitrinelocal.repository.LojaRepository;
+import br.com.vitrinelocal.repository.ProdutoRepository;
+
+@Service
+public class ProdutoService {
+
+    private final ProdutoRepository produtoRepository;
+    private final LojaRepository lojaRepository;
+
+    public ProdutoService(ProdutoRepository produtoRepository, LojaRepository lojaRepository) {
+        this.produtoRepository = produtoRepository;
+        this.lojaRepository = lojaRepository;
+    }
+
+    @Transactional
+    public ProdutoResponseDTO criar(ProdutoRequestDTO dto) {
+        Loja loja = lojaRepository.findById(dto.lojaId())
+                .orElseThrow(() -> new RecursoNaoEncontradoException("Loja não encontrada"));
+
+        Produto produto = new Produto();
+        produto.setLoja(loja);
+        aplicarDados(produto, dto);
+
+        return ProdutoResponseDTO.fromEntity(produtoRepository.save(produto));
+    }
+
+    @Transactional(readOnly = true)
+    public ProdutoResponseDTO buscarPorId(UUID id) {
+        return ProdutoResponseDTO.fromEntity(buscarEntidade(id));
+    }
+
+    @Transactional(readOnly = true)
+    public List<ProdutoResponseDTO> listarPorLoja(UUID lojaId) {
+        return produtoRepository.findByLojaId(lojaId).stream()
+                .map(ProdutoResponseDTO::fromEntity)
+                .toList();
+    }
+
+    @Transactional(readOnly = true)
+    public List<ProdutoResponseDTO> listarPublicosPorSlug(String slug) {
+        return produtoRepository.findByLojaSlugAndAtivoTrue(slug).stream()
+                .map(ProdutoResponseDTO::fromEntity)
+                .toList();
+    }
+
+    @Transactional
+    public ProdutoResponseDTO atualizar(UUID id, ProdutoRequestDTO dto) {
+        Produto produto = buscarEntidade(id);
+        aplicarDados(produto, dto);
+        return ProdutoResponseDTO.fromEntity(produtoRepository.save(produto));
+    }
+
+    @Transactional
+    public void excluir(UUID id) {
+        if (!produtoRepository.existsById(id)) {
+            throw new RecursoNaoEncontradoException("Produto não encontrado");
+        }
+        produtoRepository.deleteById(id);
+    }
+
+    private Produto buscarEntidade(UUID id) {
+        return produtoRepository.findById(id)
+                .orElseThrow(() -> new RecursoNaoEncontradoException("Produto não encontrado"));
+    }
+
+    // Copia os campos do DTO para a entidade (a loja não muda na edição).
+    private void aplicarDados(Produto produto, ProdutoRequestDTO dto) {
+        produto.setNome(dto.nome());
+        produto.setPreco(dto.preco());
+        produto.setDescricaoCurta(dto.descricaoCurta());
+        produto.setDescricaoCompleta(dto.descricaoCompleta());
+        produto.setMarca(dto.marca());
+        produto.setCategoria(dto.categoria());
+        produto.setImagemUrl(dto.imagemUrl());
+        produto.setAtivo(dto.ativo());
+    }
+}

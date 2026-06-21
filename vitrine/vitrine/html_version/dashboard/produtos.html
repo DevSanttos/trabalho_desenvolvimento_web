@@ -44,7 +44,7 @@
                 <div class="cabecalho-secao">
                     <div>
                         <h2>Produtos</h2>
-                        <p>6 produtos cadastrados</p>
+                        <p id="subtituloContagem">Carregando...</p>
                     </div>
                     <a href="produtos-novo.html" class="botao">
                         <i data-lucide="plus" class="icone-xs"></i> Adicionar produto
@@ -55,19 +55,19 @@
                 <div class="grade-estatisticas-produtos">
                     <div class="cartao">
                         <p>Total de produtos</p>
-                        <p>6</p>
+                        <p id="statTotal">0</p>
                     </div>
                     <div class="cartao">
                         <p>Produtos ativos</p>
-                        <p>5</p>
+                        <p id="statAtivos">0</p>
                     </div>
                     <div class="cartao">
                         <p>Produtos inativos</p>
-                        <p>1</p>
+                        <p id="statInativos">0</p>
                     </div>
                     <div class="cartao">
                         <p>Total de visualizações</p>
-                        <p>1000</p>
+                        <p id="statVisualizacoes">0</p>
                     </div>
                 </div>
 
@@ -75,12 +75,12 @@
                 <div class="barra-filtros">
                     <div class="campo-busca">
                         <i data-lucide="search" class="icone-busca icone-sm"></i>
-                        <input type="text" class="input" placeholder="Buscar produtos...">
+                        <input type="text" id="campoBusca" class="input" placeholder="Buscar produtos...">
                     </div>
                     <div class="grupo-filtros">
-                        <button class="filtro-botao filtro-botao--ativo">Todos</button>
-                        <button class="filtro-botao">Ativos</button>
-                        <button class="filtro-botao">Inativos</button>
+                        <button class="filtro-botao filtro-botao--ativo" data-filtro="todos">Todos</button>
+                        <button class="filtro-botao" data-filtro="ativos">Ativos</button>
+                        <button class="filtro-botao" data-filtro="inativos">Inativos</button>
                     </div>
                 </div>
 
@@ -98,121 +98,8 @@
                                     <th>Ações</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="tabela-produto-celula">
-                                            <img src="../imagens/sofa-loja.webp" alt="Sofá Retrátil" class="miniatura-produto">
-                                            <span>Sofá Retrátil</span>
-                                        </div>
-                                    </td>
-                                    <td>Sofás</td>
-                                    <td>R$ 2499,90</td>
-                                    <td>234</td>
-                                    <td><span class="etiqueta etiqueta-aberto">Ativo</span></td>
-                                    <td>
-                                        <div class="tabela-acoes">
-                                            <button class="botao-icone" title="Visualizar"><i data-lucide="eye" class="icone-xs"></i></button>
-                                            <button class="botao-icone" title="Editar"><i data-lucide="pencil" class="icone-xs"></i></button>
-                                            <button class="botao-icone" title="Excluir"><i data-lucide="trash-2" class="icone-xs"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="tabela-produto-celula">
-                                            <img src="../imagens/sofa-loja.webp" alt="Sofá Retrátil" class="miniatura-produto">
-                                            <span>Sofá Retrátil</span>
-                                        </div>
-                                    </td>
-                                    <td>Sofás</td>
-                                    <td>R$ 2499,90</td>
-                                    <td>234</td>
-                                    <td><span class="etiqueta etiqueta-aberto">Ativo</span></td>
-                                    <td>
-                                        <div class="tabela-acoes">
-                                            <button class="botao-icone" title="Visualizar"><i data-lucide="eye" class="icone-xs"></i></button>
-                                            <button class="botao-icone" title="Editar"><i data-lucide="pencil" class="icone-xs"></i></button>
-                                            <button class="botao-icone" title="Excluir"><i data-lucide="trash-2" class="icone-xs"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="tabela-produto-celula">
-                                            <img src="../imagens/sofa-loja.webp" alt="Sofá Retrátil" class="miniatura-produto">
-                                            <span>Sofá Retrátil</span>
-                                        </div>
-                                    </td>
-                                    <td>Sofás</td>
-                                    <td>R$ 2499,90</td>
-                                    <td>234</td>
-                                    <td><span class="etiqueta etiqueta-aberto">Ativo</span></td>
-                                    <td>
-                                        <div class="tabela-acoes">
-                                            <button class="botao-icone" title="Visualizar"><i data-lucide="eye" class="icone-xs"></i></button>
-                                            <button class="botao-icone" title="Editar"><i data-lucide="pencil" class="icone-xs"></i></button>
-                                            <button class="botao-icone" title="Excluir"><i data-lucide="trash-2" class="icone-xs"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="tabela-produto-celula">
-                                            <img src="../imagens/sofa-loja.webp" alt="Sofá Retrátil" class="miniatura-produto">
-                                            <span>Sofá Retrátil</span>
-                                        </div>
-                                    </td>
-                                    <td>Sofás</td>
-                                    <td>R$ 2499,90</td>
-                                    <td>234</td>
-                                    <td><span class="etiqueta etiqueta-padrao">Inativo</span></td>
-                                    <td>
-                                        <div class="tabela-acoes">
-                                            <button class="botao-icone" title="Visualizar"><i data-lucide="eye" class="icone-xs"></i></button>
-                                            <button class="botao-icone" title="Editar"><i data-lucide="pencil" class="icone-xs"></i></button>
-                                            <button class="botao-icone" title="Excluir"><i data-lucide="trash-2" class="icone-xs"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="tabela-produto-celula">
-                                            <img src="../imagens/sofa-loja.webp" alt="Sofá Retrátil" class="miniatura-produto">
-                                            <span>Sofá Retrátil</span>
-                                        </div>
-                                    </td>
-                                    <td>Sofás</td>
-                                    <td>R$ 2499,90</td>
-                                    <td>234</td>
-                                    <td><span class="etiqueta etiqueta-aberto">Ativo</span></td>
-                                    <td>
-                                        <div class="tabela-acoes">
-                                            <button class="botao-icone" title="Visualizar"><i data-lucide="eye" class="icone-xs"></i></button>
-                                            <button class="botao-icone" title="Editar"><i data-lucide="pencil" class="icone-xs"></i></button>
-                                            <button class="botao-icone" title="Excluir"><i data-lucide="trash-2" class="icone-xs"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="tabela-produto-celula">
-                                            <img src="../imagens/sofa-loja.webp" alt="Sofá Retrátil" class="miniatura-produto">
-                                            <span>Sofá Retrátil</span>
-                                        </div>
-                                    </td>
-                                    <td>Sofás</td>
-                                    <td>R$ 2499,90</td>
-                                    <td>234</td>
-                                    <td><span class="etiqueta etiqueta-aberto">Ativo</span></td>
-                                    <td>
-                                        <div class="tabela-acoes">
-                                            <button class="botao-icone" title="Visualizar"><i data-lucide="eye" class="icone-xs"></i></button>
-                                            <button class="botao-icone" title="Editar"><i data-lucide="pencil" class="icone-xs"></i></button>
-                                            <button class="botao-icone" title="Excluir"><i data-lucide="trash-2" class="icone-xs"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
+                            <tbody id="tabelaProdutosBody">
+                                <!-- Linhas inseridas dinamicamente por produtos.js -->
                             </tbody>
                         </table>
                     </div>
@@ -224,15 +111,9 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="../js/dashboard.js"></script>
+    <script src="../js/produtos.js"></script>
     <script>
         lucide.createIcons();
-
-        document.querySelectorAll('.filtro-botao').forEach(botao => {
-            botao.addEventListener('click', () => {
-                document.querySelectorAll('.filtro-botao').forEach(b => b.classList.remove('filtro-botao--ativo'));
-                botao.classList.add('filtro-botao--ativo');
-            });
-        });
     </script>
 </body>
 </html>

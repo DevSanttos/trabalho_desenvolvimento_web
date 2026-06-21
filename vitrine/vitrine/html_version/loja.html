@@ -31,10 +31,10 @@
 
             <div class="loja-cabecalho__corpo">
                 <div class="loja-cabecalho__titulo-linha">
-                    <h1 class="loja-cabecalho__titulo">Casa &amp; Design</h1>
+                    <h1 class="loja-cabecalho__titulo" id="lojaNome">Carregando...</h1>
                     <span class="etiqueta etiqueta-aberto">Aberto</span>
                 </div>
-                <p class="loja-cabecalho__categoria">Móveis</p>
+                <p class="loja-cabecalho__categoria" id="lojaCategoria">Móveis</p>
 
                 <div class="loja-cabecalho__infos">
                     <div class="loja-cabecalho__info-item">
@@ -64,113 +64,21 @@
     <!-- Abas de categorias -->
     <nav class="loja-abas" aria-label="Categorias da loja">
         <div class="loja-abas__lista">
-            <button class="loja-abas__item ativo">Todos</button>
-            <button class="loja-abas__item">Sofás</button>
-            <button class="loja-abas__item">Cadeiras</button>
-            <button class="loja-abas__item">Mesas</button>
-            <button class="loja-abas__item">Armários</button>
+            <button class="loja-abas__item ativo" data-categoria="todos">Todos</button>
+            <button class="loja-abas__item" data-categoria="sofas">Sofás</button>
+            <button class="loja-abas__item" data-categoria="mesas">Mesas</button>
+            <button class="loja-abas__item" data-categoria="cadeiras">Cadeiras</button>
+            <button class="loja-abas__item" data-categoria="decoracao">Decoração</button>
         </div>
     </nav>
 
-    <!-- Grade de produtos -->
-    <div class="produtos-grade">
-
-        <a href="produto.html" class="cartao-produto">
-            <div class="cartao-produto__imagem-wrapper">
-                <img src="imagens/sofa-loja.webp" alt="Sofá" class="cartao-produto__imagem">
-            </div>
-            <div class="cartao-produto__corpo">
-                <div class="cartao-produto__titulo">Sofá Retrátil</div>
-                <div class="cartao-produto__descricao">3 lugares, tecido</div>
-                <div class="cartao-produto__preco">R$ 2499,90</div>
-                <div class="cartao-produto__rodape">
-                    <span class="cartao-produto__tag">Sofás</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="produto.html" class="cartao-produto">
-            <div class="cartao-produto__imagem-wrapper">
-                 <img src="imagens/sofa-loja.webp" alt="Sofá" class="cartao-produto__imagem">
-            </div>
-            <div class="cartao-produto__corpo">
-                <div class="cartao-produto__titulo">Sofá Retrátil</div>
-                <div class="cartao-produto__descricao">3 lugares, tecido</div>
-                <div class="cartao-produto__preco">R$ 2499,90</div>
-                <div class="cartao-produto__rodape">
-                    <span class="cartao-produto__tag">Cadeiras</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="produto.html" class="cartao-produto">
-            <div class="cartao-produto__imagem-wrapper">
-                <img src="imagens/sofa-loja.webp" alt="Sofá" class="cartao-produto__imagem">
-            </div>
-            <div class="cartao-produto__corpo">
-                <div class="cartao-produto__titulo">Sofá Retrátil</div>
-                <div class="cartao-produto__descricao">3 lugares, tecido</div>
-                <div class="cartao-produto__preco">R$ 2499,90</div>
-                <div class="cartao-produto__rodape">
-                    <span class="cartao-produto__tag">Mesas</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="produto.html" class="cartao-produto">
-            <div class="cartao-produto__imagem-wrapper">
-                <img src="imagens/sofa-loja.webp" alt="Sofá" class="cartao-produto__imagem">
-            </div>
-            <div class="cartao-produto__corpo">
-                <div class="cartao-produto__titulo">Sofá Retrátil</div>
-                <div class="cartao-produto__descricao">3 lugares, tecido</div>
-                <div class="cartao-produto__preco">R$ 2499,90</div>
-                <div class="cartao-produto__rodape">
-                    <span class="cartao-produto__tag">Cadeiras</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="produto.html" class="cartao-produto">
-            <div class="cartao-produto__imagem-wrapper">
-                <img src="imagens/sofa-loja.webp" alt="Sofá" class="cartao-produto__imagem">
-            </div>
-            <div class="cartao-produto__corpo">
-                <div class="cartao-produto__titulo">Sofá Retrátil</div>
-                <div class="cartao-produto__descricao">3 lugares, tecido</div>
-                <div class="cartao-produto__preco">R$ 2499,90</div>
-                <div class="cartao-produto__rodape">
-                    <span class="cartao-produto__tag">Armários</span>
-                </div>
-            </div>
-        </a>
-
-        <a href="produto.html" class="cartao-produto">
-            <div class="cartao-produto__imagem-wrapper">
-                <img src="imagens/sofa-loja.webp" alt="Sofá" class="cartao-produto__imagem">
-            </div>
-            <div class="cartao-produto__corpo">
-                <div class="cartao-produto__titulo">Sofá Retrátil</div>
-                <div class="cartao-produto__descricao">3 lugares, tecido</div>
-                <div class="cartao-produto__preco">R$ 2499,90</div>
-                <div class="cartao-produto__rodape">
-                    <span class="cartao-produto__tag">Sofás</span>
-                </div>
-            </div>
-        </a>
-
-    </div>
+    <!-- Grade de produtos (preenchida por loja-publica.js) -->
+    <div class="produtos-grade" id="produtosGrade"></div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/loja-publica.js"></script>
     <script>
         lucide.createIcons();
-
-        document.querySelectorAll('.loja-abas__item').forEach(botao => {
-            botao.addEventListener('click', () => {
-                document.querySelectorAll('.loja-abas__item').forEach(b => b.classList.remove('ativo'));
-                botao.classList.add('ativo');
-            });
-        });
     </script>
 </body>
 </html>

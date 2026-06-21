@@ -41,57 +41,53 @@
             <div class="dashboard-interno">
 
                 <div class="cabecalho-pagina">
-                    <h2>Adicionar produto</h2>
-                    <p>Preencha as informações do novo produto</p>
+                    <h2 id="tituloPagina">Adicionar produto</h2>
+                    <p>Preencha as informações do produto</p>
                 </div>
 
                 <div class="cartao">
-                    <form class="campos-formulario">
+                    <form class="campos-formulario" id="produtoForm">
 
-                        <!-- Imagem do produto -->
+                        <!-- Imagem do produto (URL) -->
                         <div>
-                            <label>Imagem do produto</label>
-                            <div class="area-envio">
-                                <i data-lucide="upload"></i>
-                                <p>Clique para fazer upload</p>
-                                <p>PNG, JPG até 5MB</p>
-                            </div>
+                            <label for="imagemUrl">URL da imagem</label>
+                            <input type="url" id="imagemUrl" class="input" placeholder="https://exemplo.com/imagem.jpg">
                         </div>
 
                         <!-- Nome do produto -->
                         <div>
-                            <label>Nome do produto *</label>
-                            <input type="text" class="input" placeholder="Ex: Sofá Retrátil" required>
+                            <label for="nome">Nome do produto *</label>
+                            <input type="text" id="nome" class="input" placeholder="Ex: Sofá Retrátil" required>
                         </div>
 
                         <!-- Preço -->
                         <div>
-                            <label>Preço *</label>
-                            <input type="text" class="input" placeholder="0,00" required>
+                            <label for="preco">Preço *</label>
+                            <input type="text" id="preco" class="input" placeholder="0,00" required>
                         </div>
 
                         <!-- Descrição curta -->
                         <div>
-                            <label>Descrição curta *</label>
-                            <input type="text" class="input" placeholder="Ex: 3 lugares, tecido" required>
+                            <label for="descricaoCurta">Descrição curta *</label>
+                            <input type="text" id="descricaoCurta" class="input" placeholder="Ex: 3 lugares, tecido" required>
                         </div>
 
                         <!-- Descrição completa -->
                         <div>
-                            <label>Descrição completa</label>
-                            <textarea class="textarea" rows="4" placeholder="Descreva detalhadamente o produto, incluindo materiais, dimensões, características especiais, etc."></textarea>
+                            <label for="descricaoCompleta">Descrição completa</label>
+                            <textarea id="descricaoCompleta" class="textarea" rows="4" placeholder="Descreva detalhadamente o produto, incluindo materiais, dimensões, características especiais, etc."></textarea>
                         </div>
 
                         <!-- Marca -->
                         <div>
-                            <label>Marca</label>
-                            <input type="text" class="input" placeholder="Ex: Sofás Brasil">
+                            <label for="marca">Marca</label>
+                            <input type="text" id="marca" class="input" placeholder="Ex: Sofás Brasil">
                         </div>
 
                         <!-- Categoria -->
                         <div>
-                            <label>Categoria *</label>
-                            <select class="select" required>
+                            <label for="categoria">Categoria *</label>
+                            <select id="categoria" class="select" required>
                                 <option value=""></option>
                                 <option value="sofas">Sofás</option>
                                 <option value="mesas">Mesas</option>
@@ -107,15 +103,17 @@
                                 <p>Produto visível na vitrine</p>
                             </div>
                             <label class="interruptor">
-                                <input type="checkbox" checked>
+                                <input type="checkbox" id="ativo" checked>
                                 <span class="interruptor-controle"></span>
                             </label>
                         </div>
 
+                        <p id="produtoMensagem" class="mensagem-erro"></p>
+
                         <!-- Botões de ação -->
                         <div class="acoes-formulario">
                             <button type="button" class="botao botao-contorno" onclick="window.location.href='produtos.html'">Cancelar</button>
-                            <button type="submit" class="botao">Salvar produto</button>
+                            <button type="submit" class="botao" id="btnSalvar">Salvar produto</button>
                         </div>
 
                     </form>
@@ -127,6 +125,7 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="../js/dashboard.js"></script>
+    <script src="../js/produto-form.js"></script>
     <script>
         lucide.createIcons();
     </script>

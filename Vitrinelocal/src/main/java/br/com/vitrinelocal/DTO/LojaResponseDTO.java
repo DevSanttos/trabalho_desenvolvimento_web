@@ -6,9 +6,10 @@ import br.com.vitrinelocal.model.Loja;
 
 public record LojaResponseDTO(
         UUID id,
-        String nome
+        String nome,
+        String slug
 ) {
     public static LojaResponseDTO fromEntity(Loja loja) {
-        return new LojaResponseDTO(loja.getId(), loja.getNome());
+        return new LojaResponseDTO(loja.getId(), loja.getNome(), loja.getSlug());
     }
 }
