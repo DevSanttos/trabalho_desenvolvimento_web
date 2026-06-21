@@ -61,15 +61,18 @@ if (cadastroForm) {
             });
 
             if (response.ok) {
-                const lojista = await response.json();
-                localStorage.setItem("lojista", JSON.stringify(lojista));
-                window.location.href = "dashboard/index.html";
+                // Cadastro feito: NÃO autentica direto. Manda a pessoa fazer login.
+                mostrarMensagem("cadastroMensagem", "Cadastro realizado com sucesso! Redirecionando para o login...", false);
+                cadastroForm.reset();
+                setTimeout(() => {
+                    window.location.href = "login.html?cadastro=ok";
+                }, 1500);
             } else {
                 const msg = await extrairMensagemErro(response, "Não foi possível concluir o cadastro.");
                 mostrarMensagem("cadastroMensagem", msg);
             }
         } catch (err) {
-            mostrarMensagem("cadastroMensagem", "Erro de conexão com o servidor. O backend está rodando?");
+            mostrarMensagem("cadastroMensagem", "Erro de conexão com o servidor.");
         }
     });
 }
@@ -77,6 +80,11 @@ if (cadastroForm) {
 // ===== LOGIN =====
 const loginForm = document.getElementById("loginForm");
 if (loginForm) {
+    // Se a pessoa acabou de se cadastrar, mostra um aviso para fazer login.
+    if (new URLSearchParams(window.location.search).get("cadastro") === "ok") {
+        mostrarMensagem("loginMensagem", "Conta criada! Faça login para entrar.", false);
+    }
+
     loginForm.addEventListener("submit", async (e) => {
         e.preventDefault();
 
@@ -99,7 +107,7 @@ if (loginForm) {
                 mostrarMensagem("loginMensagem", msg);
             }
         } catch (err) {
-            mostrarMensagem("loginMensagem", "Erro de conexão com o servidor. O backend está rodando?");
+            mostrarMensagem("loginMensagem", "Erro de conexão com o servidor.");
         }
     });
 }
