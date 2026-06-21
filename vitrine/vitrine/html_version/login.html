@@ -20,15 +20,15 @@
                 <h2 class="login-form-titulo">Entrar na plataforma</h2>
                 <p class="login-form-subtitulo">Acesse a conta do seu comércio para continuar</p>
 
-                <form class="login-campos">
+                <form class="login-campos" id="loginForm">
                     <div class="login-campo">
-                        <label>E-mail</label>
-                        <input type="email" class="input" placeholder="seu@email.com">
+                        <label for="loginEmail">E-mail</label>
+                        <input type="email" id="loginEmail" class="input" placeholder="seu@email.com" required>
                     </div>
 
                     <div class="login-campo">
-                        <label>Senha</label>
-                        <input type="password" class="input" placeholder="••••••••">
+                        <label for="loginSenha">Senha</label>
+                        <input type="password" id="loginSenha" class="input" placeholder="••••••••" required>
                     </div>
 
                     <div class="login-linha-opcoes">
@@ -39,9 +39,11 @@
                         <a href="#" class="login-esqueceu">Esqueceu a senha?</a>
                     </div>
 
-                    <a href="dashboard/index.html" class="botao login-botao-entrar">
+                    <p id="loginMensagem" class="mensagem-erro"></p>
+
+                    <button type="submit" class="botao login-botao-entrar">
                         Entrar na plataforma
-                    </a>
+                    </button>
 
                 </form>
 
@@ -57,5 +59,6 @@
     <script>
         lucide.createIcons();
     </script>
+    <script src="js/auth.js"></script>
 </body>
 </html>

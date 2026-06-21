@@ -22,29 +22,29 @@
                     Preencha os dados para criar sua conta
                 </p>
 
-                <form class="campos-formulario">
+                <form class="campos-formulario" id="cadastroForm">
                     <div>
-                        <label>Nome da loja *</label>
-                        <input type="text" class="input" placeholder="Ex: Casa &amp; Design" required>
+                        <label for="nomeLoja">Nome da loja *</label>
+                        <input type="text" id="nomeLoja" class="input" placeholder="Ex: Casa &amp; Design" required>
                     </div>
 
                     <div>
-                        <label>E-mail *</label>
-                        <input type="email" class="input" placeholder="seu@email.com" required>
+                        <label for="cadastroEmail">E-mail *</label>
+                        <input type="email" id="cadastroEmail" class="input" placeholder="seu@email.com" required>
                     </div>
 
                     <div>
-                        <label>Senha *</label>
-                        <input type="password" class="input" placeholder="••••••••" required>
+                        <label for="cadastroSenha">Senha *</label>
+                        <input type="password" id="cadastroSenha" class="input" placeholder="••••••••" required>
                     </div>
 
                     <div>
-                        <label>Confirmar senha *</label>
-                        <input type="password" class="input" placeholder="••••••••" required>
+                        <label for="confirmaSenha">Confirmar senha *</label>
+                        <input type="password" id="confirmaSenha" class="input" placeholder="••••••••" required>
                     </div>
 
                     <div class="termos-linha">
-                        <input type="checkbox" required>
+                        <input type="checkbox" id="termos" required>
                         <span class="cadastro__termos-texto">
                             Concordo com os
                             <a href="#">termos de uso</a>
@@ -53,8 +53,10 @@
                         </span>
                     </div>
 
+                    <p id="cadastroMensagem" class="mensagem-erro"></p>
+
                     <div class="bloco-envio">
-                        <a href="dashboard/index.html" class="botao">Criar conta</a>
+                        <button type="submit" class="botao">Criar conta</button>
                     </div>
 
                 </form>
@@ -71,5 +73,6 @@
     <script>
         lucide.createIcons();
     </script>
+    <script src="js/auth.js"></script>
 </body>
 </html>
