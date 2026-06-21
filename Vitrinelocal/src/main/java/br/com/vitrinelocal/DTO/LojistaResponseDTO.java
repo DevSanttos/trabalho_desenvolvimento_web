@@ -1,16 +1,20 @@
 package br.com.vitrinelocal.DTO;
 
-import br.com.vitrinelocal.model.Lojista;
-
 import java.util.UUID;
+
+import br.com.vitrinelocal.model.Lojista;
 
 // Resposta sem o campo senha — nunca devolve o hash ao cliente.
 public record LojistaResponseDTO(
         UUID id,
-        String nomeLoja,
-        String email
+        String email,
+        LojaResponseDTO loja
 ) {
     public static LojistaResponseDTO fromEntity(Lojista lojista) {
-        return new LojistaResponseDTO(lojista.getId(), lojista.getNomeLoja(), lojista.getEmail());
+        return new LojistaResponseDTO(
+                lojista.getId(),
+                lojista.getEmail(),
+                LojaResponseDTO.fromEntity(lojista.getLoja())
+        );
     }
 }
