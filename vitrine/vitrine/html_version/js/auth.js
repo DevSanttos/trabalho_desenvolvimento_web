@@ -4,6 +4,11 @@
 
 const API_BASE = "http://localhost:8080/api/lojistas";
 
+// Valida o formato do email (precisa ter @ e um domínio com ponto).
+function validarEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
 // Exibe uma mensagem de feedback (erro ou sucesso) no elemento indicado.
 function mostrarMensagem(elId, texto, ehErro = true) {
     const el = document.getElementById(elId);
@@ -40,12 +45,20 @@ if (cadastroForm) {
         const termos = document.getElementById("termos").checked;
 
         // Validações de cliente antes de chamar a API.
-        if (senha !== confirmaSenha) {
-            mostrarMensagem("cadastroMensagem", "As senhas não coincidem.");
+        if (!nomeLoja || !email || !senha || !confirmaSenha) {
+            mostrarMensagem("cadastroMensagem", "Preencha todos os campos.");
             return;
         }
-        if (senha.length < 6) {
-            mostrarMensagem("cadastroMensagem", "A senha deve ter ao menos 6 caracteres.");
+        if (!validarEmail(email)) {
+            mostrarMensagem("cadastroMensagem", "Informe um email válido (com @).");
+            return;
+        }
+        if (senha.length < 8) {
+            mostrarMensagem("cadastroMensagem", "A senha deve ter ao menos 8 caracteres.");
+            return;
+        }
+        if (senha !== confirmaSenha) {
+            mostrarMensagem("cadastroMensagem", "As senhas não coincidem.");
             return;
         }
         if (!termos) {
@@ -90,6 +103,16 @@ if (loginForm) {
 
         const email = document.getElementById("loginEmail").value.trim();
         const senha = document.getElementById("loginSenha").value;
+
+        // Validações de cliente antes de chamar a API.
+        if (!email || !senha) {
+            mostrarMensagem("loginMensagem", "Preencha email e senha.");
+            return;
+        }
+        if (!validarEmail(email)) {
+            mostrarMensagem("loginMensagem", "Informe um email válido (com @).");
+            return;
+        }
 
         try {
             const response = await fetch(`${API_BASE}/login`, {

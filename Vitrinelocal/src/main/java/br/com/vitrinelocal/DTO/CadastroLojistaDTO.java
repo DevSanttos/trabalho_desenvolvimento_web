@@ -14,7 +14,7 @@ public record CadastroLojistaDTO(
         String email,
 
         @NotBlank(message = "A senha é obrigatória")
-        @Size(min = 6, message = "A senha deve ter ao menos 6 caracteres")
+        @Size(min = 8, message = "A senha deve ter ao menos 8 caracteres")
         String senha
 ) {
 }

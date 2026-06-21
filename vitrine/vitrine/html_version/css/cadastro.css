@@ -3,7 +3,7 @@
 .pagina-autenticacao {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.4fr;
 }
 
 .painel-esquerdo {
@@ -25,7 +25,7 @@
 }
 
 .painel-conteudo {
-    max-width: 448px;
+    max-width: 400px;
     width: 100%;
 }
 
@@ -56,13 +56,14 @@
 }
 
 .painel-direito h2 {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     color: var(--vl-titulo);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .subtitulo-formulario {
+    font-size: 14px;
     color: var(--vl-secundario);
     margin-bottom: 32px;
 }
@@ -78,6 +79,8 @@
 
 .bloco-envio .botao {
     width: 100%;
+    padding: 14px;
+    font-size: 15px;
     text-align: center;
 }
 
