@@ -12,6 +12,9 @@ const CATEGORIA_HOME_LABEL = {
 
 const moedaHome = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
+// Imagem transparente (1x1) para produtos sem foto.
+const SEM_IMAGEM_HOME = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
 (function () {
     const lojista = JSON.parse(localStorage.getItem("lojista") || "null");
     if (!lojista || !lojista.loja) return; // dashboard.js redireciona
@@ -50,7 +53,7 @@ const moedaHome = new Intl.NumberFormat("pt-BR", { style: "currency", currency: 
         cont.innerHTML = top.map((p) => `
             <div class="produto-popular-linha">
                 <div class="produto-popular-informacao">
-                    <img src="${p.imagemUrl ? esc(p.imagemUrl) : "../imagens/sofa-loja.webp"}" alt="${esc(p.nome)}" class="miniatura-produto">
+                    <img src="${p.imagemUrl ? esc(p.imagemUrl) : SEM_IMAGEM_HOME}" alt="${esc(p.nome)}" class="miniatura-produto">
                     <div>
                         <p class="produto-popular-nome">${esc(p.nome)}</p>
                         <p class="produto-popular-visualizacoes">${p.visualizacoes} visualizações</p>

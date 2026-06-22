@@ -60,6 +60,7 @@ public class CidadeService {
                     loja.getCategoria(),
                     loja.getEndereco(),
                     loja.getCidade(),
+                    loja.getLogoUrl(),
                     produtoRepository.countByLojaId(loja.getId())
             ));
         }

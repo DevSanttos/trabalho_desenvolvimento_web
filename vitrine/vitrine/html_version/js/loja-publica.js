@@ -12,6 +12,9 @@ const CATEGORIA_LABEL_PUB = {
 
 const moedaBRPub = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
+// Imagem transparente (1x1) usada quando o produto não tem foto — mostra só o fundo cinza.
+const SEM_IMAGEM = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
 (function () {
     const grade = document.getElementById("produtosGrade");
     if (!grade) return;
@@ -80,7 +83,11 @@ const moedaBRPub = new Intl.NumberFormat("pt-BR", { style: "currency", currency:
         if (horaEl) horaEl.textContent = montarHorario(loja);
 
         const logoEl = document.getElementById("lojaLogo");
-        if (logoEl && loja.logoUrl) logoEl.src = loja.logoUrl;
+        if (logoEl) {
+            // Se a URL falhar (link inválido/bloqueado) ou não existir, deixa o espaço neutro.
+            logoEl.onerror = () => { logoEl.onerror = null; logoEl.src = SEM_IMAGEM; };
+            logoEl.src = loja.logoUrl || SEM_IMAGEM;
+        }
 
         const whats = document.getElementById("btnWhatsapp");
         if (whats) {
@@ -122,12 +129,13 @@ const moedaBRPub = new Intl.NumberFormat("pt-BR", { style: "currency", currency:
     }
 
     function card(p) {
-        const img = p.imagemUrl ? esc(p.imagemUrl) : "imagens/sofa-loja.webp";
+        const img = p.imagemUrl ? esc(p.imagemUrl) : SEM_IMAGEM;
         const categoria = CATEGORIA_LABEL_PUB[p.categoria] || p.categoria;
         return `
             <a href="produto.html?id=${esc(p.id)}" class="cartao-produto">
                 <div class="cartao-produto__imagem-wrapper">
-                    <img src="${img}" alt="${esc(p.nome)}" class="cartao-produto__imagem">
+                    <img src="${img}" alt="${esc(p.nome)}" class="cartao-produto__imagem"
+                         onerror="this.onerror=null;this.src='${SEM_IMAGEM}'">
                 </div>
                 <div class="cartao-produto__corpo">
                     <div class="cartao-produto__titulo">${esc(p.nome)}</div>

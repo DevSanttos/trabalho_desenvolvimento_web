@@ -12,6 +12,9 @@ const CATEGORIA_LABEL = {
 
 const moedaBR = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
+// Imagem transparente (1x1) para produtos sem foto — mostra só o fundo cinza da miniatura.
+const SEM_IMAGEM = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
 (function () {
     const tbody = document.getElementById("tabelaProdutosBody");
     if (!tbody) return;
@@ -80,7 +83,7 @@ const moedaBR = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "B
     }
 
     function linha(p) {
-        const img = p.imagemUrl ? esc(p.imagemUrl) : "../imagens/sofa-loja.webp";
+        const img = p.imagemUrl ? esc(p.imagemUrl) : SEM_IMAGEM;
         const categoria = CATEGORIA_LABEL[p.categoria] || p.categoria;
         const etiqueta = p.ativo
             ? `<span class="etiqueta etiqueta-aberto">Ativo</span>`

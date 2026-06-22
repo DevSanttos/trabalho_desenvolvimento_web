@@ -238,6 +238,8 @@
     aspect-ratio: 1 / 1;
     width: 100%;
     border-radius: 8px;
+    object-fit: cover;
+    background: var(--vl-fundo-base);
 }
 
 .cartao-produto__corpo {

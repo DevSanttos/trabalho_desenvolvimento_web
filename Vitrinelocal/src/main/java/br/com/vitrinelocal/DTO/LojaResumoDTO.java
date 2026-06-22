@@ -7,6 +7,7 @@ public record LojaResumoDTO(
         String categoria,
         String endereco,
         String cidade,
+        String logoUrl,
         long totalProdutos
 ) {
 }

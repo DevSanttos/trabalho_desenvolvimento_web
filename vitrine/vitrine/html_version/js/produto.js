@@ -37,7 +37,15 @@ const moedaProd = new Intl.NumberFormat("pt-BR", { style: "currency", currency: 
 
         const cat = CATEGORIA_PROD_LABEL[produto.categoria] || produto.categoria || "";
         document.title = `${produto.nome} - VitrineLocal`;
-        if (produto.imagemUrl) document.getElementById("prodImagem").src = produto.imagemUrl;
+        // Sem foto (ou link quebrado): usa uma imagem transparente — fundo cinza claro.
+        const transparente = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+        const imagem = produto.imagemUrl || transparente;
+        const imgPrincipal = document.getElementById("prodImagem");
+        const imgMini = document.getElementById("prodMiniatura");
+        imgPrincipal.onerror = () => { imgPrincipal.onerror = null; imgPrincipal.src = transparente; };
+        imgMini.onerror = () => { imgMini.onerror = null; imgMini.src = transparente; };
+        imgPrincipal.src = imagem;
+        imgMini.src = imagem;
         document.getElementById("prodCategoria").textContent = cat;
         document.getElementById("prodCategoriaEspec").textContent = cat;
         document.getElementById("prodTitulo").textContent = produto.nome;

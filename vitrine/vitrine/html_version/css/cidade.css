@@ -215,7 +215,9 @@
     height: 52px;
     border-radius: 8px;
     margin-bottom: 14px;
-    border: 2px solid #0000001d
+    border: 2px solid #0000001d;
+    object-fit: cover;
+    background: var(--vl-borda);
 }
 
 .cartao-loja__nome {
