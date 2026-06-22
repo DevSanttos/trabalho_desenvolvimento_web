@@ -37,35 +37,14 @@
                 <div class="destaque__busca">
                     <div class="destaque__busca-campo">
                         <i data-lucide="map-pin" class="icone-sm"></i>
-                        <input type="text" class="destaque__busca-input" placeholder="Digite sua cidade...">
+                        <input type="text" id="buscaCidade" class="destaque__busca-input" placeholder="Digite sua cidade...">
                     </div>
-                    <button class="botao botao-explorar">Explorar</button>
+                    <button class="botao botao-explorar" id="botaoExplorar">Explorar</button>
                 </div>
             </div>
 
-            <!-- Cidades rápidas -->
-            <div class="cidades-rapidas">
-                <a href="cidade.html" class="cartao-cidade-rapida">
-                    <img src="imagens/ibirama.jpg" alt="Ibirama" class="cartao-cidade-rapida__imagem">
-                    <h3>Ibirama</h3>
-                    <p>127 lojas</p>
-                </a>
-                <a href="cidade.html" class="cartao-cidade-rapida">
-                    <img src="imagens/ibirama.jpg" alt="Ibirama" class="cartao-cidade-rapida__imagem">
-                    <h3>Ibirama</h3>
-                    <p>127 lojas</p>
-                </a>
-                <a href="cidade.html" class="cartao-cidade-rapida">
-                    <img src="imagens/ibirama.jpg" alt="Ibirama" class="cartao-cidade-rapida__imagem">
-                    <h3>Ibirama</h3>
-                    <p>127 lojas</p>
-                </a>
-                <a href="cidade.html" class="cartao-cidade-rapida">
-                    <img src="imagens/ibirama.jpg" alt="Ibirama" class="cartao-cidade-rapida__imagem">
-                    <h3>Ibirama</h3>
-                    <p>127 lojas</p>
-                </a>
-            </div>
+            <!-- Cidades rápidas (preenchidas por home.js) -->
+            <div class="cidades-rapidas" id="cidadesRapidas"></div>
         </div>
     </section>
 
@@ -112,62 +91,8 @@
         <div class="cidades-cadastradas__conteudo">
             <h2 class="cidades-cadastradas__titulo">Cidades com lojas cadastradas</h2>
 
-            <div class="cidades-cadastradas__grade">
-
-                <div class="cidade-cartao">
-                    <img src="imagens/ibirama.jpg" alt="Ibirama" class="cidade-cartao__imagem">
-                    <div class="cidade-cartao__corpo">
-                        <h3 class="cidade-cartao__nome">Ibirama</h3>
-                        <p class="cidade-cartao__total">127 lojas cadastradas</p>
-                        <a href="cidade.html" class="botao-ver-cidade">Ver lojas</a>
-                    </div>
-                </div>
-
-                <div class="cidade-cartao">
-                    <img src="imagens/ibirama.jpg" alt="Ibirama" class="cidade-cartao__imagem">
-                    <div class="cidade-cartao__corpo">
-                        <h3 class="cidade-cartao__nome">Ibirama</h3>
-                        <p class="cidade-cartao__total">127 lojas cadastradas</p>
-                        <a href="cidade.html" class="botao-ver-cidade">Ver lojas</a>
-                    </div>
-                </div>
-
-                <div class="cidade-cartao">
-                    <img src="imagens/ibirama.jpg" alt="Ibirama" class="cidade-cartao__imagem">
-                    <div class="cidade-cartao__corpo">
-                        <h3 class="cidade-cartao__nome">Ibirama</h3>
-                        <p class="cidade-cartao__total">127 lojas cadastradas</p>
-                        <a href="cidade.html" class="botao-ver-cidade">Ver lojas</a>
-                    </div>
-                </div>
-
-                <div class="cidade-cartao">
-                    <img src="imagens/ibirama.jpg" alt="Ibirama" class="cidade-cartao__imagem">
-                    <div class="cidade-cartao__corpo">
-                        <h3 class="cidade-cartao__nome">Ibirama</h3>
-                        <p class="cidade-cartao__total">127 lojas cadastradas</p>
-                        <a href="cidade.html" class="botao-ver-cidade">Ver lojas</a>
-                    </div>
-                </div>
-
-                <div class="cidade-cartao">
-                    <img src="imagens/ibirama.jpg" alt="Ibirama" class="cidade-cartao__imagem">
-                    <div class="cidade-cartao__corpo">
-                        <h3 class="cidade-cartao__nome">Ibirama</h3>
-                        <p class="cidade-cartao__total">127 lojas cadastradas</p>
-                        <a href="cidade.html" class="botao-ver-cidade">Ver lojas</a>
-                    </div>
-                </div>
-
-                <div class="cidade-cartao">
-                    <img src="imagens/ibirama.jpg" alt="Ibirama" class="cidade-cartao__imagem">
-                    <div class="cidade-cartao__corpo">
-                        <h3 class="cidade-cartao__nome">Ibirama</h3>
-                        <p class="cidade-cartao__total">127 lojas cadastradas</p>
-                        <a href="cidade.html" class="botao-ver-cidade">Ver lojas</a>
-                    </div>
-                </div>
-
+            <div class="cidades-cadastradas__grade" id="cidadesGrade">
+                <!-- Preenchido por home.js -->
             </div>
         </div>
     </section>
@@ -205,6 +130,7 @@
     </footer>
 
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/home.js"></script>
     <script>
         lucide.createIcons();
     </script>

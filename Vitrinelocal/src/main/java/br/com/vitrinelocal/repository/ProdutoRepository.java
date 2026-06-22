@@ -16,4 +16,7 @@ public interface ProdutoRepository extends JpaRepository<Produto, UUID> {
 
     // Apenas os produtos ativos de uma loja, buscados pelo slug (vitrine pública).
     List<Produto> findByLojaSlugAndAtivoTrue(String slug);
+
+    // Quantidade de produtos de uma loja (para o card da loja na cidade).
+    long countByLojaId(UUID lojaId);
 }

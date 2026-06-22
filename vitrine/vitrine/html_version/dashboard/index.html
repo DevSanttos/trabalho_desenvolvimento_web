@@ -55,7 +55,7 @@
                     <div class="cartao cartao-estatistica">
                         <div class="dado-estatistica">
                             <p>Total de produtos</p>
-                            <p>48</p>
+                            <p id="homeTotalProdutos">0</p>
                         </div>
                         <div class="icone-estatistica icone-estatistica--laranja">
                             <i data-lucide="package" class="icone-md"></i>
@@ -64,7 +64,7 @@
                     <div class="cartao cartao-estatistica">
                         <div class="dado-estatistica">
                             <p>Visualizações da loja</p>
-                            <p>1.234</p>
+                            <p id="homeVisualizacoes">0</p>
                         </div>
                         <div class="icone-estatistica icone-estatistica--verde">
                             <i data-lucide="eye" class="icone-md"></i>
@@ -73,7 +73,7 @@
                     <div class="cartao cartao-estatistica">
                         <div class="dado-estatistica">
                             <p>Categorias ativas</p>
-                            <p>8</p>
+                            <p id="homeCategorias">0</p>
                         </div>
                         <div class="icone-estatistica icone-estatistica--laranja">
                             <i data-lucide="tag" class="icone-md"></i>
@@ -100,37 +100,8 @@
 
                     <div class="cartao">
                         <h3>Produtos mais visualizados</h3>
-                        <div class="produtos-populares-lista">
-                            <div class="produto-popular-linha">
-                                <div class="produto-popular-informacao">
-                                    <img src="../imagens/sofa-loja.webp" alt="Sofá Retrátil" class="miniatura-produto">
-                                    <div>
-                                        <p class="produto-popular-nome">Sofá Retrátil</p>
-                                        <p class="produto-popular-visualizacoes">234 visualizações</p>
-                                    </div>
-                                </div>
-                                <span class="produto-popular-preco">R$ 2.499,90</span>
-                            </div>
-                            <div class="produto-popular-linha">
-                                <div class="produto-popular-informacao">
-                                    <img src="../imagens/sofa-loja.webp" alt="Sofá Retrátil" class="miniatura-produto">
-                                    <div>
-                                        <p class="produto-popular-nome">Sofá Retrátil</p>
-                                        <p class="produto-popular-visualizacoes">234 visualizações</p>
-                                    </div>
-                                </div>
-                                <span class="produto-popular-preco">R$ 1.899,90</span>
-                            </div>
-                            <div class="produto-popular-linha">
-                                <div class="produto-popular-informacao">
-                                    <img src="../imagens/sofa-loja.webp" alt="Sofá Retrátil" class="miniatura-produto">
-                                    <div>
-                                        <p class="produto-popular-nome">Sofá Retrátil</p>
-                                        <p class="produto-popular-visualizacoes">234 visualizações</p>
-                                    </div>
-                                </div>
-                                <span class="produto-popular-preco">R$ 1.499,90</span>
-                            </div>
+                        <div class="produtos-populares-lista" id="produtosPopulares">
+                            <!-- Preenchido por dashboard-home.js -->
                         </div>
                     </div>
                 </div>
@@ -153,35 +124,8 @@
                                     <th>Ações</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Sofá Retrátil</td>
-                                    <td>Sofás</td>
-                                    <td>R$ 2499,90</td>
-                                    <td><span class="etiqueta etiqueta-aberto">Ativo</span></td>
-                                    <td><button class="botao-fantasma">Editar</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Sofá Retrátil</td>
-                                    <td>Sofás</td>
-                                    <td>R$ 2499,90</td>
-                                    <td><span class="etiqueta etiqueta-aberto">Ativo</span></td>
-                                    <td><button class="botao-fantasma">Editar</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Sofá Retrátil</td>
-                                    <td>Sofás</td>
-                                    <td>R$ 2499,90</td>
-                                    <td><span class="etiqueta etiqueta-aberto">Ativo</span></td>
-                                    <td><button class="botao-fantasma">Editar</button></td>
-                                </tr>
-                                <tr>
-                                    <td>Sofá Retrátil</td>
-                                    <td>Sofás</td>
-                                    <td>R$ 2499,90</td>
-                                    <td><span class="etiqueta etiqueta-padrao">Inativo</span></td>
-                                    <td><button class="botao-fantasma">Editar</button></td>
-                                </tr>
+                            <tbody id="tabelaResumoBody">
+                                <!-- Preenchido por dashboard-home.js -->
                             </tbody>
                         </table>
                     </div>
@@ -193,6 +137,7 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="../js/dashboard.js"></script>
+    <script src="../js/dashboard-home.js"></script>
     <script>
         lucide.createIcons();
     </script>

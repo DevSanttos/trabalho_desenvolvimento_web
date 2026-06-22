@@ -15,7 +15,9 @@ public record ProdutoResponseDTO(
         String categoria,
         String imagemUrl,
         boolean ativo,
-        int visualizacoes
+        int visualizacoes,
+        String lojaSlug,
+        String lojaNome
 ) {
     public static ProdutoResponseDTO fromEntity(Produto p) {
         return new ProdutoResponseDTO(
@@ -28,7 +30,9 @@ public record ProdutoResponseDTO(
                 p.getCategoria(),
                 p.getImagemUrl(),
                 p.isAtivo(),
-                p.getVisualizacoes()
+                p.getVisualizacoes(),
+                p.getLoja().getSlug(),
+                p.getLoja().getNome()
         );
     }
 }

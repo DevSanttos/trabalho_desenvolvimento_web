@@ -27,7 +27,7 @@
     <!-- Cabeçalho da loja-->
     <div class="loja-cabecalho">    
         <div class="loja-cabecalho__inner">
-            <img src="imagens/logo-loja-moveis.webp" alt="Sofá" class="loja-cabecalho__logo">
+            <img src="imagens/logo-loja-moveis.webp" alt="Logo da loja" class="loja-cabecalho__logo" id="lojaLogo">
 
             <div class="loja-cabecalho__corpo">
                 <div class="loja-cabecalho__titulo-linha">
@@ -39,17 +39,17 @@
                 <div class="loja-cabecalho__infos">
                     <div class="loja-cabecalho__info-item">
                         <i data-lucide="map-pin" class="icone-xs"></i>
-                        <span>R. Jonathan Rezende, 142 - Centro, Ibirama</span>
+                        <span id="lojaEndereco">—</span>
                     </div>
                     <div class="loja-cabecalho__info-item">
                         <i data-lucide="clock" class="icone-xs"></i>
-                        <span>Seg-Sex: 9h-18h | Sáb: 9h-13h</span>
+                        <span id="lojaHorario">—</span>
                     </div>
                 </div>
             </div>
 
             <div class="loja-cabecalho__acoes">
-                <button class="botao-whatsapp">
+                <button class="botao-whatsapp" id="btnWhatsapp">
                     <i data-lucide="message-circle" class="icone-sm"></i>
                     WhatsApp
                 </button>

@@ -30,7 +30,7 @@ public class Loja {
     @Column(nullable = false, unique = true)
     private String slug;
 
-    // Campos preenchidos depois (página "Minha loja"). Nullable por enquanto.
+    // Campos preenchidos na página "Minha loja". Nullable.
     private String descricao;
     private String categoria;
     private String cidade;
@@ -39,4 +39,11 @@ public class Loja {
     private String whatsapp;
     private String emailContato;
     private String instagram;
+    private String logoUrl;
+
+    // Horário de funcionamento (texto simples, ex: "09:00").
+    private String horaSemanaAbertura;
+    private String horaSemanaFechamento;
+    private String horaSabadoAbertura;
+    private String horaSabadoFechamento;
 }

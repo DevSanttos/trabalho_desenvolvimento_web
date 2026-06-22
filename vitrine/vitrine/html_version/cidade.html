@@ -32,20 +32,20 @@
                 Trocar cidade
             </a>
 
-            <h1 class="cidade-hero__titulo">Ibirama</h1>
-            <p class="cidade-hero__subtitulo">Santa Catarina · Explore as lojas locais</p>
+            <h1 class="cidade-hero__titulo" id="cidadeNome">Carregando...</h1>
+            <p class="cidade-hero__subtitulo">Explore as lojas locais</p>
 
             <div class="cidade-hero__status">
                 <div>
-                    <div class="cidade-hero__stat-valor">6</div>
-                    <div class="cidade-hero__stat-label">Lojas ativas</div>
+                    <div class="cidade-hero__stat-valor" id="statLojas">0</div>
+                    <div class="cidade-hero__stat-label">Lojas</div>
                 </div>
                 <div>
-                    <div class="cidade-hero__stat-valor">1.240</div>
+                    <div class="cidade-hero__stat-valor" id="statProdutos">0</div>
                     <div class="cidade-hero__stat-label">Produtos</div>
                 </div>
                 <div>
-                    <div class="cidade-hero__stat-valor">8</div>
+                    <div class="cidade-hero__stat-valor" id="statCategorias">0</div>
                     <div class="cidade-hero__stat-label">Categorias</div>
                 </div>
             </div>
@@ -59,112 +59,23 @@
         <aside class="cidade-sidebar">
             <div class="cidade-sidebar__busca">
                 <i data-lucide="search" class="icone-xs"></i>
-                <input type="text" class="cidade-sidebar__input" placeholder="Buscar lojas...">
+                <input type="text" id="buscaLoja" class="cidade-sidebar__input" placeholder="Buscar lojas...">
             </div>
 
             <h3 class="cidade-sidebar__titulo">Categorias</h3>
-            <ul class="categoria-lista">
-                <li><button class="categoria-lista__item categoria-lista__item--ativo">Todos (6)</button></li>
-                <li><button class="categoria-lista__item">Móveis (6)</button></li>
-                <li><button class="categoria-lista__item">Decoração (6)</button></li>
-                <li><button class="categoria-lista__item">Roupas (6)</button></li>
-                <li><button class="categoria-lista__item">Alimentos (6)</button></li>
+            <ul class="categoria-lista" id="categoriaLista">
+                <!-- Preenchida por cidade.js -->
             </ul>
         </aside>
 
-        <!-- Grade de lojas -->
+        <!-- Grade de lojas (preenchida por cidade.js) -->
         <main>
-            <div class="lojas-grade">
-
-                <a href="loja.html" class="cartao-loja">
-                    <div class="cartao-loja__logo">
-                        <img src="imagens/logo-loja-moveis.webp" alt="foto_loja">
-                    </div>
-                    <div class="cartao-loja__nome">Casa &amp; Design</div>
-                    <div class="cartao-loja__categoria">Móveis</div>
-                    <div class="cartao-loja__endereco">Rua das Flores, 123</div>
-                    <div class="cartao-loja__rodape">
-                        <span class="cartao-loja__produtos">48 produtos</span>
-                        <span class="etiqueta etiqueta-aberto">Aberto</span>
-                    </div>
-                    <span class="botao-ver-loja">Ver loja</span>
-                </a>
-
-                <a href="loja.html" class="cartao-loja">
-                    <div class="cartao-loja__logo">
-                        <img src="imagens/logo-loja-moveis.webp" alt="foto_loja">
-                    </div>
-                    <div class="cartao-loja__nome">Boutique Elegance</div>
-                    <div class="cartao-loja__categoria">Roupas</div>
-                    <div class="cartao-loja__endereco">Av. Principal, 456</div>
-                    <div class="cartao-loja__rodape">
-                        <span class="cartao-loja__produtos">127 produtos</span>
-                        <span class="etiqueta etiqueta-aberto">Aberto</span>
-                    </div>
-                    <span class="botao-ver-loja">Ver loja</span>
-                </a>
-
-                <a href="loja.html" class="cartao-loja">
-                    <div class="cartao-loja__logo">
-                        <img src="imagens/logo-loja-moveis.webp" alt="foto_loja">
-                    </div>
-                    <div class="cartao-loja__nome">Sabor da Terra</div>
-                    <div class="cartao-loja__categoria">Alimentos</div>
-                    <div class="cartao-loja__endereco">Rua do Comércio, 789</div>
-                    <div class="cartao-loja__rodape">
-                        <span class="cartao-loja__produtos">85 produtos</span>
-                        <span class="etiqueta etiqueta-fechado">Fechado</span>
-                    </div>
-                    <span class="botao-ver-loja">Ver loja</span>
-                </a>
-
-                <a href="loja.html" class="cartao-loja">
-                    <div class="cartao-loja__logo">
-                        <img src="imagens/logo-loja-moveis.webp" alt="foto_loja">
-                    </div>
-                    <div class="cartao-loja__nome">Arte &amp; Estilo</div>
-                    <div class="cartao-loja__categoria">Decoração</div>
-                    <div class="cartao-loja__endereco">Praça Central, 101</div>
-                    <div class="cartao-loja__rodape">
-                        <span class="cartao-loja__produtos">62 produtos</span>
-                        <span class="etiqueta etiqueta-aberto">Aberto</span>
-                    </div>
-                    <span class="botao-ver-loja">Ver loja</span>
-                </a>
-
-                <a href="loja.html" class="cartao-loja">
-                    <div class="cartao-loja__logo">
-                        <img src="imagens/logo-loja-moveis.webp" alt="foto_loja">
-                    </div>
-                    <div class="cartao-loja__nome">Móveis Premium</div>
-                    <div class="cartao-loja__categoria">Móveis</div>
-                    <div class="cartao-loja__endereco">Rua da Indústria, 234</div>
-                    <div class="cartao-loja__rodape">
-                        <span class="cartao-loja__produtos">93 produtos</span>
-                        <span class="etiqueta etiqueta-aberto">Aberto</span>
-                    </div>
-                    <span class="botao-ver-loja">Ver loja</span>
-                </a>
-
-                <a href="loja.html" class="cartao-loja">
-                    <div class="cartao-loja__logo">
-                        <img src="imagens/logo-loja-moveis.webp" alt="foto_loja">
-                    </div>
-                    <div class="cartao-loja__nome">Fashion Store</div>
-                    <div class="cartao-loja__categoria">Roupas</div>
-                    <div class="cartao-loja__endereco">Av. Shopping, 567</div>
-                    <div class="cartao-loja__rodape">
-                        <span class="cartao-loja__produtos">156 produtos</span>
-                        <span class="etiqueta etiqueta-fechado">Fechado</span>
-                    </div>
-                    <span class="botao-ver-loja">Ver loja</span>
-                </a>
-
-            </div>
+            <div class="lojas-grade" id="lojasGrade"></div>
         </main>
     </div>
 
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/cidade.js"></script>
     <script>
         lucide.createIcons();
     </script>

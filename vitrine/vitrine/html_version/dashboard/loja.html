@@ -61,32 +61,22 @@
                     <h3>Informações básicas</h3>
 
                     <form class="campos-formulario">
-                        <!-- Logo da loja -->
+                        <!-- Logo da loja (URL) -->
                         <div>
-                            <label>Logo da loja</label>
-                            <div class="logo-envio-linha">
-                                <div class="loja-logo-placeholder">
-                                    <i data-lucide="store" class="icone-md"></i>
-                                </div>
-                                <div>
-                                    <button type="button" class="botao botao-contorno">
-                                        <i data-lucide="upload" class="icone-xs"></i> Alterar logo
-                                    </button>
-                                    <p class="campo-dica">PNG ou JPG, máximo 2MB</p>
-                                </div>
-                            </div>
+                            <label for="logoUrl">URL do logo</label>
+                            <input type="url" id="logoUrl" class="input" placeholder="https://exemplo.com/logo.png">
                         </div>
 
                         <!-- Nome da loja -->
                         <div>
-                            <label>Nome da loja *</label>
-                            <input type="text" class="input" value="Casa &amp; Design" required>
+                            <label for="nome">Nome da loja *</label>
+                            <input type="text" id="nome" class="input" required>
                         </div>
 
                         <!-- Categoria -->
                         <div>
-                            <label>Categoria principal *</label>
-                            <select class="select" required>
+                            <label for="categoria">Categoria principal *</label>
+                            <select id="categoria" class="select" required>
                                 <option value=""></option>
                                 <option value="moveis">Móveis</option>
                                 <option value="decoracao">Decoração</option>
@@ -98,8 +88,8 @@
 
                         <!-- Descrição -->
                         <div>
-                            <label>Descrição da loja</label>
-                            <textarea class="textarea" rows="4" placeholder="Conte um pouco sobre sua loja, produtos e diferenciais..."></textarea>
+                            <label for="descricao">Descrição da loja</label>
+                            <textarea id="descricao" class="textarea" rows="4" placeholder="Conte um pouco sobre sua loja, produtos e diferenciais..."></textarea>
                         </div>
                     </form>
                 </div>
@@ -110,18 +100,18 @@
 
                     <form class="campos-formulario">
                         <div>
-                            <label>Cidade *</label>
-                            <input type="text" class="input" required>
+                            <label for="cidade">Cidade *</label>
+                            <input type="text" id="cidade" class="input" placeholder="Ex: Ibirama" required>
                         </div>
 
                         <div>
-                            <label>Endereço completo *</label>
-                            <input type="text" class="input" value="Rua das Flores, 123 - Centro" required>
+                            <label for="endereco">Endereço completo *</label>
+                            <input type="text" id="endereco" class="input" placeholder="Rua, número - bairro" required>
                         </div>
 
                         <div>
-                            <label>CEP</label>
-                            <input type="text" class="input" placeholder="01234-567">
+                            <label for="cep">CEP</label>
+                            <input type="text" id="cep" class="input" placeholder="01234-567">
                         </div>
                     </form>
                 </div>
@@ -132,19 +122,19 @@
 
                     <form class="campos-formulario">
                         <div>
-                            <label>WhatsApp *</label>
-                            <input type="tel" class="input" placeholder="(11) 99999-9999" required>
+                            <label for="whatsapp">WhatsApp *</label>
+                            <input type="tel" id="whatsapp" class="input" placeholder="(11) 99999-9999" required>
                             <p class="campo-dica">Clientes entrarão em contato por este número</p>
                         </div>
 
                         <div>
-                            <label>E-mail da loja</label>
-                            <input type="email" class="input" placeholder="contato@casaedesign.com">
+                            <label for="emailContato">E-mail da loja</label>
+                            <input type="email" id="emailContato" class="input" placeholder="contato@casaedesign.com">
                         </div>
 
                         <div>
-                            <label>Instagram</label>
-                            <input type="text" class="input" placeholder="@casaedesign">
+                            <label for="instagram">Instagram</label>
+                            <input type="text" id="instagram" class="input" placeholder="@casaedesign">
                         </div>
                     </form>
                 </div>
@@ -158,14 +148,14 @@
                     <form class="campos-formulario">
                         <div class="horario-linha">
                             <label>Segunda a Sexta</label>
-                            <input type="text" class="input" value="09:00" placeholder="Abertura">
-                            <input type="text" class="input" value="18:00" placeholder="Fechamento">
+                            <input type="text" id="horaSemanaAbertura" class="input" placeholder="Abertura">
+                            <input type="text" id="horaSemanaFechamento" class="input" placeholder="Fechamento">
                         </div>
 
                         <div class="horario-linha">
                             <label>Sábado</label>
-                            <input type="text" class="input" value="09:00" placeholder="Abertura">
-                            <input type="text" class="input" value="13:00" placeholder="Fechamento">
+                            <input type="text" id="horaSabadoAbertura" class="input" placeholder="Abertura">
+                            <input type="text" id="horaSabadoFechamento" class="input" placeholder="Fechamento">
                         </div>
 
                         <div class="horario-linha">
@@ -176,10 +166,12 @@
                     </form>
                 </div>
 
+                <p id="lojaMensagem" class="mensagem-erro"></p>
+
                 <!-- Botões de ação -->
                 <div class="acoes-formulario">
-                    <button class="botao botao-contorno">Cancelar</button>
-                    <button class="botao">Salvar alterações</button>
+                    <button type="button" class="botao botao-contorno" onclick="window.location.href='index.html'">Cancelar</button>
+                    <button type="button" class="botao" id="btnSalvarLoja">Salvar alterações</button>
                 </div>
 
             </div>
@@ -188,6 +180,7 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="../js/dashboard.js"></script>
+    <script src="../js/loja-form.js"></script>
     <script>
         lucide.createIcons();
     </script>

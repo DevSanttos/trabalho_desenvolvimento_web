@@ -42,8 +42,7 @@ const moedaBRPub = new Intl.NumberFormat("pt-BR", { style: "currency", currency:
         try {
             const respLoja = await fetch(`${API_BASE_PUBLICO}/${slug}`);
             if (respLoja.ok) {
-                const loja = await respLoja.json();
-                document.getElementById("lojaNome").textContent = loja.nome;
+                preencherCabecalho(await respLoja.json());
             } else {
                 document.getElementById("lojaNome").textContent = "Loja não encontrada";
                 grade.innerHTML = mensagem("Essa loja não existe ou o endereço está incorreto.");
@@ -65,6 +64,48 @@ const moedaBRPub = new Intl.NumberFormat("pt-BR", { style: "currency", currency:
         render();
     }
 
+    function preencherCabecalho(loja) {
+        document.getElementById("lojaNome").textContent = loja.nome;
+
+        const catEl = document.getElementById("lojaCategoria");
+        if (catEl) catEl.textContent = loja.categoria || "";
+
+        const endEl = document.getElementById("lojaEndereco");
+        if (endEl) {
+            const partes = [loja.endereco, loja.cidade].filter(Boolean);
+            endEl.textContent = partes.length ? partes.join(" - ") : "Endereço não informado";
+        }
+
+        const horaEl = document.getElementById("lojaHorario");
+        if (horaEl) horaEl.textContent = montarHorario(loja);
+
+        const logoEl = document.getElementById("lojaLogo");
+        if (logoEl && loja.logoUrl) logoEl.src = loja.logoUrl;
+
+        const whats = document.getElementById("btnWhatsapp");
+        if (whats) {
+            const numero = (loja.whatsapp || "").replace(/\D/g, "");
+            if (numero) {
+                whats.addEventListener("click", () => {
+                    window.open(`https://wa.me/55${numero}`, "_blank");
+                });
+            } else {
+                whats.style.display = "none";
+            }
+        }
+    }
+
+    function montarHorario(loja) {
+        const partes = [];
+        if (loja.horaSemanaAbertura && loja.horaSemanaFechamento) {
+            partes.push(`Seg-Sex: ${loja.horaSemanaAbertura}-${loja.horaSemanaFechamento}`);
+        }
+        if (loja.horaSabadoAbertura && loja.horaSabadoFechamento) {
+            partes.push(`Sáb: ${loja.horaSabadoAbertura}-${loja.horaSabadoFechamento}`);
+        }
+        return partes.length ? partes.join(" | ") : "Horário não informado";
+    }
+
     function render() {
         let lista = produtos;
         if (categoriaAtual !== "todos") {
@@ -84,7 +125,7 @@ const moedaBRPub = new Intl.NumberFormat("pt-BR", { style: "currency", currency:
         const img = p.imagemUrl ? esc(p.imagemUrl) : "imagens/sofa-loja.webp";
         const categoria = CATEGORIA_LABEL_PUB[p.categoria] || p.categoria;
         return `
-            <div class="cartao-produto">
+            <a href="produto.html?id=${esc(p.id)}" class="cartao-produto">
                 <div class="cartao-produto__imagem-wrapper">
                     <img src="${img}" alt="${esc(p.nome)}" class="cartao-produto__imagem">
                 </div>
@@ -96,7 +137,7 @@ const moedaBRPub = new Intl.NumberFormat("pt-BR", { style: "currency", currency:
                         <span class="cartao-produto__tag">${esc(categoria)}</span>
                     </div>
                 </div>
-            </div>`;
+            </a>`;
     }
 
     function mensagem(texto) {

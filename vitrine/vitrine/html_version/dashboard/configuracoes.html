@@ -52,20 +52,21 @@
                     </h3>
                     <form class="campos-formulario">
                         <div>
-                            <label>Nome da loja</label>
-                            <input type="text" class="input" value="Casa e Design">
+                            <label for="confNome">Nome da loja</label>
+                            <input type="text" id="confNome" class="input">
                         </div>
                         <div>
-                            <label>E-mail</label>
-                            <input type="email" class="input" value="casaedesign@gmail.com">
+                            <label for="confEmail">E-mail</label>
+                            <input type="email" id="confEmail" class="input">
                             <p class="campo-dica">Este é o e-mail usado para login e notificações</p>
                         </div>
                         <div>
-                            <label>Telefone</label>
-                            <input type="tel" class="input" value="(11) 98765-4321">
+                            <label for="confTelefone">Telefone</label>
+                            <input type="tel" id="confTelefone" class="input">
                         </div>
+                        <p id="contaMensagem" class="mensagem-erro"></p>
                         <div class="rodape-campos">
-                            <button type="button" class="botao botao-contorno">Salvar alterações</button>
+                            <button type="button" class="botao botao-contorno" id="btnSalvarConta">Salvar alterações</button>
                         </div>
                     </form>
                 </div>
@@ -77,19 +78,20 @@
                     </h3>
                     <form class="campos-formulario">
                         <div>
-                            <label>Senha atual</label>
-                            <input type="password" class="input" placeholder="••••••••">
+                            <label for="senhaAtual">Senha atual</label>
+                            <input type="password" id="senhaAtual" class="input" placeholder="••••••••">
                         </div>
                         <div>
-                            <label>Nova senha</label>
-                            <input type="password" class="input" placeholder="••••••••">
+                            <label for="novaSenha">Nova senha</label>
+                            <input type="password" id="novaSenha" class="input" placeholder="••••••••">
                         </div>
                         <div>
-                            <label>Confirmar nova senha</label>
-                            <input type="password" class="input" placeholder="••••••••">
+                            <label for="confirmarSenha">Confirmar nova senha</label>
+                            <input type="password" id="confirmarSenha" class="input" placeholder="••••••••">
                         </div>
+                        <p id="senhaMensagem" class="mensagem-erro"></p>
                         <div class="rodape-campos">
-                            <button type="button" class="botao botao-contorno">Alterar senha</button>
+                            <button type="button" class="botao botao-contorno" id="btnAlterarSenha">Alterar senha</button>
                         </div>
                     </form>
                 </div>
@@ -112,6 +114,7 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="../js/dashboard.js"></script>
+    <script src="../js/configuracoes.js"></script>
     <script>
         lucide.createIcons();
     </script>

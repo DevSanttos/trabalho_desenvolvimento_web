@@ -33,7 +33,7 @@
             <!-- Coluna esquerda: galeria de imagens -->
             <section class="galeria" aria-label="Galeria de imagens do produto">
                 <div class="galeria__imagem-bloco">
-                    <img src="imagens/sofa-loja.webp" alt="Sofá" class="galeria__imagem-principal">
+                    <img src="imagens/sofa-loja.webp" alt="Produto" class="galeria__imagem-principal" id="prodImagem">
                     <button class="galeria__seta galeria__seta--anterior" aria-label="Imagem anterior">
                         <i data-lucide="chevron-left" class="icone-sm"></i>
                     </button>
@@ -54,44 +54,40 @@
 
                 <!-- Cabeçalho: voltar + fechar -->
                 <div class="produto-info__cabecalho">
-                    <a href="loja.html" class="produto-info__voltar">
+                    <a href="loja.html" class="produto-info__voltar" id="prodVoltar">
                         <i data-lucide="arrow-left" class="icone-xs"></i>
-                        Voltar para Casa &amp; Design
+                        Voltar para a loja
                     </a>
-                    <a href="loja.html" class="botao-fechar" aria-label="Fechar">
+                    <a href="loja.html" class="botao-fechar" aria-label="Fechar" id="prodFechar">
                         <i data-lucide="x" class="icone-xs"></i>
                     </a>
                 </div>
 
-                <p class="produto-info__caminho">Ibirama / Casa &amp; Design / Sofá Retrátil</p>
+                <p class="produto-info__caminho" id="prodCaminho"></p>
 
                 <!-- Categoria, título e preço -->
-                <span class="produto-info__categoria">Sofás</span>
-                <h1 class="produto-info__titulo">Sofá Retrátil</h1>
-                <p class="produto-info__preco">R$ 2499,90</p>
+                <span class="produto-info__categoria" id="prodCategoria"></span>
+                <h1 class="produto-info__titulo" id="prodTitulo">Carregando...</h1>
+                <p class="produto-info__preco" id="prodPreco"></p>
 
                 <!-- Descrição -->
-                <p class="produto-info__descricao">
-                    Sofá retrátil de 3 lugares com tecido suede de alta qualidade. Design moderno e
-                    confortável, perfeito para sua sala de estar. Inclui almofadas decorativas e
-                    mecanismo de retração suave.
-                </p>
+                <p class="produto-info__descricao" id="prodDescricao"></p>
 
                 <!-- Especificações -->
                 <dl class="especificacoes">
                     <div>
                         <dt class="especificacao__rotulo">Marca</dt>
-                        <dd class="especificacao__valor">Sofás Brasil</dd>
+                        <dd class="especificacao__valor" id="prodMarca">—</dd>
                     </div>
                     <div>
                         <dt class="especificacao__rotulo">Categoria</dt>
-                        <dd class="especificacao__valor">Clássico / Retrô</dd>
+                        <dd class="especificacao__valor" id="prodCategoriaEspec">—</dd>
                     </div>
                 </dl>
 
                 <!-- Ações principais -->
                 <div class="produto-acoes">
-                    <button class="botao-contato-whatsapp">
+                    <button class="botao-contato-whatsapp" id="btnWhatsappProduto">
                         <i data-lucide="message-circle" class="icone-sm"></i>
                         Falar com a loja no WhatsApp
                     </button>
@@ -105,6 +101,7 @@
     </main>
 
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="js/produto.js"></script>
     <script>
         lucide.createIcons();
     </script>

@@ -1,21 +1,24 @@
 package br.com.vitrinelocal.service;
 
-import java.text.Normalizer;
-import java.util.Locale;
+import java.util.UUID;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.com.vitrinelocal.DTO.AlterarSenhaDTO;
+import br.com.vitrinelocal.DTO.AtualizarContaDTO;
 import br.com.vitrinelocal.DTO.CadastroLojistaDTO;
 import br.com.vitrinelocal.DTO.LoginDTO;
 import br.com.vitrinelocal.DTO.LojistaResponseDTO;
 import br.com.vitrinelocal.exception.CredenciaisInvalidasException;
 import br.com.vitrinelocal.exception.EmailJaCadastradoException;
+import br.com.vitrinelocal.exception.RecursoNaoEncontradoException;
 import br.com.vitrinelocal.model.Loja;
 import br.com.vitrinelocal.model.Lojista;
 import br.com.vitrinelocal.repository.LojaRepository;
 import br.com.vitrinelocal.repository.LojistaRepository;
+import br.com.vitrinelocal.util.SlugUtil;
 
 @Service
 public class LojistaService {
@@ -65,9 +68,43 @@ public class LojistaService {
         return LojistaResponseDTO.fromEntity(lojista);
     }
 
+    // Atualiza nome da loja, email do lojista e telefone (whatsapp) — Configurações.
+    @Transactional
+    public LojistaResponseDTO atualizarConta(UUID lojistaId, AtualizarContaDTO dto) {
+        Lojista lojista = buscarLojista(lojistaId);
+
+        // Se o email mudou, garante que continue único.
+        if (!lojista.getEmail().equalsIgnoreCase(dto.email())
+                && lojistaRepository.existsByEmail(dto.email())) {
+            throw new EmailJaCadastradoException("Já existe um lojista com este email");
+        }
+
+        lojista.setEmail(dto.email());
+        lojista.getLoja().setNome(dto.nomeLoja());
+        lojista.getLoja().setWhatsapp(dto.telefone());
+
+        return LojistaResponseDTO.fromEntity(lojistaRepository.save(lojista));
+    }
+
+    // Troca a senha após validar a senha atual.
+    @Transactional
+    public void alterarSenha(UUID lojistaId, AlterarSenhaDTO dto) {
+        Lojista lojista = buscarLojista(lojistaId);
+        if (!passwordEncoder.matches(dto.senhaAtual(), lojista.getSenha())) {
+            throw new CredenciaisInvalidasException("A senha atual está incorreta");
+        }
+        lojista.setSenha(passwordEncoder.encode(dto.novaSenha()));
+        lojistaRepository.save(lojista);
+    }
+
+    private Lojista buscarLojista(UUID id) {
+        return lojistaRepository.findById(id)
+                .orElseThrow(() -> new RecursoNaoEncontradoException("Lojista não encontrado"));
+    }
+
     // Gera um slug a partir do nome e garante que seja único (anexa -2, -3, ... se preciso).
     private String gerarSlugUnico(String nome) {
-        String base = gerarSlug(nome);
+        String base = SlugUtil.gerar(nome);
         if (base.isEmpty()) {
             base = "loja";
         }
@@ -78,14 +115,5 @@ public class LojistaService {
             sufixo++;
         }
         return slug;
-    }
-
-    // Transforma "Casa & Design" em "casa-design": minúsculas, sem acentos, símbolos viram hífen.
-    private String gerarSlug(String texto) {
-        String semAcento = Normalizer.normalize(texto, Normalizer.Form.NFD)
-                .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
-        return semAcento.toLowerCase(Locale.ROOT)
-                .replaceAll("[^a-z0-9]+", "-")
-                .replaceAll("(^-+)|(-+$)", "");
     }
 }
