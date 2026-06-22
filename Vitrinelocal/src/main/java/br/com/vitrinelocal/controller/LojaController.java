@@ -18,7 +18,6 @@ import br.com.vitrinelocal.service.LojaService;
 import br.com.vitrinelocal.service.ProdutoService;
 import jakarta.validation.Valid;
 
-// Endpoints da loja: leitura pública pelo slug; edição pelo id (painel).
 @RestController
 @RequestMapping("/api/lojas")
 public class LojaController {

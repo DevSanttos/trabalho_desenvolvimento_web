@@ -9,5 +9,4 @@ public class VitrinelocalApplication {
     public static void main(String[] args) {
         SpringApplication.run(VitrinelocalApplication.class, args);
     }
-
 }

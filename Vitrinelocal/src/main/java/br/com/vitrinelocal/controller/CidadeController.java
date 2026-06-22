@@ -12,7 +12,6 @@ import br.com.vitrinelocal.DTO.CidadeResumoDTO;
 import br.com.vitrinelocal.DTO.LojaResumoDTO;
 import br.com.vitrinelocal.service.CidadeService;
 
-// Endpoints públicos de cidades (home e página da cidade).
 @RestController
 @RequestMapping("/api/cidades")
 public class CidadeController {
