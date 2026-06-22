@@ -1,5 +1,6 @@
 package br.com.vitrinelocal.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -44,16 +45,22 @@ public class ProdutoService {
 
     @Transactional(readOnly = true)
     public List<ProdutoResponseDTO> listarPorLoja(UUID lojaId) {
-        return produtoRepository.findByLojaId(lojaId).stream()
-                .map(ProdutoResponseDTO::fromEntity)
-                .toList();
+        // Converte cada produto da loja em um DTO de resposta.
+        List<ProdutoResponseDTO> resultado = new ArrayList<>();
+        for (Produto produto : produtoRepository.findByLojaId(lojaId)) {
+            resultado.add(ProdutoResponseDTO.fromEntity(produto));
+        }
+        return resultado;
     }
 
     @Transactional(readOnly = true)
     public List<ProdutoResponseDTO> listarPublicosPorSlug(String slug) {
-        return produtoRepository.findByLojaSlugAndAtivoTrue(slug).stream()
-                .map(ProdutoResponseDTO::fromEntity)
-                .toList();
+        // Apenas os produtos ativos da loja (vitrine pública).
+        List<ProdutoResponseDTO> resultado = new ArrayList<>();
+        for (Produto produto : produtoRepository.findByLojaSlugAndAtivoTrue(slug)) {
+            resultado.add(ProdutoResponseDTO.fromEntity(produto));
+        }
+        return resultado;
     }
 
     @Transactional

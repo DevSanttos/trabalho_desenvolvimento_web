@@ -8,16 +8,19 @@ public final class SlugUtil {
     private SlugUtil() {
     }
 
-    // Transforma "Casa & Design" em "casa-design": minúsculas, sem acentos,
-    // símbolos/espaços viram hífen, sem hífens nas pontas.
+    // Transforma "Casa & Design" em "casa-design", passo a passo.
     public static String gerar(String texto) {
         if (texto == null) {
             return "";
         }
+        // 1) separa as letras dos acentos e 2) remove tudo que não é ASCII (os acentos).
         String semAcento = Normalizer.normalize(texto, Normalizer.Form.NFD)
-                .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
-        return semAcento.toLowerCase(Locale.ROOT)
-                .replaceAll("[^a-z0-9]+", "-")
-                .replaceAll("(^-+)|(-+$)", "");
+                .replaceAll("[^\\p{ASCII}]", "");
+        // 3) tudo minúsculo.
+        String minusculo = semAcento.toLowerCase(Locale.ROOT);
+        // 4) troca espaços e símbolos por hífen.
+        String comHifens = minusculo.replaceAll("[^a-z0-9]+", "-");
+        // 5) remove hífen sobrando no começo ou no fim.
+        return comHifens.replaceAll("^-+", "").replaceAll("-+$", "");
     }
 }
