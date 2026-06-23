@@ -8,14 +8,10 @@ public record AtualizarLojaDTO(
         @NotBlank(message = "O nome da loja é obrigatório")
         String nome,
 
-        String descricao,
         String categoria,
         String cidade,
         String endereco,
-        String cep,
         String whatsapp,
-        String emailContato,
-        String instagram,
         String logoUrl,
         String horaSemanaAbertura,
         String horaSemanaFechamento,

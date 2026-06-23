@@ -9,11 +9,12 @@ const API_LOJAS = "http://localhost:8080/api/lojas";
     const lojista = JSON.parse(localStorage.getItem("lojista") || "null");
     if (!lojista || !lojista.loja) return; // dashboard.js redireciona
 
-    // Campos do formulário (id no HTML == nome do campo no backend).
+    // Campos do formulário que são salvos (id no HTML == nome do campo no backend).
+    // Obs: Descrição, CEP, E-mail e Instagram continuam na tela, mas não são salvos por enquanto.
     const campos = [
-        "nome", "categoria", "descricao", "logoUrl",
-        "cidade", "endereco", "cep",
-        "whatsapp", "emailContato", "instagram",
+        "nome", "categoria", "logoUrl",
+        "cidade", "endereco",
+        "whatsapp",
         "horaSemanaAbertura", "horaSemanaFechamento",
         "horaSabadoAbertura", "horaSabadoFechamento",
     ];

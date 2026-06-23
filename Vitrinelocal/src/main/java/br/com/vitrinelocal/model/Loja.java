@@ -31,14 +31,10 @@ public class Loja {
     private String slug;
 
     // Campos preenchidos na página "Minha loja". Nullable.
-    private String descricao;
     private String categoria;
     private String cidade;
     private String endereco;
-    private String cep;
     private String whatsapp;
-    private String emailContato;
-    private String instagram;
     private String logoUrl;
 
     // Horário de funcionamento (texto simples, ex: "09:00").

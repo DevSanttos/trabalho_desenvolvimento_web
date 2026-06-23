@@ -34,14 +34,10 @@ public class LojaService {
 
         // O slug permanece o mesmo, mesmo que o nome mude (não quebra links públicos).
         loja.setNome(dto.nome());
-        loja.setDescricao(dto.descricao());
         loja.setCategoria(dto.categoria());
         loja.setCidade(dto.cidade());
         loja.setEndereco(dto.endereco());
-        loja.setCep(dto.cep());
         loja.setWhatsapp(dto.whatsapp());
-        loja.setEmailContato(dto.emailContato());
-        loja.setInstagram(dto.instagram());
         loja.setLogoUrl(dto.logoUrl());
         loja.setHoraSemanaAbertura(dto.horaSemanaAbertura());
         loja.setHoraSemanaFechamento(dto.horaSemanaFechamento());
