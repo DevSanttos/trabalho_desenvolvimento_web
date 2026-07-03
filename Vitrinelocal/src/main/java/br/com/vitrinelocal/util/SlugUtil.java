@@ -8,7 +8,7 @@ public final class SlugUtil {
     private SlugUtil() {
     }
 
-    // Transforma "Casa & Design" em "casa-design", passo a passo.
+    // Transforma "Casa & Design" em "casa-design".
     public static String gerar(String texto) {
         if (texto == null) {
             return "";

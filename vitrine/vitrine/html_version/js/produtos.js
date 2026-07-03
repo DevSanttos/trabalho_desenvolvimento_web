@@ -3,13 +3,6 @@
 
 const API_PRODUTOS_LISTA = "http://localhost:8080/api/produtos";
 
-const CATEGORIA_LABEL = {
-    sofas: "Sofás",
-    mesas: "Mesas",
-    cadeiras: "Cadeiras",
-    decoracao: "Decoração",
-};
-
 const moedaBR = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
 // Imagem transparente (1x1) para produtos sem foto — mostra só o fundo cinza da miniatura.
@@ -84,7 +77,7 @@ const SEM_IMAGEM = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALA
 
     function linha(p) {
         const img = p.imagemUrl ? esc(p.imagemUrl) : SEM_IMAGEM;
-        const categoria = CATEGORIA_LABEL[p.categoria] || p.categoria;
+        const categoria = p.categoria || "";
         const etiqueta = p.ativo
             ? `<span class="etiqueta etiqueta-aberto">Ativo</span>`
             : `<span class="etiqueta etiqueta-padrao">Inativo</span>`;

@@ -74,12 +74,9 @@ if (cadastroForm) {
             });
 
             if (response.ok) {
-                // Cadastro feito: NÃO autentica direto. Manda a pessoa fazer login.
-                mostrarMensagem("cadastroMensagem", "Cadastro realizado com sucesso! Redirecionando para o login...", false);
+                // Cadastro feito: só mostra a mensagem. A pessoa vai para o login quando quiser.
+                mostrarMensagem("cadastroMensagem", "Cadastro concluído! Faça o login para entrar.", false);
                 cadastroForm.reset();
-                setTimeout(() => {
-                    window.location.href = "login.html?cadastro=ok";
-                }, 1500);
             } else {
                 const msg = await extrairMensagemErro(response, "Não foi possível concluir o cadastro.");
                 mostrarMensagem("cadastroMensagem", msg);

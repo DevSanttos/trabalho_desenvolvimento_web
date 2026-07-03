@@ -27,7 +27,8 @@
     <!-- Cabeçalho da loja-->
     <div class="loja-cabecalho">    
         <div class="loja-cabecalho__inner">
-            <img src="imagens/logo-loja-moveis.webp" alt="Logo da loja" class="loja-cabecalho__logo" id="lojaLogo">
+            <!-- Começa com uma imagem transparente (quadrado cinza). O JS coloca o logo real se houver. -->
+            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Logo da loja" class="loja-cabecalho__logo" id="lojaLogo">
 
             <div class="loja-cabecalho__corpo">
                 <div class="loja-cabecalho__titulo-linha">
@@ -63,13 +64,8 @@
 
     <!-- Abas de categorias -->
     <nav class="loja-abas" aria-label="Categorias da loja">
-        <div class="loja-abas__lista">
-            <button class="loja-abas__item ativo" data-categoria="todos">Todos</button>
-            <button class="loja-abas__item" data-categoria="sofas">Sofás</button>
-            <button class="loja-abas__item" data-categoria="mesas">Mesas</button>
-            <button class="loja-abas__item" data-categoria="cadeiras">Cadeiras</button>
-            <button class="loja-abas__item" data-categoria="decoracao">Decoração</button>
-        </div>
+        <!-- As abas são montadas por loja-publica.js a partir das categorias dos produtos -->
+        <div class="loja-abas__lista" id="lojaAbas"></div>
     </nav>
 
     <!-- Grade de produtos (preenchida por loja-publica.js) -->

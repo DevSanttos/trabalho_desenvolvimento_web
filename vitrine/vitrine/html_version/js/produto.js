@@ -3,13 +3,6 @@
 const API_PRODUTO_DET = "http://localhost:8080/api/produtos";
 const API_LOJA_DET = "http://localhost:8080/api/lojas";
 
-const CATEGORIA_PROD_LABEL = {
-    sofas: "Sofás",
-    mesas: "Mesas",
-    cadeiras: "Cadeiras",
-    decoracao: "Decoração",
-};
-
 const moedaProd = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
 (function () {
@@ -35,7 +28,7 @@ const moedaProd = new Intl.NumberFormat("pt-BR", { style: "currency", currency: 
             return;
         }
 
-        const cat = CATEGORIA_PROD_LABEL[produto.categoria] || produto.categoria || "";
+        const cat = produto.categoria || "";
         document.title = `${produto.nome} - VitrineLocal`;
         // Sem foto (ou link quebrado): usa uma imagem transparente — fundo cinza claro.
         const transparente = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";

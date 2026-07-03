@@ -34,6 +34,9 @@
                     <i data-lucide="settings" class="icone-sm"></i> Configurações
                 </a>
             </nav>
+            <a href="#" class="item-lateral" id="btnSair">
+                <i data-lucide="log-out" class="icone-sm"></i> Sair
+            </a>
         </aside>
 
         <!-- Conteúdo principal -->
@@ -84,16 +87,10 @@
                             <input type="text" id="marca" class="input" placeholder="Ex: Sofás Brasil">
                         </div>
 
-                        <!-- Categoria -->
+                        <!-- Categoria (digite a que quiser: Sofás, Notebooks, Camisetas...) -->
                         <div>
                             <label for="categoria">Categoria *</label>
-                            <select id="categoria" class="select" required>
-                                <option value=""></option>
-                                <option value="sofas">Sofás</option>
-                                <option value="mesas">Mesas</option>
-                                <option value="cadeiras">Cadeiras</option>
-                                <option value="decoracao">Decoração</option>
-                            </select>
+                            <input type="text" id="categoria" class="input" placeholder="Ex: Sofás, Notebooks, Camisetas..." required>
                         </div>
 
                         <!-- Status -->

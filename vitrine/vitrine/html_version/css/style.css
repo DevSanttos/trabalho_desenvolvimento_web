@@ -226,6 +226,13 @@ ul {
   color: #fff;
   padding: 24px;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Empurra o botão "Sair" para o fim da barra lateral */
+#btnSair {
+  margin-top: auto;
 }
 
 .item-lateral {
@@ -307,6 +314,30 @@ td {
 }
 .mensagem-sucesso {
   color: var(--vl-aberto);
+}
+
+/* Botões de ação (ver/editar/excluir) nas tabelas de produtos */
+.tabela-acoes {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.botao-icone {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--vl-secundario);
+  padding: 6px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s, background 0.15s;
+}
+.botao-icone:hover {
+  background: var(--vl-borda);
+  color: var(--vl-titulo);
 }
 
 .acoes-formulario {

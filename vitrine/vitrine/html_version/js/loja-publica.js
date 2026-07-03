@@ -3,13 +3,6 @@
 
 const API_BASE_PUBLICO = "http://localhost:8080/api/lojas";
 
-const CATEGORIA_LABEL_PUB = {
-    sofas: "Sofás",
-    mesas: "Mesas",
-    cadeiras: "Cadeiras",
-    decoracao: "Decoração",
-};
-
 const moedaBRPub = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
 // Imagem transparente (1x1) usada quando o produto não tem foto — mostra só o fundo cinza.
@@ -30,15 +23,6 @@ const SEM_IMAGEM = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALA
     let categoriaAtual = "todos";
 
     carregar();
-
-    document.querySelectorAll(".loja-abas__item").forEach((botao) => {
-        botao.addEventListener("click", () => {
-            document.querySelectorAll(".loja-abas__item").forEach((b) => b.classList.remove("ativo"));
-            botao.classList.add("ativo");
-            categoriaAtual = botao.dataset.categoria;
-            render();
-        });
-    });
 
     async function carregar() {
         // Cabeçalho da loja
@@ -64,7 +48,43 @@ const SEM_IMAGEM = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALA
         } catch (err) {
             produtos = [];
         }
+        montarAbas();
         render();
+    }
+
+    // Monta as abas de categoria a partir das categorias que os produtos têm.
+    function montarAbas() {
+        const nav = document.getElementById("lojaAbas");
+        if (!nav) return;
+
+        // Pega as categorias diferentes que aparecem nos produtos.
+        const categorias = [];
+        for (let i = 0; i < produtos.length; i++) {
+            const c = produtos[i].categoria;
+            if (c && !categorias.includes(c)) {
+                categorias.push(c);
+            }
+        }
+
+        // Primeira aba é "Todos"; depois uma para cada categoria.
+        let html = `<button class="loja-abas__item ativo" data-categoria="todos">Todos</button>`;
+        for (let i = 0; i < categorias.length; i++) {
+            html += `<button class="loja-abas__item" data-categoria="${esc(categorias[i])}">${esc(categorias[i])}</button>`;
+        }
+        nav.innerHTML = html;
+
+        // Liga o clique de cada aba.
+        const botoes = nav.querySelectorAll(".loja-abas__item");
+        for (let i = 0; i < botoes.length; i++) {
+            botoes[i].addEventListener("click", () => {
+                for (let j = 0; j < botoes.length; j++) {
+                    botoes[j].classList.remove("ativo");
+                }
+                botoes[i].classList.add("ativo");
+                categoriaAtual = botoes[i].dataset.categoria;
+                render();
+            });
+        }
     }
 
     function preencherCabecalho(loja) {
@@ -130,7 +150,7 @@ const SEM_IMAGEM = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALA
 
     function card(p) {
         const img = p.imagemUrl ? esc(p.imagemUrl) : SEM_IMAGEM;
-        const categoria = CATEGORIA_LABEL_PUB[p.categoria] || p.categoria;
+        const categoria = p.categoria || "";
         return `
             <a href="produto.html?id=${esc(p.id)}" class="cartao-produto">
                 <div class="cartao-produto__imagem-wrapper">

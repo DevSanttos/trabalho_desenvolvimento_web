@@ -3,13 +3,6 @@
 
 const API_PRODUTOS_HOME = "http://localhost:8080/api/produtos";
 
-const CATEGORIA_HOME_LABEL = {
-    sofas: "Sofás",
-    mesas: "Mesas",
-    cadeiras: "Cadeiras",
-    decoracao: "Decoração",
-};
-
 const moedaHome = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
 // Imagem transparente (1x1) para produtos sem foto.
@@ -72,7 +65,7 @@ const SEM_IMAGEM_HOME = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAA
             return;
         }
         tbody.innerHTML = recentes.map((p) => {
-            const cat = CATEGORIA_HOME_LABEL[p.categoria] || p.categoria;
+            const cat = p.categoria || "";
             const etiqueta = p.ativo
                 ? `<span class="etiqueta etiqueta-aberto">Ativo</span>`
                 : `<span class="etiqueta etiqueta-padrao">Inativo</span>`;
@@ -82,9 +75,49 @@ const SEM_IMAGEM_HOME = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAA
                     <td>${esc(cat)}</td>
                     <td>${moedaHome.format(p.preco)}</td>
                     <td>${etiqueta}</td>
-                    <td><button class="botao-fantasma" onclick="window.location.href='produtos-novo.html?id=${p.id}'">Editar</button></td>
+                    <td>
+                        <div class="tabela-acoes">
+                            <button class="botao-icone" title="Visualizar" data-acao="ver" data-id="${p.id}"><i data-lucide="eye" class="icone-xs"></i></button>
+                            <button class="botao-icone" title="Editar" data-acao="editar" data-id="${p.id}"><i data-lucide="pencil" class="icone-xs"></i></button>
+                            <button class="botao-icone" title="Excluir" data-acao="excluir" data-id="${p.id}"><i data-lucide="trash-2" class="icone-xs"></i></button>
+                        </div>
+                    </td>
                 </tr>`;
         }).join("");
+        ligarAcoes(tbody);
+    }
+
+    // Liga os botões de ação (ver / editar / excluir) de cada linha da tabela.
+    function ligarAcoes(tbody) {
+        const botoes = tbody.querySelectorAll("[data-acao]");
+        for (let i = 0; i < botoes.length; i++) {
+            const botao = botoes[i];
+            botao.addEventListener("click", () => {
+                const id = botao.dataset.id;
+                const acao = botao.dataset.acao;
+                if (acao === "ver") {
+                    window.open(`../loja.html?loja=${lojista.loja.slug}`, "_blank");
+                } else if (acao === "editar") {
+                    window.location.href = `produtos-novo.html?id=${id}`;
+                } else if (acao === "excluir") {
+                    excluir(id);
+                }
+            });
+        }
+    }
+
+    async function excluir(id) {
+        if (!confirm("Excluir este produto?")) return;
+        try {
+            const resp = await fetch(`${API_PRODUTOS_HOME}/${id}`, { method: "DELETE" });
+            if (resp.ok) {
+                carregar(); // recarrega estatísticas, populares e tabela
+            } else {
+                alert("Não foi possível excluir o produto.");
+            }
+        } catch (err) {
+            alert("Erro de conexão com o servidor.");
+        }
     }
 
     function setText(id, valor) {
