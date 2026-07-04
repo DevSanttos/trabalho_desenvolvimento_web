@@ -1,6 +1,7 @@
 package br.com.vitrinelocal.DTO;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.UUID;
 
 import jakarta.validation.constraints.NotBlank;
@@ -29,7 +30,7 @@ public record ProdutoRequestDTO(
         @NotBlank(message = "A categoria é obrigatória")
         String categoria,
 
-        String imagemUrl,
+        List<String> imagens,
 
         boolean ativo
 ) {

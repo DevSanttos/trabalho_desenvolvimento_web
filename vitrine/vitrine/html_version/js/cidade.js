@@ -48,6 +48,10 @@ const CATEGORIA_LOJA_LABEL = {
         const nomeParam = new URLSearchParams(window.location.search).get("nome");
         const nomeCidade = lojas.length ? lojas[0].cidade : (nomeParam || formatarSlug(slug));
         document.getElementById("cidadeNome").textContent = nomeCidade;
+
+        // Mostra a cidade escolhida também no seletor do topo.
+        const barraNome = document.getElementById("barraCidadeNome");
+        if (barraNome) barraNome.textContent = nomeCidade;
         document.getElementById("statLojas").textContent = lojas.length;
         document.getElementById("statProdutos").textContent =
             lojas.reduce((s, l) => s + (l.totalProdutos || 0), 0);

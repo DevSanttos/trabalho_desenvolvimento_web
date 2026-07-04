@@ -1,9 +1,13 @@
 package br.com.vitrinelocal.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -43,7 +47,11 @@ public class Produto {
     @Column(nullable = false)
     private String categoria;
 
-    private String imagemUrl;
+    // Um produto pode ter várias fotos (guardadas numa tabela separada: produto_imagens).
+    @ElementCollection
+    @CollectionTable(name = "produto_imagens", joinColumns = @JoinColumn(name = "produto_id"))
+    @Column(name = "url")
+    private List<String> imagens = new ArrayList<>();
 
     // Visível na vitrine pública quando true.
     @Column(nullable = false)

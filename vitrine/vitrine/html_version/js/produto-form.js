@@ -1,7 +1,8 @@
 // Formulário de produto: cria (POST) ou edita (PUT) conforme houver ?id= na URL.
-// Carregado nas páginas do dashboard (../js/produto-form.js), após o dashboard.js.
+// Suporta várias fotos por produto.
 
 const API_PRODUTOS = "http://localhost:8080/api/produtos";
+const API_BACKEND = "http://localhost:8080";
 
 (function () {
     const form = document.getElementById("produtoForm");
@@ -14,11 +15,30 @@ const API_PRODUTOS = "http://localhost:8080/api/produtos";
     const produtoId = params.get("id");
     const ehEdicao = !!produtoId;
 
+    // Lista das URLs das fotos já enviadas (o produto pode ter várias).
+    let imagens = [];
+    const inputArquivo = document.getElementById("imagemArquivo");
+
     if (ehEdicao) {
         document.getElementById("tituloPagina").textContent = "Editar produto";
         document.getElementById("btnSalvar").textContent = "Salvar alterações";
         carregarProduto(produtoId);
     }
+
+    // Ao escolher arquivos, envia cada um e adiciona na lista de fotos.
+    inputArquivo.addEventListener("change", async () => {
+        const arquivos = Array.from(inputArquivo.files);
+        inputArquivo.value = ""; // limpa para poder escolher mais fotos depois
+        for (const arquivo of arquivos) {
+            try {
+                const url = await enviarImagem(arquivo);
+                imagens.push(url);
+            } catch (err) {
+                mostrar("Não foi possível enviar uma das imagens.");
+            }
+        }
+        renderPreviews();
+    });
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
@@ -37,7 +57,7 @@ const API_PRODUTOS = "http://localhost:8080/api/produtos";
             descricaoCompleta: document.getElementById("descricaoCompleta").value.trim(),
             marca: document.getElementById("marca").value.trim(),
             categoria: document.getElementById("categoria").value,
-            imagemUrl: document.getElementById("imagemUrl").value.trim(),
+            imagens: imagens,
             ativo: document.getElementById("ativo").checked,
         };
 
@@ -61,6 +81,24 @@ const API_PRODUTOS = "http://localhost:8080/api/produtos";
         }
     });
 
+    // Desenha as prévias das fotos, cada uma com um botão de remover.
+    function renderPreviews() {
+        const cont = document.getElementById("imagemPreviews");
+        cont.innerHTML = "";
+        imagens.forEach((url, indice) => {
+            const item = document.createElement("div");
+            item.className = "preview-item";
+            item.innerHTML = `
+                <img src="${url}" alt="Foto ${indice + 1}">
+                <button type="button" class="preview-remover" title="Remover">&times;</button>`;
+            item.querySelector(".preview-remover").addEventListener("click", () => {
+                imagens.splice(indice, 1);
+                renderPreviews();
+            });
+            cont.appendChild(item);
+        });
+    }
+
     async function carregarProduto(id) {
         try {
             const resp = await fetch(`${API_PRODUTOS}/${id}`);
@@ -69,7 +107,8 @@ const API_PRODUTOS = "http://localhost:8080/api/produtos";
                 return;
             }
             const p = await resp.json();
-            document.getElementById("imagemUrl").value = p.imagemUrl || "";
+            imagens = p.imagens || [];
+            renderPreviews();
             document.getElementById("nome").value = p.nome || "";
             document.getElementById("preco").value = formatarPrecoInput(p.preco);
             document.getElementById("descricaoCurta").value = p.descricaoCurta || "";
@@ -80,6 +119,17 @@ const API_PRODUTOS = "http://localhost:8080/api/produtos";
         } catch (err) {
             mostrar("Erro ao carregar o produto.");
         }
+    }
+
+    // Envia um arquivo para o backend e devolve a URL completa da imagem salva.
+    async function enviarImagem(arquivo) {
+        const dados = new FormData();
+        dados.append("arquivo", arquivo);
+        // Não definimos Content-Type: o navegador coloca o certo para o arquivo.
+        const resp = await fetch(`${API_BACKEND}/api/upload`, { method: "POST", body: dados });
+        if (!resp.ok) throw new Error("upload falhou");
+        const json = await resp.json();
+        return API_BACKEND + json.url; // ex: http://localhost:8080/uploads/abc.jpg
     }
 
     function mostrar(texto) {

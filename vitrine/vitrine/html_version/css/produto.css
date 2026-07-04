@@ -61,7 +61,13 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 48px;
-    align-items: start;
+    align-items: stretch;
+}
+
+/* A coluna de informações vira uma coluna flex para empurrar o botão do WhatsApp pro fim. */
+.produto-info {
+    display: flex;
+    flex-direction: column;
 }
 
 /* CABEÇALHO DO PAINEL DE INFO (voltar + fechar) */
@@ -198,6 +204,7 @@
 
 .produto-info__categoria {
     display: inline-flex;
+    align-self: flex-start;
     align-items: center;
     padding: 4px 14px;
     background: var(--vl-terracota);
@@ -260,6 +267,7 @@
 .produto-acoes {
     display: flex;
     gap: 12px;
+    margin-top: auto;
 }
 
 .botao-contato-whatsapp {

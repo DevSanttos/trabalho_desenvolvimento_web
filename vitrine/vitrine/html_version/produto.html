@@ -35,17 +35,16 @@
                 <div class="galeria__imagem-bloco">
                     <!-- Começa transparente (fundo cinza). O JS coloca a foto real do produto se houver. -->
                     <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Produto" class="galeria__imagem-principal" id="prodImagem">
-                    <button class="galeria__seta galeria__seta--anterior" aria-label="Imagem anterior">
+                    <button class="galeria__seta galeria__seta--anterior" id="setaAnterior" aria-label="Imagem anterior">
                         <i data-lucide="chevron-left" class="icone-sm"></i>
                     </button>
-                    <button class="galeria__seta galeria__seta--proxima" aria-label="Próxima imagem">
+                    <button class="galeria__seta galeria__seta--proxima" id="setaProxima" aria-label="Próxima imagem">
                         <i data-lucide="chevron-right" class="icone-sm"></i>
                     </button>
                 </div>
 
-                <div class="galeria__miniaturas">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Miniatura do produto" class="galeria__miniatura galeria__miniatura--ativa" id="prodMiniatura">
-                </div>
+                <!-- Miniaturas montadas pelo produto.js (uma por foto) -->
+                <div class="galeria__miniaturas" id="prodMiniaturas"></div>
             </section>
 
             <!-- Coluna direita: informações do produto -->
@@ -89,9 +88,6 @@
                     <button class="botao-contato-whatsapp" id="btnWhatsappProduto">
                         <i data-lucide="message-circle" class="icone-sm"></i>
                         Falar com a loja no WhatsApp
-                    </button>
-                    <button class="botao-favoritar" aria-label="Favoritar produto">
-                        <i data-lucide="heart" class="icone-sm"></i>
                     </button>
                 </div>
 

@@ -30,15 +30,7 @@ const moedaProd = new Intl.NumberFormat("pt-BR", { style: "currency", currency: 
 
         const cat = produto.categoria || "";
         document.title = `${produto.nome} - VitrineLocal`;
-        // Sem foto (ou link quebrado): usa uma imagem transparente — fundo cinza claro.
-        const transparente = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
-        const imagem = produto.imagemUrl || transparente;
-        const imgPrincipal = document.getElementById("prodImagem");
-        const imgMini = document.getElementById("prodMiniatura");
-        imgPrincipal.onerror = () => { imgPrincipal.onerror = null; imgPrincipal.src = transparente; };
-        imgMini.onerror = () => { imgMini.onerror = null; imgMini.src = transparente; };
-        imgPrincipal.src = imagem;
-        imgMini.src = imagem;
+        montarGaleria(produto.imagens || []);
         document.getElementById("prodCategoria").textContent = cat;
         document.getElementById("prodCategoriaEspec").textContent = cat;
         document.getElementById("prodTitulo").textContent = produto.nome;
@@ -55,6 +47,62 @@ const moedaProd = new Intl.NumberFormat("pt-BR", { style: "currency", currency: 
         document.getElementById("prodCaminho").textContent = `${produto.lojaNome} / ${produto.nome}`;
 
         ligarWhatsapp(produto.lojaSlug, produto.nome);
+    }
+
+    // Monta a galeria: imagem principal + miniaturas + setas.
+    function montarGaleria(imagens) {
+        const transparente = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+        const imgPrincipal = document.getElementById("prodImagem");
+        const miniaturas = document.getElementById("prodMiniaturas");
+
+        // Sem fotos: mostra o quadrado cinza e some com miniaturas/setas.
+        if (imagens.length === 0) {
+            imgPrincipal.src = transparente;
+            miniaturas.innerHTML = "";
+            esconderSetas();
+            return;
+        }
+
+        let atual = 0;
+        function mostrar(indice) {
+            atual = indice;
+            imgPrincipal.src = imagens[indice];
+            // marca a miniatura ativa
+            const minis = miniaturas.querySelectorAll(".galeria__miniatura");
+            minis.forEach((m, i) => m.classList.toggle("galeria__miniatura--ativa", i === indice));
+        }
+
+        // Cria uma miniatura por foto.
+        miniaturas.innerHTML = "";
+        imagens.forEach((url, i) => {
+            const mini = document.createElement("img");
+            mini.src = url;
+            mini.className = "galeria__miniatura";
+            mini.alt = `Foto ${i + 1}`;
+            mini.addEventListener("click", () => mostrar(i));
+            miniaturas.appendChild(mini);
+        });
+
+        // Setas: passam para a foto anterior/próxima (dá a volta).
+        const setaAnt = document.getElementById("setaAnterior");
+        const setaProx = document.getElementById("setaProxima");
+        if (imagens.length > 1) {
+            setaAnt.style.display = "";
+            setaProx.style.display = "";
+            setaAnt.addEventListener("click", () => mostrar((atual - 1 + imagens.length) % imagens.length));
+            setaProx.addEventListener("click", () => mostrar((atual + 1) % imagens.length));
+        } else {
+            esconderSetas();
+        }
+
+        mostrar(0);
+    }
+
+    function esconderSetas() {
+        const setaAnt = document.getElementById("setaAnterior");
+        const setaProx = document.getElementById("setaProxima");
+        if (setaAnt) setaAnt.style.display = "none";
+        if (setaProx) setaProx.style.display = "none";
     }
 
     // Busca o WhatsApp da loja para o botão de contato.

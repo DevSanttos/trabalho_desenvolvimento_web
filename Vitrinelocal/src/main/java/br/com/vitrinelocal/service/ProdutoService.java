@@ -91,7 +91,7 @@ public class ProdutoService {
         produto.setDescricaoCompleta(dto.descricaoCompleta());
         produto.setMarca(dto.marca());
         produto.setCategoria(dto.categoria());
-        produto.setImagemUrl(dto.imagemUrl());
+        produto.setImagens(dto.imagens() != null ? dto.imagens() : new ArrayList<>());
         produto.setAtivo(dto.ativo());
     }
 }
