@@ -1,11 +1,7 @@
-// Vitrine pública: identifica a loja pelo slug na URL (?loja=casa-design),
-// carrega o cabeçalho e os produtos ativos, e filtra por categoria nas abas.
-
 const API_BASE_PUBLICO = "http://localhost:8080/api/lojas";
 
 const moedaBRPub = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
-// Imagem transparente (1x1) usada quando o produto não tem foto — mostra só o fundo cinza.
 const SEM_IMAGEM = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
 (function () {
@@ -41,7 +37,6 @@ const SEM_IMAGEM = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALA
             return;
         }
 
-        // Produtos ativos
         try {
             const resp = await fetch(`${API_BASE_PUBLICO}/${slug}/produtos`);
             produtos = resp.ok ? await resp.json() : [];
@@ -52,12 +47,10 @@ const SEM_IMAGEM = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALA
         render();
     }
 
-    // Monta as abas de categoria a partir das categorias que os produtos têm.
     function montarAbas() {
         const nav = document.getElementById("lojaAbas");
         if (!nav) return;
 
-        // Pega as categorias diferentes que aparecem nos produtos.
         const categorias = [];
         for (let i = 0; i < produtos.length; i++) {
             const c = produtos[i].categoria;
@@ -66,14 +59,12 @@ const SEM_IMAGEM = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALA
             }
         }
 
-        // Primeira aba é "Todos"; depois uma para cada categoria.
         let html = `<button class="loja-abas__item ativo" data-categoria="todos">Todos</button>`;
         for (let i = 0; i < categorias.length; i++) {
             html += `<button class="loja-abas__item" data-categoria="${esc(categorias[i])}">${esc(categorias[i])}</button>`;
         }
         nav.innerHTML = html;
 
-        // Liga o clique de cada aba.
         const botoes = nav.querySelectorAll(".loja-abas__item");
         for (let i = 0; i < botoes.length; i++) {
             botoes[i].addEventListener("click", () => {
@@ -104,7 +95,6 @@ const SEM_IMAGEM = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALA
 
         const logoEl = document.getElementById("lojaLogo");
         if (logoEl) {
-            // Se a URL falhar (link inválido/bloqueado) ou não existir, deixa o espaço neutro.
             logoEl.onerror = () => { logoEl.onerror = null; logoEl.src = SEM_IMAGEM; };
             logoEl.src = loja.logoUrl || SEM_IMAGEM;
         }

@@ -1,11 +1,7 @@
-// Lista de produtos do painel: carrega do backend, calcula estatísticas,
-// filtra (busca + Todos/Ativos/Inativos) e trata as ações ver/editar/excluir.
-
 const API_PRODUTOS_LISTA = "http://localhost:8080/api/produtos";
 
 const moedaBR = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
-// Imagem transparente (1x1) para produtos sem foto — mostra só o fundo cinza da miniatura.
 const SEM_IMAGEM = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
 (function () {
@@ -13,21 +9,19 @@ const SEM_IMAGEM = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALA
     if (!tbody) return;
 
     const lojista = JSON.parse(localStorage.getItem("lojista") || "null");
-    if (!lojista || !lojista.loja) return; // dashboard.js redireciona
+    if (!lojista || !lojista.loja) return;
 
-    let produtos = [];          // todos os produtos vindos do backend
-    let filtroStatus = "todos"; // todos | ativos | inativos
+    let produtos = [];
+    let filtroStatus = "todos";
     let termoBusca = "";
 
     carregar();
 
-    // Busca
     document.getElementById("campoBusca").addEventListener("input", (e) => {
         termoBusca = e.target.value.trim().toLowerCase();
         render();
     });
 
-    // Filtros de status
     document.querySelectorAll(".filtro-botao").forEach((botao) => {
         botao.addEventListener("click", () => {
             document.querySelectorAll(".filtro-botao").forEach((b) => b.classList.remove("filtro-botao--ativo"));
@@ -134,7 +128,6 @@ const SEM_IMAGEM = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALA
         }
     }
 
-    // Evita quebra de HTML / injeção ao inserir texto vindo do banco.
     function esc(texto) {
         return String(texto)
             .replace(/&/g, "&amp;")

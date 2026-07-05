@@ -1,9 +1,5 @@
-// Página da cidade: lista as lojas daquela cidade (slug na URL), com busca e
-// filtro de categoria no cliente.
-
 const API_CIDADES_PUB = "http://localhost:8080/api/cidades";
 
-// Imagem transparente (1x1) para lojas sem logo (ou link quebrado).
 const SEM_IMAGEM_CIDADE = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
 const CATEGORIA_LOJA_LABEL = {
@@ -44,12 +40,10 @@ const CATEGORIA_LOJA_LABEL = {
             lojas = [];
         }
 
-        // Nome da cidade: usa o das lojas; se não houver, o "nome" da URL; senão, o slug formatado.
         const nomeParam = new URLSearchParams(window.location.search).get("nome");
         const nomeCidade = lojas.length ? lojas[0].cidade : (nomeParam || formatarSlug(slug));
         document.getElementById("cidadeNome").textContent = nomeCidade;
 
-        // Mostra a cidade escolhida também no seletor do topo.
         const barraNome = document.getElementById("barraCidadeNome");
         if (barraNome) barraNome.textContent = nomeCidade;
         document.getElementById("statLojas").textContent = lojas.length;
@@ -118,7 +112,7 @@ const CATEGORIA_LOJA_LABEL = {
         return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
     }
 
-    // "rio-do-sul" -> "Rio Do Sul" (usado só quando não veio o nome na URL).
+    // "rio-do-sul" -> "Rio Do Sul"
     function formatarSlug(s) {
         return s.split("-").map((p) => p.charAt(0).toUpperCase() + p.slice(1)).join(" ");
     }

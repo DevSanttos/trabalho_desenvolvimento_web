@@ -5,7 +5,7 @@ const API_LOJAS_CONF = "http://localhost:8080/api/lojas";
 
 (function () {
     const lojista = JSON.parse(localStorage.getItem("lojista") || "null");
-    if (!lojista || !lojista.loja) return; // dashboard.js redireciona
+    if (!lojista || !lojista.loja) return;
 
     preencher();
 
@@ -15,7 +15,6 @@ const API_LOJAS_CONF = "http://localhost:8080/api/lojas";
     async function preencher() {
         document.getElementById("confNome").value = lojista.loja.nome || "";
         document.getElementById("confEmail").value = lojista.email || "";
-        // Telefone (whatsapp) vem do detalhe da loja.
         try {
             const resp = await fetch(`${API_LOJAS_CONF}/${lojista.loja.slug}`);
             if (resp.ok) {
@@ -23,7 +22,7 @@ const API_LOJAS_CONF = "http://localhost:8080/api/lojas";
                 document.getElementById("confTelefone").value = loja.whatsapp || "";
             }
         } catch (err) {
-            /* silencioso */
+  
         }
     }
 

@@ -1,6 +1,3 @@
-// Formulário de produto: cria (POST) ou edita (PUT) conforme houver ?id= na URL.
-// Suporta várias fotos por produto.
-
 const API_PRODUTOS = "http://localhost:8080/api/produtos";
 const API_BACKEND = "http://localhost:8080";
 
@@ -15,7 +12,6 @@ const API_BACKEND = "http://localhost:8080";
     const produtoId = params.get("id");
     const ehEdicao = !!produtoId;
 
-    // Lista das URLs das fotos já enviadas (o produto pode ter várias).
     let imagens = [];
     const inputArquivo = document.getElementById("imagemArquivo");
 
@@ -25,10 +21,9 @@ const API_BACKEND = "http://localhost:8080";
         carregarProduto(produtoId);
     }
 
-    // Ao escolher arquivos, envia cada um e adiciona na lista de fotos.
     inputArquivo.addEventListener("change", async () => {
         const arquivos = Array.from(inputArquivo.files);
-        inputArquivo.value = ""; // limpa para poder escolher mais fotos depois
+        inputArquivo.value = "";
         for (const arquivo of arquivos) {
             try {
                 const url = await enviarImagem(arquivo);
@@ -81,7 +76,6 @@ const API_BACKEND = "http://localhost:8080";
         }
     });
 
-    // Desenha as prévias das fotos, cada uma com um botão de remover.
     function renderPreviews() {
         const cont = document.getElementById("imagemPreviews");
         cont.innerHTML = "";
@@ -121,15 +115,13 @@ const API_BACKEND = "http://localhost:8080";
         }
     }
 
-    // Envia um arquivo para o backend e devolve a URL completa da imagem salva.
     async function enviarImagem(arquivo) {
         const dados = new FormData();
         dados.append("arquivo", arquivo);
-        // Não definimos Content-Type: o navegador coloca o certo para o arquivo.
         const resp = await fetch(`${API_BACKEND}/api/upload`, { method: "POST", body: dados });
         if (!resp.ok) throw new Error("upload falhou");
         const json = await resp.json();
-        return API_BACKEND + json.url; // ex: http://localhost:8080/uploads/abc.jpg
+        return API_BACKEND + json.url;
     }
 
     function mostrar(texto) {
@@ -138,19 +130,17 @@ const API_BACKEND = "http://localhost:8080";
     }
 })();
 
-// "2.499,90" ou "2499,90" -> 2499.9 (número). Retorna null se inválido.
 function parsePreco(texto) {
     if (!texto) return null;
     let limpo = texto.replace(/[^\d,.]/g, "");
     if (limpo.includes(",")) {
-        // formato pt-BR: ponto é milhar, vírgula é decimal
         limpo = limpo.replace(/\./g, "").replace(",", ".");
     }
     const valor = parseFloat(limpo);
     return isNaN(valor) ? null : valor;
 }
 
-// 2499.9 -> "2499,90" para preencher o input na edição.
+
 function formatarPrecoInput(valor) {
     if (valor == null) return "";
     return Number(valor).toFixed(2).replace(".", ",");

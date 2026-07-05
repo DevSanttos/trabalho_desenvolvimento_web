@@ -1,16 +1,12 @@
-// Dashboard inicial: estatísticas, produtos mais vistos e tabela de produtos,
-// calculados a partir dos produtos da loja logada.
-
 const API_PRODUTOS_HOME = "http://localhost:8080/api/produtos";
 
 const moedaHome = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
 
-// Imagem transparente (1x1) para produtos sem foto.
 const SEM_IMAGEM_HOME = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
 (function () {
     const lojista = JSON.parse(localStorage.getItem("lojista") || "null");
-    if (!lojista || !lojista.loja) return; // dashboard.js redireciona
+    if (!lojista || !lojista.loja) return;
 
     carregar();
 
@@ -87,7 +83,6 @@ const SEM_IMAGEM_HOME = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAA
         ligarAcoes(tbody);
     }
 
-    // Liga os botões de ação (ver / editar / excluir) de cada linha da tabela.
     function ligarAcoes(tbody) {
         const botoes = tbody.querySelectorAll("[data-acao]");
         for (let i = 0; i < botoes.length; i++) {
@@ -111,7 +106,7 @@ const SEM_IMAGEM_HOME = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAA
         try {
             const resp = await fetch(`${API_PRODUTOS_HOME}/${id}`, { method: "DELETE" });
             if (resp.ok) {
-                carregar(); // recarrega estatísticas, populares e tabela
+                carregar();
             } else {
                 alert("Não foi possível excluir o produto.");
             }

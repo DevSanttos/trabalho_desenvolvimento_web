@@ -39,7 +39,6 @@ const moedaProd = new Intl.NumberFormat("pt-BR", { style: "currency", currency: 
             produto.descricaoCompleta || produto.descricaoCurta || "";
         document.getElementById("prodMarca").textContent = produto.marca || "—";
 
-        // Links de voltar e caminho usam a loja do produto.
         const linkLoja = `loja.html?loja=${produto.lojaSlug}`;
         document.getElementById("prodVoltar").href = linkLoja;
         document.getElementById("prodFechar").href = linkLoja;
@@ -49,13 +48,11 @@ const moedaProd = new Intl.NumberFormat("pt-BR", { style: "currency", currency: 
         ligarWhatsapp(produto.lojaSlug, produto.nome);
     }
 
-    // Monta a galeria: imagem principal + miniaturas + setas.
     function montarGaleria(imagens) {
         const transparente = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
         const imgPrincipal = document.getElementById("prodImagem");
         const miniaturas = document.getElementById("prodMiniaturas");
 
-        // Sem fotos: mostra o quadrado cinza e some com miniaturas/setas.
         if (imagens.length === 0) {
             imgPrincipal.src = transparente;
             miniaturas.innerHTML = "";
@@ -67,12 +64,10 @@ const moedaProd = new Intl.NumberFormat("pt-BR", { style: "currency", currency: 
         function mostrar(indice) {
             atual = indice;
             imgPrincipal.src = imagens[indice];
-            // marca a miniatura ativa
             const minis = miniaturas.querySelectorAll(".galeria__miniatura");
             minis.forEach((m, i) => m.classList.toggle("galeria__miniatura--ativa", i === indice));
         }
 
-        // Cria uma miniatura por foto.
         miniaturas.innerHTML = "";
         imagens.forEach((url, i) => {
             const mini = document.createElement("img");
@@ -83,7 +78,6 @@ const moedaProd = new Intl.NumberFormat("pt-BR", { style: "currency", currency: 
             miniaturas.appendChild(mini);
         });
 
-        // Setas: passam para a foto anterior/próxima (dá a volta).
         const setaAnt = document.getElementById("setaAnterior");
         const setaProx = document.getElementById("setaProxima");
         if (imagens.length > 1) {
@@ -105,7 +99,6 @@ const moedaProd = new Intl.NumberFormat("pt-BR", { style: "currency", currency: 
         if (setaProx) setaProx.style.display = "none";
     }
 
-    // Busca o WhatsApp da loja para o botão de contato.
     async function ligarWhatsapp(slug, nomeProduto) {
         const botao = document.getElementById("btnWhatsappProduto");
         try {
@@ -122,7 +115,7 @@ const moedaProd = new Intl.NumberFormat("pt-BR", { style: "currency", currency: 
                 window.open(`https://wa.me/55${numero}?text=${msg}`, "_blank");
             });
         } catch (err) {
-            /* silencioso */
+
         }
     }
 })();
