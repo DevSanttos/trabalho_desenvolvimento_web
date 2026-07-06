@@ -64,10 +64,16 @@
                     <h3>Informações básicas</h3>
 
                     <form class="campos-formulario">
-                        <!-- Logo da loja (URL) -->
+                        <!-- Logo da loja (upload de arquivo) -->
                         <div>
-                            <label for="logoUrl">URL do logo</label>
-                            <input type="url" id="logoUrl" class="input" placeholder="https://exemplo.com/logo.png">
+                            <label>Logo da loja</label>
+                            <label for="logoArquivo" class="area-envio">
+                                <i data-lucide="upload"></i>
+                                <p>Clique para fazer upload do logo</p>
+                                <p class="upload-dica">PNG ou JPG</p>
+                            </label>
+                            <input type="file" id="logoArquivo" accept="image/*" hidden>
+                            <div id="logoPreview" class="galeria-previews"></div>
                         </div>
 
                         <!-- Nome da loja -->

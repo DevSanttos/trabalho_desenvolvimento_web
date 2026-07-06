@@ -38,6 +38,15 @@
     font-size: 14px;
 }
 
+.rodape-formulario a {
+    color: var(--vl-terracota);
+    font-weight: 500;
+}
+
+.rodape-formulario a:hover {
+    text-decoration: underline;
+}
+
 /* TEXTO DOS TERMOS */
 
 .termos-linha a { 

@@ -316,6 +316,83 @@ td {
   color: var(--vl-aberto);
 }
 
+/* Marca "VitrineLocal" grande no painel escuro do login/cadastro */
+.marca-grande {
+  width: 100%;
+  text-align: center;
+  font-size: 64px;
+  font-weight: 700;
+  color: #fff;
+}
+.marca-grande span {
+  color: var(--vl-terracota);
+}
+
+/* Caixa de upload (usada em produtos e no logo da loja) */
+.area-envio {
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  border: 2px dashed var(--vl-borda);
+  border-radius: 12px;
+  padding: 40px;
+  transition: border-color 0.2s;
+}
+.area-envio:hover {
+  border-color: var(--vl-secundario);
+}
+.area-envio i,
+.area-envio svg {
+  width: 40px;
+  height: 40px;
+  color: var(--vl-secundario);
+}
+.area-envio p {
+  margin-top: 8px;
+  color: var(--vl-corpo);
+}
+.upload-dica {
+  color: var(--vl-secundario);
+  font-size: 13px;
+}
+
+/* Prévias das fotos escolhidas */
+.galeria-previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
+}
+.preview-item {
+  position: relative;
+  width: 96px;
+  height: 96px;
+}
+.preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--vl-borda);
+}
+.preview-remover {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  background: var(--vl-fechado);
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Botões de ação (ver/editar/excluir) nas tabelas de produtos */
 .tabela-acoes {
   display: flex;
