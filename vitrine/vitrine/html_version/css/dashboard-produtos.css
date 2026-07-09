@@ -46,7 +46,7 @@
 
 .campo-busca .input {
     padding-left: 40px;
-    background: #fff;
+    background: var(--vl-superficie);
 }
 
 .grupo-filtros {

@@ -9,7 +9,7 @@
 /* Painel esquerdo (Marca) */
 
 .login-painel-marca {
-    background: var(--vl-titulo);
+    background: var(--vl-painel-escuro);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,7 +19,7 @@
 /* Painel Direito (Formulário)*/
 
 .login-painel-form {
-    background: #fff;
+    background: var(--vl-superficie);
     display: flex;
     align-items: center;
     justify-content: center;

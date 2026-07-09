@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/cidade.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="js/theme.js"></script>
 </head>
 <body>
 
@@ -16,11 +17,17 @@
             <a href="index.html" class="barra-cidade__logo">
                 <span>Vitrine</span>Local
             </a>
-            <button class="barra-cidade__cidade">
-                <i data-lucide="map-pin" class="icone-xs"></i>
-                <span id="barraCidadeNome">Cidade</span>
-                <i data-lucide="chevron-down" class="icone-xs"></i>
-            </button>
+            <div class="acoes-barra">
+                <button class="barra-cidade__cidade">
+                    <i data-lucide="map-pin" class="icone-xs"></i>
+                    <span id="barraCidadeNome">Cidade</span>
+                    <i data-lucide="chevron-down" class="icone-xs"></i>
+                </button>
+                <button type="button" class="botao-tema" data-alternar-tema aria-label="Alternar tema claro/escuro" title="Alternar tema">
+                    <i data-lucide="sun" class="icone-sm icone-tema-sol"></i>
+                    <i data-lucide="moon" class="icone-sm icone-tema-lua"></i>
+                </button>
+            </div>
         </div>
     </nav>
 

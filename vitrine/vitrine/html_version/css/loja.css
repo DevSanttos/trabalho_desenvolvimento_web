@@ -1,7 +1,7 @@
 ﻿/* barra-nav  */
 
 .barra-loja {
-    background: #fff;
+    background: var(--vl-superficie);
     border-bottom: 1px solid var(--vl-borda);
 }
 
@@ -32,7 +32,7 @@
     padding: 8px 14px;
     border: 1px solid var(--vl-borda);
     border-radius: 8px;
-    background: #fff;
+    background: var(--vl-superficie);
     color: var(--vl-titulo);
     font-size: 13px;
     font-weight: 600;
@@ -163,7 +163,7 @@
 /* ABAS DE CATEGORIAS */
 
 .loja-abas {
-    background: #fff;
+    background: var(--vl-superficie);
     border-bottom: 1px solid var(--vl-borda);
 }
 
@@ -215,7 +215,7 @@
 /* cartao DE PRODUTO */
 
 .cartao-produto {
-    background: #fff;
+    background: var(--vl-superficie);
     border: 1px solid var(--vl-borda);
     border-radius: 12px;
     overflow: hidden;

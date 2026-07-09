@@ -2,7 +2,7 @@
 /* barra-nav */
 
 .barra-cidade {
-    background: #fff;
+    background: var(--vl-superficie);
     border-bottom: 1px solid var(--vl-borda);
 }
 
@@ -32,7 +32,7 @@
     padding: 8px 14px;
     border: 1px solid var(--vl-borda);
     border-radius: 8px;
-    background: #fff;
+    background: var(--vl-superficie);
     color: var(--vl-titulo);
     font-size: 13px;
     font-weight: 600;
@@ -116,7 +116,7 @@
 /* SIDEBAR DE FILTROS */
 
 .cidade-sidebar {
-    background: #fff;
+    background: var(--vl-superficie);
     border: 1px solid var(--vl-borda);
     border-radius: 12px;
     padding: 16px;
@@ -195,7 +195,7 @@
 /* cartao DE LOJA */
 
 .cartao-loja {
-    background: #fff;
+    background: var(--vl-superficie);
     border: 1px solid var(--vl-borda);
     border-radius: 12px;
     padding: 20px;

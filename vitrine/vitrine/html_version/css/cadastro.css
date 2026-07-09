@@ -7,7 +7,7 @@
 }
 
 .painel-esquerdo {
-    background: var(--vl-titulo);
+    background: var(--vl-painel-escuro);
     color: #fff;
     padding: 48px;
     display: flex;

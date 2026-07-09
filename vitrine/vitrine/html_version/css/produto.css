@@ -2,7 +2,7 @@
 /* barra-nav */
 
 .barra-produto {
-    background: #fff;
+    background: var(--vl-superficie);
     border-bottom: 1px solid var(--vl-borda);
 }
 
@@ -33,7 +33,7 @@
     padding: 8px 16px;
     border: 1px solid var(--vl-borda);
     border-radius: 8px;
-    background: #fff;
+    background: var(--vl-superficie);
     color: var(--vl-titulo);
     font-size: 14px;
     font-weight: 500;
@@ -103,7 +103,7 @@
 /* GALERIA DE IMAGENS (coluna esquerda) */
 
 .galeria {
-    background: #fff;
+    background: var(--vl-superficie);
     border-radius: 16px;
     padding: 24px;
 }
@@ -118,7 +118,7 @@
     aspect-ratio: 1 / 1;
     object-fit: contain;
     border-radius: 10px;
-    background: #f5f6f8;
+    background: var(--vl-fundo-base);
 }
 
 .galeria__seta {
@@ -127,7 +127,7 @@
     transform: translateY(-50%);
     width: 36px;
     height: 36px;
-    background: #fff;
+    background: var(--vl-superficie);
     border: 1px solid var(--vl-borda);
     border-radius: 50%;
     display: flex;
@@ -167,7 +167,7 @@
     border: 2px solid var(--vl-borda);
     cursor: pointer;
     transition: border-color 0.2s;
-    background: #f5f6f8;
+    background: var(--vl-fundo-base);
 }
 
 .galeria__miniatura:hover:not(.galeria__miniatura--ativa) {
@@ -297,7 +297,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fff;
+    background: var(--vl-superficie);
     border: 1.5px solid var(--vl-borda);
     border-radius: 10px;
     cursor: pointer;

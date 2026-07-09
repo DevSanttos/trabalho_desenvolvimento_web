@@ -13,8 +13,29 @@
   --vl-azul-ardosia: #6B8DAE;
   --vl-aberto: #276945;
   --vl-fechado: #C0392B;
-  
+
+  /* Fundo escuro fixo (sidebar do dashboard, rodapé, painel de marca do login/cadastro).
+     Independente do tema — é sempre escuro, com texto branco por cima. */
+  --vl-painel-escuro: #1A2233;
+
   --font-family: 'Inter', system-ui, sans-serif;
+  color-scheme: light;
+}
+
+/* Modo escuro. Ativado via atributo data-theme na tag <html> (ver js/theme.js). */
+:root[data-theme="dark"] {
+  --vl-fundo-base: #12151C;
+  --vl-superficie: #1B2029;
+  --vl-borda: #2E3440;
+  --vl-terracota: #E2703F;
+  --vl-terracota-hover: #EF8659;
+  --vl-terracota-suave: #3A2A22;
+  --vl-titulo: #F1F3F7;
+  --vl-corpo: #C7CEDA;
+  --vl-secundario: #97A0B2;
+  --vl-aberto: #3FAE73;
+  --vl-fechado: #E2574A;
+  color-scheme: dark;
 }
 
 * {
@@ -28,6 +49,7 @@ body {
   background-color: var(--vl-fundo-base);
   color: var(--vl-corpo);
   line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 button {
@@ -222,7 +244,7 @@ ul {
 
 .painel-lateral {
   width: 256px;
-  background: var(--vl-titulo);
+  background: var(--vl-painel-escuro);
   color: #fff;
   padding: 24px;
   min-height: 100vh;
@@ -469,6 +491,10 @@ td {
 
 .logo-lateral {
   margin-bottom: 32px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .logo-lateral h1 {
@@ -487,5 +513,54 @@ td {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+/* BOTÃO DE ALTERNAR TEMA (claro/escuro) */
+
+.acoes-barra {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.botao-tema {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  color: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.botao-tema:hover {
+  background: rgba(139, 149, 164, 0.18);
+}
+
+/* Versão flutuante, para páginas sem barra de navegação (login/cadastro) */
+.botao-tema--flutuante {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--vl-superficie);
+  border: 1px solid var(--vl-borda);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  z-index: 50;
+}
+
+/* Mostra o sol no tema claro e a lua no tema escuro — troca só de CSS, sem JS */
+.botao-tema .icone-tema-lua {
+  display: none;
+}
+
+:root[data-theme="dark"] .botao-tema .icone-tema-sol {
+  display: none;
+}
+
+:root[data-theme="dark"] .botao-tema .icone-tema-lua {
+  display: inline-block;
 }
 
