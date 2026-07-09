@@ -15,7 +15,7 @@ public record ProdutoResponseDTO(
         String marca,
         String categoria,
         List<String> imagens,
-        String imagemUrl,   // a primeira imagem (usada nos cards e listas)
+        String imagemUrl,
         boolean ativo,
         int visualizacoes,
         String lojaSlug,
@@ -23,7 +23,6 @@ public record ProdutoResponseDTO(
 ) {
     public static ProdutoResponseDTO fromEntity(Produto p) {
         List<String> imagens = p.getImagens();
-        // A "imagem principal" é a primeira da lista (ou nada, se não houver fotos).
         String principal = (imagens == null || imagens.isEmpty()) ? null : imagens.get(0);
         return new ProdutoResponseDTO(
                 p.getId(),

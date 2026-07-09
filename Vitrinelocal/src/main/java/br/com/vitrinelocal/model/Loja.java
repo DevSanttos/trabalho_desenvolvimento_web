@@ -30,14 +30,12 @@ public class Loja {
     @Column(nullable = false, unique = true)
     private String slug;
 
-    // Campos preenchidos na página "Minha loja". Nullable.
     private String categoria;
     private String cidade;
     private String endereco;
     private String whatsapp;
     private String logoUrl;
 
-    // Horário de funcionamento (texto simples, ex: "09:00").
     private String horaSemanaAbertura;
     private String horaSemanaFechamento;
     private String horaSabadoAbertura;

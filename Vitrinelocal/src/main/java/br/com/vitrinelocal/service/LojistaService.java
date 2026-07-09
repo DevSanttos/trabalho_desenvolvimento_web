@@ -27,8 +27,7 @@ public class LojistaService {
     private final LojaRepository lojaRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public LojistaService(LojistaRepository lojistaRepository, LojaRepository lojaRepository,
-                          PasswordEncoder passwordEncoder) {
+    public LojistaService(LojistaRepository lojistaRepository, LojaRepository lojaRepository, PasswordEncoder passwordEncoder) {
         this.lojistaRepository = lojistaRepository;
         this.lojaRepository = lojaRepository;
         this.passwordEncoder = passwordEncoder;
@@ -40,14 +39,12 @@ public class LojistaService {
             throw new EmailJaCadastradoException("Já existe um lojista cadastrado com este email");
         }
 
-        // A loja é criada junto com o lojista (cascade) e fica vinculada a ele.
         Loja loja = new Loja();
         loja.setNome(dto.nomeLoja());
         loja.setSlug(gerarSlugUnico(dto.nomeLoja()));
 
         Lojista lojista = new Lojista();
         lojista.setEmail(dto.email());
-        // Gera o hash BCrypt — a senha em texto puro nunca é persistida.
         lojista.setSenha(passwordEncoder.encode(dto.senha()));
         lojista.setLoja(loja);
 
@@ -57,10 +54,8 @@ public class LojistaService {
 
     @Transactional(readOnly = true)
     public LojistaResponseDTO login(LoginDTO dto) {
-        Lojista lojista = lojistaRepository.findByEmail(dto.email())
-                .orElseThrow(() -> new CredenciaisInvalidasException("Email ou senha inválidos"));
+        Lojista lojista = lojistaRepository.findByEmail(dto.email()).orElseThrow(() -> new CredenciaisInvalidasException("Email ou senha inválidos"));
 
-        // Compara a senha informada com o hash armazenado.
         if (!passwordEncoder.matches(dto.senha(), lojista.getSenha())) {
             throw new CredenciaisInvalidasException("Email ou senha inválidos");
         }
@@ -68,14 +63,12 @@ public class LojistaService {
         return LojistaResponseDTO.fromEntity(lojista);
     }
 
-    // Atualiza nome da loja, email do lojista e telefone (whatsapp) — Configurações.
+
     @Transactional
     public LojistaResponseDTO atualizarConta(UUID lojistaId, AtualizarContaDTO dto) {
         Lojista lojista = buscarLojista(lojistaId);
 
-        // Se o email mudou, garante que continue único.
-        if (!lojista.getEmail().equalsIgnoreCase(dto.email())
-                && lojistaRepository.existsByEmail(dto.email())) {
+        if (!lojista.getEmail().equalsIgnoreCase(dto.email()) && lojistaRepository.existsByEmail(dto.email())) {
             throw new EmailJaCadastradoException("Já existe um lojista com este email");
         }
 
@@ -86,7 +79,6 @@ public class LojistaService {
         return LojistaResponseDTO.fromEntity(lojistaRepository.save(lojista));
     }
 
-    // Troca a senha após validar a senha atual.
     @Transactional
     public void alterarSenha(UUID lojistaId, AlterarSenhaDTO dto) {
         Lojista lojista = buscarLojista(lojistaId);
@@ -98,11 +90,9 @@ public class LojistaService {
     }
 
     private Lojista buscarLojista(UUID id) {
-        return lojistaRepository.findById(id)
-                .orElseThrow(() -> new RecursoNaoEncontradoException("Lojista não encontrado"));
+        return lojistaRepository.findById(id).orElseThrow(() -> new RecursoNaoEncontradoException("Lojista não encontrado"));
     }
 
-    // Gera um slug a partir do nome e garante que seja único (anexa -2, -3, ... se preciso).
     private String gerarSlugUnico(String nome) {
         String base = SlugUtil.gerar(nome);
         if (base.isEmpty()) {

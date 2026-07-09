@@ -47,20 +47,17 @@ public class Produto {
     @Column(nullable = false)
     private String categoria;
 
-    // Um produto pode ter várias fotos (guardadas numa tabela separada: produto_imagens).
     @ElementCollection
     @CollectionTable(name = "produto_imagens", joinColumns = @JoinColumn(name = "produto_id"))
     @Column(name = "url")
     private List<String> imagens = new ArrayList<>();
 
-    // Visível na vitrine pública quando true.
     @Column(nullable = false)
     private boolean ativo = true;
 
     @Column(nullable = false)
     private int visualizacoes = 0;
 
-    // Muitos produtos pertencem a uma loja.
     @ManyToOne(optional = false)
     @JoinColumn(name = "loja_id")
     private Loja loja;

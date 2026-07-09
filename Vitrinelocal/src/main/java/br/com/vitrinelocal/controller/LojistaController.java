@@ -41,14 +41,12 @@ public class LojistaController {
         return ResponseEntity.ok(response);
     }
 
-    // Configurações: atualizar nome da loja, email e telefone.
     @PutMapping("/{id}/conta")
     public ResponseEntity<LojistaResponseDTO> atualizarConta(@PathVariable UUID id,
                                                              @Valid @RequestBody AtualizarContaDTO dto) {
         return ResponseEntity.ok(lojistaService.atualizarConta(id, dto));
     }
 
-    // Configurações: trocar a senha.
     @PutMapping("/{id}/senha")
     public ResponseEntity<Void> alterarSenha(@PathVariable UUID id,
                                              @Valid @RequestBody AlterarSenhaDTO dto) {

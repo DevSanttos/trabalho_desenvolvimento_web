@@ -3,7 +3,7 @@ package br.com.vitrinelocal.DTO;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-// Edição de "Informações da loja" em Configurações.
+// Edição de Informações da loja em Configurações.
 public record AtualizarContaDTO(
 
         @NotBlank(message = "O nome da loja é obrigatório")

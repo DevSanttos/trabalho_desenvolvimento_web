@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import br.com.vitrinelocal.model.Loja;
 
-// Dados completos da loja — usados no cabeçalho público e no formulário "Minha loja".
+// Dados completos da loja.
 public record LojaDetalheDTO(
         UUID id,
         String nome,

@@ -10,7 +10,6 @@ import jakarta.validation.constraints.Positive;
 
 public record ProdutoRequestDTO(
 
-        // Obrigatório na criação (POST); ignorado na edição (PUT).
         UUID lojaId,
 
         @NotBlank(message = "O nome do produto é obrigatório")

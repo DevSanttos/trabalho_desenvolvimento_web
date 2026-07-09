@@ -28,8 +28,7 @@ public class ProdutoService {
 
     @Transactional
     public ProdutoResponseDTO criar(ProdutoRequestDTO dto) {
-        Loja loja = lojaRepository.findById(dto.lojaId())
-                .orElseThrow(() -> new RecursoNaoEncontradoException("Loja não encontrada"));
+        Loja loja = lojaRepository.findById(dto.lojaId()).orElseThrow(() -> new RecursoNaoEncontradoException("Loja não encontrada"));
 
         Produto produto = new Produto();
         produto.setLoja(loja);
@@ -45,7 +44,6 @@ public class ProdutoService {
 
     @Transactional(readOnly = true)
     public List<ProdutoResponseDTO> listarPorLoja(UUID lojaId) {
-        // Converte cada produto da loja em um DTO de resposta.
         List<ProdutoResponseDTO> resultado = new ArrayList<>();
         for (Produto produto : produtoRepository.findByLojaId(lojaId)) {
             resultado.add(ProdutoResponseDTO.fromEntity(produto));
@@ -55,7 +53,6 @@ public class ProdutoService {
 
     @Transactional(readOnly = true)
     public List<ProdutoResponseDTO> listarPublicosPorSlug(String slug) {
-        // Apenas os produtos ativos da loja (vitrine pública).
         List<ProdutoResponseDTO> resultado = new ArrayList<>();
         for (Produto produto : produtoRepository.findByLojaSlugAndAtivoTrue(slug)) {
             resultado.add(ProdutoResponseDTO.fromEntity(produto));
@@ -79,11 +76,9 @@ public class ProdutoService {
     }
 
     private Produto buscarEntidade(UUID id) {
-        return produtoRepository.findById(id)
-                .orElseThrow(() -> new RecursoNaoEncontradoException("Produto não encontrado"));
+        return produtoRepository.findById(id).orElseThrow(() -> new RecursoNaoEncontradoException("Produto não encontrado"));
     }
 
-    // Copia os campos do DTO para a entidade (a loja não muda na edição).
     private void aplicarDados(Produto produto, ProdutoRequestDTO dto) {
         produto.setNome(dto.nome());
         produto.setPreco(dto.preco());

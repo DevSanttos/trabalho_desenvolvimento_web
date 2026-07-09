@@ -15,7 +15,6 @@ import br.com.vitrinelocal.repository.LojaRepository;
 import br.com.vitrinelocal.repository.ProdutoRepository;
 import br.com.vitrinelocal.util.SlugUtil;
 
-// Cidades são derivadas do campo "cidade" das lojas (não há entidade Cidade).
 @Service
 public class CidadeService {
 
@@ -29,7 +28,6 @@ public class CidadeService {
 
     @Transactional(readOnly = true)
     public List<CidadeResumoDTO> listarCidades() {
-        // Agrupa as lojas pelo slug da cidade, preservando o nome original e contando.
         Map<String, CidadeAgrupada> mapa = new LinkedHashMap<>();
         for (Loja loja : lojaRepository.findAll()) {
             if (loja.getCidade() == null || loja.getCidade().isBlank()) {
@@ -67,7 +65,6 @@ public class CidadeService {
         return resultado;
     }
 
-    // Auxiliar para acumular nome + contagem por cidade.
     private static class CidadeAgrupada {
         final String nome;
         long total = 0;

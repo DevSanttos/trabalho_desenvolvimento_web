@@ -30,19 +30,16 @@ public class LojaController {
         this.produtoService = produtoService;
     }
 
-    // Dados completos da loja (cabeçalho público e carregamento do formulário "Minha loja").
     @GetMapping("/{slug}")
     public ResponseEntity<LojaDetalheDTO> buscarPorSlug(@PathVariable String slug) {
         return ResponseEntity.ok(lojaService.buscarPorSlug(slug));
     }
 
-    // Produtos ativos da vitrine pública.
     @GetMapping("/{slug}/produtos")
     public ResponseEntity<List<ProdutoResponseDTO>> listarProdutos(@PathVariable String slug) {
         return ResponseEntity.ok(produtoService.listarPublicosPorSlug(slug));
     }
 
-    // Atualização dos dados da loja (página "Minha loja").
     @PutMapping("/{id}")
     public ResponseEntity<LojaDetalheDTO> atualizar(@PathVariable UUID id,
                                                     @Valid @RequestBody AtualizarLojaDTO dto) {

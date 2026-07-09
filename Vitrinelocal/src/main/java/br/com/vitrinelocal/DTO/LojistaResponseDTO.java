@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import br.com.vitrinelocal.model.Lojista;
 
-// Resposta sem o campo senha — nunca devolve o hash ao cliente.
+// Resposta sem o campo senha.
 public record LojistaResponseDTO(
         UUID id,
         String email,

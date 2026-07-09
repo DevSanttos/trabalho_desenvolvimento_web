@@ -2,7 +2,7 @@ package br.com.vitrinelocal.DTO;
 
 import jakarta.validation.constraints.NotBlank;
 
-// Campos editáveis da loja (o slug NÃO muda, para não quebrar os links públicos).
+// Campos editáveis da loja.
 public record AtualizarLojaDTO(
 
         @NotBlank(message = "O nome da loja é obrigatório")

@@ -23,7 +23,6 @@ public class SecurityConfig {
     }
 
     // Libera as rotas: a autenticação é feita manualmente no service.
-    // CORS habilitado para o frontend que roda em origem separada (Live Server).
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
@@ -33,8 +32,6 @@ public class SecurityConfig {
         return http.build();
     }
 
-    // Permite requisições vindas do frontend (Live Server, porta 5500).
-    // Ajuste a lista de origens se usar outra porta/host.
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();

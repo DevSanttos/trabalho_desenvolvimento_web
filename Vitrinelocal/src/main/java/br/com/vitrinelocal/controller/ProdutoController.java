@@ -41,7 +41,6 @@ public class ProdutoController {
         return ResponseEntity.ok(produtoService.buscarPorId(id));
     }
 
-    // Lista todos os produtos de uma loja (painel do lojista).
     @GetMapping
     public ResponseEntity<List<ProdutoResponseDTO>> listarPorLoja(@RequestParam UUID lojaId) {
         return ResponseEntity.ok(produtoService.listarPorLoja(lojaId));

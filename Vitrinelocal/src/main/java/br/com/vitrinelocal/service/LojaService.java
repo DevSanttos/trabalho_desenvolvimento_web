@@ -32,7 +32,6 @@ public class LojaService {
         Loja loja = lojaRepository.findById(id)
                 .orElseThrow(() -> new RecursoNaoEncontradoException("Loja não encontrada"));
 
-        // O slug permanece o mesmo, mesmo que o nome mude (não quebra links públicos).
         loja.setNome(dto.nome());
         loja.setCategoria(dto.categoria());
         loja.setCidade(dto.cidade());
